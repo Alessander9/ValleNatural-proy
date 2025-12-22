@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+
+  <title>Valle Natural - Tienda Orgánica</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body class="bg-gray-50">
+  <div class="static-bar">
+    <span><i class="material-icons">local_shipping</i> Envíos a todo el Perú</span>
+    <span><i class="material-icons">star</i> Calidad Garantizada</span>
+    <span><i class="material-icons">verified_user</i> Compra 100% Segura</span>
+  </div>
+
+  <div style="position: sticky; top: 0; z-index: 1000;">
+    <section class="main-header">
+      <button class="hamburger-menu" type="button" aria-label="Abrir menú">
+        <i class="material-icons">menu</i>
+      </button>
+
+      <div class="brand-logo">Valle <span>Natural</span></div>
+
+      <div class="search-bar-container">
+        <div class="search-input-wrapper">
+          <input type="text" placeholder="¿Qué producto natural buscas hoy?" class="product-search-input">
+          <i class="material-icons search-icon">search</i>
+        </div>
+      </div>
+
+      <div class="user-actions-container">
+        <div class="cart-button-container">
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="whatsapp-cart-button" aria-label="Carrito por WhatsApp">
+            <i class="material-icons">shopping_cart</i>
+          </a>
+        </div>
+        <div class="login-button-container">
+          <a href="#" class="login-button" aria-label="Iniciar sesión">
+            <i class="material-icons">person_outline</i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <nav class="main-navbar">
+      <a href="#">Inicio</a>
+      <a href="Productos.html">Productos</a>
+            <a href="#">Frutos Secos y Deshidratados</a>
+      <!-- <a href="#">Nosotros</a>-->
+      <a href="#">Combos</a>
+      <!--<a href="#">Asesoría</a>-->
+      <a href="#">Contacto</a>
+    </nav>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>🎉 Oferta Especial: 20% dscto en productos seleccionados!</span>
+      <span>📦 ¡Nuevos paquetes de snacks saludables!</span>
+      <span>🚚 Envío gratis en pedidos S/150.</span>
+      <span>✨ Nueva línea de superalimentos</span>
+      <span>🍯 Miel de abeja pura - ¡Endulza tu vida!</span>
+      <span>🎉 Oferta Especial: 20% dscto en productos seleccionados!</span>
+      <span>📦 ¡Nuevos paquetes de snacks saludables!</span>
+      <span>🚚 Envío gratis en pedidos &gt; S/150.</span>
+      <span>✨ Nueva línea de superalimentos</span>
+      <span>🍯 Miel de abeja pura - ¡Endulza tu vida!</span>
+    </div>
+  </div>
+
+  <header class="hero-carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide active" style="background-image: url('./img/frutos-secos-bg.jpeg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Los Mejores <br><span>Frutos Secos</span></h2>
+          <p>Energía natural premium para tu día a día. Seleccionados cuidadosamente para ti.</p>
+          <a href="FrutosSecos.html" class="action-button">Comprar Ahora <i class="material-icons">arrow_forward</i></a>
+        </div>
+      </div>
+
+      <div class="carousel-slide" style="background-image: url('./img/miel-bg.jpg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Miel 100% <br><span>Pura de Abeja</span></h2>
+          <p>Directo del campo a tu mesa. Sin aditivos, sin procesos industriales.</p>
+          <a href="MielAbeja.html" class="action-button">Descubrir <i class="material-icons">arrow_forward</i></a>
+        </div>
+      </div>
+
+      <div class="carousel-slide" style="background-image: url('./img/super-alimentos-bg.jpeg');">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Super<br>Alimentos <br><span>Para tu Bienestar</span></h2>
+          <p>Maca, Chía, Colágeno y más. Nutrición avanzada para potenciar tu salud.</p>
+          <a href="#" class="action-button">Ver Catálogo <i class="material-icons">arrow_forward</i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="prev-btn" type="button" aria-label="Anterior"><i class="material-icons">arrow_back</i></button>
+      <button class="next-btn" type="button" aria-label="Siguiente"><i class="material-icons">arrow_forward</i></button>
+    </div>
+  </header>
+
+  <section class="featured-offers section-padding">
+    <h2 class="section-title">Ofertas <span>Imperdibles</span></h2>
+    <div class="offer-carousel-container">
+      <div class="offer-carousel-wrapper">
+
+        <!-- ✅ Ahora sí: estas ofertas tienen gsap-card -->
+        <div class="offer-card gsap-card">
+          <div class="offer-badge">-20%</div>
+          <div class="img-wrapper">
+            <img src="./img/frutosSecos.jpg" alt="Frutos Secos">
+          </div>
+          <div class="card-body">
+            <h3>Mix Premium de Frutos Secos</h3>
+            <p class="offer-price"><span class="old-price">S/ 60.00</span> S/ 50.00</p>
+            <div class="delivery-info">
+              <i class="material-icons">local_shipping</i> Envío Inmediato
+            </div>
+            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+              <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
+            </a>
+            <a href="FrutosSecos.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+          </div>
+        </div>
+
+        <div class="offer-card gsap-card">
+          <div class="offer-badge">Oferta</div>
+          <div class="img-wrapper">
+            <img src="./img/miel.jpg" alt="Miel">
+          </div>
+          <div class="card-body">
+            <h3>Miel de Abeja (1kg)</h3>
+            <p class="offer-price">S/ 50.00</p>
+            <div class="delivery-info">
+              <i class="material-icons">verified</i> 100% Natural
+            </div>
+            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+              <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
+            </a>
+            <a href="MielAbeja.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+          </div>
+        </div>
+
+        <div class="offer-card gsap-card">
+          <div class="offer-badge">Hot</div>
+          <div class="img-wrapper">
+            <img src="./img/chia.jpeg" alt="Chía">
+          </div>
+          <div class="card-body">
+            <h3>Semillas de Chía Premium</h3>
+            <p class="offer-price">S/ 50.00</p>
+            <div class="delivery-info">
+              <i class="material-icons">favorite</i> Superalimento
+            </div>
+            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+              <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
+            </a>
+            <a href="Chia.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+          </div>
+        </div>
+
+        <div class="offer-card gsap-card">
+          <div class="offer-badge">Nuevo</div>
+          <div class="img-wrapper">
+            <img src="./img/colageno-hidrolizado.jpeg" alt="Colágeno">
+          </div>
+          <div class="card-body">
+            <h3>Colágeno Hidrolizado</h3>
+            <p class="offer-price">S/ 50.00</p>
+            <div class="delivery-info">
+              <i class="material-icons">spa</i> Salud Articular
+            </div>
+            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+              <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
+            </a>
+            <a href="ColagenoHidrolizado.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="productos" class="nuestros-productos section-padding">
+    <h2 class="section-title">Nuestra <span>Selección</span></h2>
+
+    <!-- ✅ Ahora sí: productos con gsap-prod -->
+    <div class="productos-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/algarrobina.jpg" alt="Algarrobina">
+        </div>
+        <div class="card-body">
+          <h3>Algarrobina Premium</h3>
+          <p class="offer-price">S/ 28.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="Algarrobina.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/chia.jpeg" alt="Chía">
+        </div>
+        <div class="card-body">
+          <h3>Semillas de Chía</h3>
+          <p class="offer-price">S/ 15.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="Chia.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/colageno-hidrolizado.jpeg" alt="Colágeno">
+        </div>
+        <div class="card-body">
+          <h3>Colágeno Hidrolizado</h3>
+          <p class="offer-price">S/ 50.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="ColagenoHidrolizado.html" class="add-to-cart-btn" style="margin-top:10px">Ver detalle</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/curcuma.jpg" alt="Cúrcuma">
+        </div>
+        <div class="card-body">
+          <h3>Cúrcuma en Polvo</h3>
+          <p class="offer-price">S/ 20.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="Curcuma.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/frutosSecos.jpg" alt="Frutos">
+        </div>
+        <div class="card-body">
+          <h3>Mix Frutos Secos</h3>
+          <p class="offer-price">S/ 30.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="FrutosSecos.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/maca-negra.jpeg" alt="Maca">
+        </div>
+        <div class="card-body">
+          <h3>Maca Negra</h3>
+          <p class="offer-price">S/ 40.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="MacaNegra.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/miel.jpg" alt="Miel">
+        </div>
+        <div class="card-body">
+          <h3>Miel de Abeja</h3>
+          <p class="offer-price">S/ 45.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="MielAbeja.html" class="add-to-cart-btn" style="margin-top:10px">Ver detalle</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/moringa.jpg" alt="Moringa">
+        </div>
+        <div class="card-body">
+          <h3>Moringa en Polvo</h3>
+          <p class="offer-price">S/ 22.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="Moringa.html" class="add-to-cart-btn" style="margin-top:10px">Ver detalle</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/colageno.jpg" alt="Colágeno + Cartílago">
+        </div>
+        <div class="card-body">
+          <h3>Colágeno + Cartílago</h3>
+          <p class="offer-price">S/ 55.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="ColagenoCartilagoTiburon.html" class="add-to-cart-btn" style="margin-top:10px">Ver detalle</a>
+        </div>
+      </div>
+
+      <div class="offer-card product-card-grid gsap-prod">
+        <div class="img-wrapper">
+          <img src="./img/propoleo.jpg" alt="Propóleo">
+        </div>
+        <div class="card-body">
+          <h3>Propóleo Natural</h3>
+          <p class="offer-price">S/ 28.00</p>
+          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+            <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+          </a>
+          <a href="Propoleo.html" class="add-to-cart-btn" style="margin-top:10px">Ver detalle</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="footer-brand">Valle <span>Natural</span></div>
+        <p>Tu aliado natural desde 2010. Nos dedicamos a llevar salud, bienestar y energía vital a tu mesa con productos orgánicos seleccionados de la más alta calidad.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+          <li><a href="#productos"><i class="fas fa-chevron-right"></i> Productos</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Contáctanos</h4>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Av. Siempre Viva 123, Lima, Perú</span></div>
+        <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+51 981 383 662</span></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> <span>ventas@vallenatural.pe</span></div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn twitter"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Valle Natural. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="tooltip-wa">¡Hola! ¿En qué te ayudo?</span>
+  </a>
+
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ✅ Animación header/nav
+  gsap.from(".main-header", { y: -80, opacity: 0, duration: 1, ease: "power4.out" });
+  gsap.from(".main-navbar", { y: -50, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
+
+  // ✅ Texto del hero
+  const animateHeroText = () => {
+    gsap.timeline()
+      .fromTo(".carousel-slide.active .slide-content h2",
+        { y: 60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true }
+      )
+      .fromTo(".carousel-slide.active .slide-content p",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true },
+        "-=0.6"
+      )
+      .fromTo(".carousel-slide.active .action-button",
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)", overwrite: true },
+        "-=0.4"
+      );
+
+      // ✅ PROMO MODAL al abrir (con GSAP) + se puede cerrar
+const promoModal = document.getElementById("promoModal");
+const promoClose = document.getElementById("promoClose");
+const promoLater = document.getElementById("promoLater");
+
+const KEY = "promo_closed_session";
+
+const openPromo = () => {
+  promoModal.classList.add("show");
+  gsap.fromTo(".promo-backdrop", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" });
+  gsap.fromTo(".promo-card", { y: 30, scale: 0.95, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" });
+};
+
+const closePromo = () => {
+  // ✅ Marca como cerrado en esta sesión
+  sessionStorage.setItem(KEY, "1");
+
+  gsap.to(".promo-card", { y: 10, scale: 0.97, opacity: 0, duration: 0.22, ease: "power2.in" });
+  gsap.to(".promo-backdrop", {
+    opacity: 0,
+    duration: 0.22,
+    ease: "power2.in",
+    onComplete: () => promoModal.classList.remove("show")
+  });
+};
+
+// ✅ SOLO abre si NO fue cerrado antes en esta sesión
+if (!sessionStorage.getItem(KEY)) openPromo();
+
+promoClose.addEventListener("click", closePromo);
+promoLater.addEventListener("click", closePromo);
+promoModal.querySelector(".promo-backdrop").addEventListener("click", closePromo);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && promoModal.classList.contains("show")) closePromo();
+});
+
+      
+  };
+  animateHeroText();
+
+  // ✅ FUNCIÓN: anima cards en lote y evita que se queden invisibles
+  const batchCards = (targets, triggerEl) => {
+    ScrollTrigger.batch(targets, {
+      trigger: triggerEl,
+      start: "top 85%",
+      once: true,              // solo 1 vez (evita bugs de “se esconden de nuevo”)
+      onEnter: (batch) => {
+        gsap.fromTo(batch,
+          { y: 50, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12, ease: "power3.out", overwrite: true }
+        );
+      }
+    });
+  };
+
+  // ✅ Aplica a ofertas y productos
+  batchCards(".gsap-card", ".featured-offers");
+  batchCards(".gsap-prod", ".nuestros-productos");
+
+  // ✅ Carrusel
+  const slides = document.querySelectorAll(".carousel-slide");
+  const nextBtn = document.querySelector(".next-btn");
+  const prevBtn = document.querySelector(".prev-btn");
+  let currentSlide = 0;
+  let slideInterval;
+
+  const showSlide = (index) => {
+    slides.forEach(slide => slide.classList.remove("active"));
+
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides[currentSlide].classList.add("active");
+    animateHeroText();
+  };
+
+  const nextSlide = () => showSlide(currentSlide + 1);
+  const prevSlide = () => showSlide(currentSlide - 1);
+
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
+    prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
+  }
+
+  const startInterval = () => { slideInterval = setInterval(nextSlide, 6000); };
+  const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
+  startInterval();
+
+  // ✅ Menú hamburguesa
+  const menuBtn = document.querySelector(".hamburger-menu");
+  const navbar = document.querySelector(".main-navbar");
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      navbar.classList.toggle("active-mobile");
+      const icon = menuBtn.querySelector("i");
+      icon.textContent = navbar.classList.contains("active-mobile") ? "close" : "menu";
+      // refresca por si cambia la altura del header
+      setTimeout(() => ScrollTrigger.refresh(), 80);
+    });
+  }
+
+  // ✅ FIX CLAVE: refrescar triggers cuando TODO cargó (imágenes + fuentes)
+  window.addEventListener("load", () => ScrollTrigger.refresh());
+
+  // ✅ FIX CLAVE: refrescar si navegas por anclas (#productos, etc.)
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", () => {
+      setTimeout(() => ScrollTrigger.refresh(), 300);
+    });
+  });
+});
+</script>
+
+</body>
+<div class="promo-modal" id="promoModal" aria-hidden="true">
+  <div class="promo-backdrop"></div>
+
+  <div class="promo-card" role="dialog" aria-modal="true" aria-label="Oferta especial">
+    <button class="promo-close" id="promoClose" aria-label="Cerrar oferta">✕</button>
+
+    <!-- IMAGEN DE PROMOCIÓN -->
+    <img 
+      src="./img/alert.png" 
+      alt="Oferta especial 20% de descuento y envío gratis" 
+      class="promo-image"
+    />
+
+    <div class="promo-actions">
+      <a class="promo-btn" href="https://wa.me/51981383662" target="_blank" rel="noopener">
+        Pedir por WhatsApp
+      </a>
+      <button class="promo-btn-outline" id="promoLater">Ver luego</button>
+    </div>
+  </div>
+</div>
+
+
+</html>
