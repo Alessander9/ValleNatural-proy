@@ -90,6 +90,7 @@
   </div>
 
   <!-- Header -->
+   <!-- Header -->
   <header class="bg-white sticky top-0 z-50 border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html" class="text-2xl font-extrabold flex items-center gap-2" style="color:var(--green-dark)">
@@ -103,7 +104,7 @@
 
       <nav id="mainNav" class="hidden md:flex items-center gap-6 font-semibold text-sm">
         <a href="index.html" class="hover:text-[var(--green)] flex items-center gap-1"><span class="material-icons text-base">home</span> Inicio</a>
-        <a href="#" class="hover:text-[var(--green)] flex items-center gap-1"><span class="material-icons text-base">storefront</span> Productos</a>
+        <a href="Productos.html" class="hover:text-[var(--green)] flex items-center gap-1"><span class="material-icons text-base">storefront</span> Productos</a>
         <a href="#" class="hover:text-[var(--green)] flex items-center gap-1"><span class="material-icons text-base">info</span> Nosotros</a>
         <a href="#" class="hover:text-[var(--green)] flex items-center gap-1"><span class="material-icons text-base">support_agent</span> Contacto</a>
       </nav>
@@ -113,7 +114,7 @@
     <nav id="mobileNav" class="md:hidden hidden px-4 pb-4">
       <div class="flex flex-col gap-2 text-sm font-semibold bg-white border rounded-lg p-3">
         <a href="index.html" class="py-1 flex items-center gap-2"><span class="material-icons text-base">home</span> Inicio</a>
-        <a href="#" class="py-1 flex items-center gap-2"><span class="material-icons text-base">storefront</span> Productos</a>
+        <a href="Productos.html" class="py-1 flex items-center gap-2"><span class="material-icons text-base">storefront</span> Productos</a>
         <a href="#" class="py-1 flex items-center gap-2"><span class="material-icons text-base">info</span> Nosotros</a>
         <a href="#" class="py-1 flex items-center gap-2"><span class="material-icons text-base">support_agent</span> Contacto</a>
       </div>
@@ -140,7 +141,7 @@
       <!-- Imagen -->
       <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100 product-image">
         <img class="rounded-xl w-full h-96 object-cover"
-             src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1200"
+             src="./img/stevia-yacon.jpeg"
              alt="Stevia Natural">
       </div>
 
@@ -148,7 +149,7 @@
       <div class="product-info">
         <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-3 flex items-center gap-2">
           <span class="material-icons" style="color:var(--orange)">spa</span>
-          Stevia Natural
+          Stevia con Harina de Yacón
         </h1>
 
         <p class="text-gray-700 mb-5 flex items-start gap-2">
@@ -158,7 +159,7 @@
 
         <div class="flex items-baseline gap-3 mb-6">
           <span class="text-3xl font-extrabold flex items-center gap-1" style="color:var(--green)">
-            <span class="material-icons">sell</span> S/ 10.00
+            <span class="material-icons">sell</span> S/ 25.00
           </span>
         </div>
 
@@ -169,8 +170,8 @@
             </label>
             <select id="presentacion"
               class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--green)]">
-              <option selected>100 g</option>
-              <option>200 g</option>
+              <option selected>150 g</option>
+             <!-- <option>200 g</option>-->
             </select>
           </div>
 
@@ -266,7 +267,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
             <div class="bg-white border rounded-lg p-3 flex items-start gap-2">
               <span class="material-icons text-gray-500">scale</span>
-              <div><span class="font-semibold">Peso/Cantidad:</span> 100 g, 200 g</div>
+              <div><span class="font-semibold">Peso/Cantidad:</span> 150 g </div>
             </div>
             <div class="bg-white border rounded-lg p-3 flex items-start gap-2">
               <span class="material-icons text-gray-500">public</span>
@@ -295,30 +296,30 @@
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 related-grid">
 
-        <a href="Panela.html" class="related-card group bg-white rounded-xl shadow-sm overflow-hidden border hover:shadow-md transition">
-          <img src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=600"
-               class="h-36 w-full object-cover group-hover:scale-105 transition-transform" alt="Panela">
+        <a href="MacaNegra.html" class="related-card group bg-white rounded-xl shadow-sm overflow-hidden border hover:shadow-md transition">
+          <img src="./img/maca-negra.jpeg"
+               class="h-46 w-full object-cover group-hover:scale-105 transition-transform" alt="Panela">
           <div class="p-3">
-            <div class="font-semibold flex items-center gap-1"><span class="material-icons text-base text-gray-500">restaurant</span> Panela Granulada</div>
-            <div class="text-[var(--green)] font-bold">S/ 14.00</div>
+            <div class="font-semibold flex items-center gap-1"><span class="material-icons text-base text-gray-500">restaurant</span> Maca Negra Gelatinizada</div>
+            <div class="text-[var(--green)] font-bold">S/ 25.00</div>
           </div>
         </a>
 
         <a href="AceiteCoco.html" class="related-card group bg-white rounded-xl shadow-sm overflow-hidden border hover:shadow-md transition">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600"
-               class="h-36 w-full object-cover group-hover:scale-105 transition-transform" alt="Aceite de Coco">
+          <img src="./img/aceite-coco.jpeg"
+               class="h-46 w-full object-cover group-hover:scale-105 transition-transform" alt="Aceite de Coco">
           <div class="p-3">
             <div class="font-semibold flex items-center gap-1"><span class="material-icons text-base text-gray-500">opacity</span> Aceite de Coco</div>
-            <div class="text-[var(--green)] font-bold">S/ 28.00</div>
+            <div class="text-[var(--green)] font-bold">S/ 50.00</div>
           </div>
         </a>
 
         <a href="Linaza.html" class="related-card group bg-white rounded-xl shadow-sm overflow-hidden border hover:shadow-md transition">
-          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600"
-               class="h-36 w-full object-cover group-hover:scale-105 transition-transform" alt="Linaza">
+          <img src="./img/linaza-molida.jpeg"
+               class="h-46 w-full object-cover group-hover:scale-105 transition-transform" alt="Linaza">
           <div class="p-3">
             <div class="font-semibold flex items-center gap-1"><span class="material-icons text-base text-gray-500">grain</span> Linaza Molida</div>
-            <div class="text-[var(--green)] font-bold">S/ 12.00</div>
+            <div class="text-[var(--green)] font-bold">S/ 15.00</div>
           </div>
         </a>
 

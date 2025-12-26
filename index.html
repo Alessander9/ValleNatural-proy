@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
 
   <title>Valle Natural - Tienda Orgánica</title>
 
@@ -14,6 +14,39 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+  <!-- ✅✅✅ AGREGADO: Estilos botón "Ir arriba" (no elimina nada) -->
+  <style>
+    .back-to-top-btn{
+      position: fixed;
+      right: 45px;
+      bottom: 125px; /* queda encima del WhatsApp flotante */
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: #006838;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 104, 56, 0.30);
+      z-index: 999;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all .25s ease;
+    }
+    .back-to-top-btn.show{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top-btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 104, 56, 0.38);
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50">
@@ -29,7 +62,12 @@
         <i class="material-icons">menu</i>
       </button>
 
-      <div class="brand-logo">Valle <span>Natural</span></div>
+      <div class="logo gsap-header">
+        <a href="index.html" class="text-4xl font-extrabold flex items-center gap-2" style="color:var(--green-dark)">
+          <span class="material-icons" style="color:var(--orange)">spa</span>
+          Valle <span style="color:var(--orange)">Natural</span>
+        </a>
+      </div>
 
       <div class="search-bar-container">
         <div class="search-input-wrapper">
@@ -40,7 +78,7 @@
 
       <div class="user-actions-container">
         <div class="cart-button-container">
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="whatsapp-cart-button" aria-label="Carrito por WhatsApp">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="whatsapp-cart-button" aria-label="Carrito por WhatsApp">
             <i class="material-icons">shopping_cart</i>
           </a>
         </div>
@@ -55,7 +93,7 @@
     <nav class="main-navbar">
       <a href="#">Inicio</a>
       <a href="Productos.html">Productos</a>
-            <a href="FrutosSecosYDeshidratados.html">Frutos Secos y Deshidratados</a>
+      <a href="FrutosSecosYDeshidratados.html">Frutos Secos y Deshidratados</a>
       <!-- <a href="#">Nosotros</a>-->
       <a href="#">Combos</a>
       <!--<a href="#">Asesoría</a>-->
@@ -131,10 +169,10 @@
             <div class="delivery-info">
               <i class="material-icons">local_shipping</i> Envío Inmediato
             </div>
-            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+            <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn">
               <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
             </a>
-            <a href="FrutosSecosYDeshidratados.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
+            <a href="FrutosSecos.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
           </div>
         </div>
 
@@ -149,7 +187,7 @@
             <div class="delivery-info">
               <i class="material-icons">verified</i> 100% Natural
             </div>
-            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+            <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn">
               <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
             </a>
             <a href="MielAbeja.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -167,7 +205,7 @@
             <div class="delivery-info">
               <i class="material-icons">favorite</i> Superalimento
             </div>
-            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+            <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn">
               <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
             </a>
             <a href="Chia.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -185,7 +223,7 @@
             <div class="delivery-info">
               <i class="material-icons">spa</i> Salud Articular
             </div>
-            <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn">
+            <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn">
               <span>Agregar al Carrito</span> <i class="material-icons">add_shopping_cart</i>
             </a>
             <a href="ColagenoHidrolizado.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -211,7 +249,7 @@
           <div class="delivery-info">
             <i class="material-icons">eco</i> Endulzante Natural
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="Algarrobina.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -229,7 +267,7 @@
           <div class="delivery-info">
             <i class="material-icons">hive</i> 100% Pura
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="MielAbeja.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -248,7 +286,7 @@
           <div class="delivery-info">
             <i class="material-icons">filter_vintage</i> Energizante
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="#" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -266,7 +304,7 @@
           <div class="delivery-info">
             <i class="material-icons">medication</i> Sistema Inmune
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="Propoleo.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -284,7 +322,7 @@
           <div class="delivery-info">
             <i class="material-icons">nutrition</i> Snack Saludable
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="FrutosSecos.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -302,7 +340,7 @@
           <div class="delivery-info">
             <i class="material-icons">pill</i> 100% Pure
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="#" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -320,7 +358,7 @@
           <div class="delivery-info">
             <i class="material-icons">pill</i> 100% Pure
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="#" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -339,7 +377,7 @@
           <div class="delivery-info">
             <i class="material-icons">water_drop</i> Extra Virgen
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="#" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -357,13 +395,13 @@
           <div class="delivery-info">
             <i class="material-icons">spa</i> Piel y Articulaciones
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="ColagenoHidrolizado.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
         </div>
       </div>
-      
+
       <!-- Cartilago de tiburón -->
       <div class="offer-card product-card-grid gsap-prod">
         <div class="img-wrapper">
@@ -375,7 +413,7 @@
           <div class="delivery-info">
             <i class="material-icons">health_and_safety</i> Refuerzo Total
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="ColagenoCartilagoTiburon.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -393,7 +431,7 @@
           <div class="delivery-info">
             <i class="material-icons">forest</i> Superalimento
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="Moringa.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -411,7 +449,7 @@
           <div class="delivery-info">
             <i class="material-icons">local_florist</i> Anti-inflamatorio
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="Curcuma.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -430,7 +468,7 @@
           <div class="delivery-info">
             <i class="material-icons">local_bar</i> Refrescante
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="#" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -448,7 +486,7 @@
           <div class="delivery-info">
             <i class="material-icons">grain</i> Omega 3
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="Chia.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -466,7 +504,7 @@
           <div class="delivery-info">
             <i class="material-icons">energy_savings_leaf</i> Vigorizante
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="MacaNegra.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -484,7 +522,7 @@
           <div class="delivery-info">
             <i class="material-icons">breakfast_dining</i> Antioxidante
           </div>
-          <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="add-to-cart-btn-full">
+          <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="add-to-cart-btn-full">
             <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
           </a>
           <a href="Cacao.html" class="add-to-cart-btn" style="margin-top:10px">Ver más</a>
@@ -551,153 +589,196 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/51981383662" target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="WhatsApp">
+  <a href="https://wa.me/51967736074" target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
     <span class="tooltip-wa">¡Hola! ¿En qué te ayudo?</span>
   </a>
 
- <script>
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
+  <!-- ✅✅✅ AGREGADO: Botón "Ir arriba" (no elimina nada) -->
+  <button id="backToTop" class="back-to-top-btn" type="button" aria-label="Volver arriba">
+    <span class="material-icons">home</span>
+  </button>
 
-  // ✅ Animación header/nav
-  gsap.from(".main-header", { y: -80, opacity: 0, duration: 1, ease: "power4.out" });
-  gsap.from(".main-navbar", { y: -50, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
 
-  // ✅ Texto del hero
-  const animateHeroText = () => {
-    gsap.timeline()
-      .fromTo(".carousel-slide.active .slide-content h2",
-        { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true }
-      )
-      .fromTo(".carousel-slide.active .slide-content p",
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true },
-        "-=0.6"
-      )
-      .fromTo(".carousel-slide.active .action-button",
-        { scale: 0.8, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)", overwrite: true },
-        "-=0.4"
-      );
+    // ✅ Animación header/nav
+    gsap.from(".main-header", { y: -80, opacity: 0, duration: 1, ease: "power4.out" });
+    gsap.from(".main-navbar", { y: -50, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
 
-      // ✅ PROMO MODAL al abrir (con GSAP) + se puede cerrar
-const promoModal = document.getElementById("promoModal");
-const promoClose = document.getElementById("promoClose");
-const promoLater = document.getElementById("promoLater");
-
-const KEY = "promo_closed_session";
-
-const openPromo = () => {
-  promoModal.classList.add("show");
-  gsap.fromTo(".promo-backdrop", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" });
-  gsap.fromTo(".promo-card", { y: 30, scale: 0.95, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.35, ease: "power3.out" });
-};
-
-const closePromo = () => {
-  // ✅ Marca como cerrado en esta sesión
-  sessionStorage.setItem(KEY, "1");
-
-  gsap.to(".promo-card", { y: 10, scale: 0.97, opacity: 0, duration: 0.22, ease: "power2.in" });
-  gsap.to(".promo-backdrop", {
-    opacity: 0,
-    duration: 0.22,
-    ease: "power2.in",
-    onComplete: () => promoModal.classList.remove("show")
-  });
-};
-
-// ✅ SOLO abre si NO fue cerrado antes en esta sesión
-if (!sessionStorage.getItem(KEY)) openPromo();
-
-promoClose.addEventListener("click", closePromo);
-promoLater.addEventListener("click", closePromo);
-promoModal.querySelector(".promo-backdrop").addEventListener("click", closePromo);
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && promoModal.classList.contains("show")) closePromo();
-});
-
-      
-  };
-  animateHeroText();
-
-  // ✅ FUNCIÓN: anima cards en lote y evita que se queden invisibles
-  const batchCards = (targets, triggerEl) => {
-    ScrollTrigger.batch(targets, {
-      trigger: triggerEl,
-      start: "top 85%",
-      once: true,              // solo 1 vez (evita bugs de “se esconden de nuevo”)
-      onEnter: (batch) => {
-        gsap.fromTo(batch,
-          { y: 50, autoAlpha: 0 },
-          { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12, ease: "power3.out", overwrite: true }
+    // ✅ Texto del hero
+    const animateHeroText = () => {
+      gsap.timeline()
+        .fromTo(".carousel-slide.active .slide-content h2",
+          { y: 60, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true }
+        )
+        .fromTo(".carousel-slide.active .slide-content p",
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true },
+          "-=0.6"
+        )
+        .fromTo(".carousel-slide.active .action-button",
+          { scale: 0.8, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)", overwrite: true },
+          "-=0.4"
         );
-      }
-    });
-  };
 
-  // ✅ Aplica a ofertas y productos
-  batchCards(".gsap-card", ".featured-offers");
-  batchCards(".gsap-prod", ".nuestros-productos");
+      // ✅ PROMO MODAL
+      const promoModal = document.getElementById("promoModal");
+      const promoClose = document.getElementById("promoClose");
+      const promoLater = document.getElementById("promoLater");
 
-  // ✅ Carrusel
-  const slides = document.querySelectorAll(".carousel-slide");
-  const nextBtn = document.querySelector(".next-btn");
-  const prevBtn = document.querySelector(".prev-btn");
-  let currentSlide = 0;
-  let slideInterval;
+      const KEY = "promo_closed_session";
 
-  const showSlide = (index) => {
-    slides.forEach(slide => slide.classList.remove("active"));
+      const openPromo = () => {
+        promoModal.classList.add("show");
+        gsap.fromTo(".promo-backdrop", { opacity: 0 }, { opacity: 1, duration: 0.25 });
+        gsap.fromTo(".promo-card",
+          { y: 30, scale: 0.95, opacity: 0 },
+          { y: 0, scale: 1, opacity: 1, duration: 0.35 }
+        );
+      };
 
-    if (index >= slides.length) currentSlide = 0;
-    else if (index < 0) currentSlide = slides.length - 1;
-    else currentSlide = index;
+      const closePromo = () => {
+        sessionStorage.setItem(KEY, "1");
+        gsap.to(".promo-card", { y: 10, scale: 0.97, opacity: 0, duration: 0.22 });
+        gsap.to(".promo-backdrop", {
+          opacity: 0,
+          duration: 0.22,
+          onComplete: () => promoModal.classList.remove("show")
+        });
+      };
 
-    slides[currentSlide].classList.add("active");
+      if (promoModal && !sessionStorage.getItem(KEY)) openPromo();
+
+      promoClose?.addEventListener("click", closePromo);
+      promoLater?.addEventListener("click", closePromo);
+      promoModal?.querySelector(".promo-backdrop")?.addEventListener("click", closePromo);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && promoModal?.classList.contains("show")) closePromo();
+      });
+    };
     animateHeroText();
-  };
 
-  const nextSlide = () => showSlide(currentSlide + 1);
-  const prevSlide = () => showSlide(currentSlide - 1);
+    // ✅ Animación cards
+    const batchCards = (targets, triggerEl) => {
+      ScrollTrigger.batch(targets, {
+        trigger: triggerEl,
+        start: "top 85%",
+        once: true,
+        onEnter: (batch) => {
+          gsap.fromTo(batch,
+            { y: 50, autoAlpha: 0 },
+            { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12 }
+          );
+        }
+      });
+    };
 
-  if (nextBtn && prevBtn) {
-    nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
-    prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
-  }
+    batchCards(".gsap-card", ".featured-offers");
+    batchCards(".gsap-prod", ".nuestros-productos");
 
-  const startInterval = () => { slideInterval = setInterval(nextSlide, 6000); };
-  const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
-  startInterval();
+    // ✅ Carrusel
+    const slides = document.querySelectorAll(".carousel-slide");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    let currentSlide = 0;
+    let slideInterval;
 
-  // ✅ Menú hamburguesa
-  const menuBtn = document.querySelector(".hamburger-menu");
-  const navbar = document.querySelector(".main-navbar");
+    const showSlide = (index) => {
+      slides.forEach(slide => slide.classList.remove("active"));
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+      animateHeroText();
+    };
 
-  if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
+    const startInterval = () => slideInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
+
+    nextBtn?.addEventListener("click", () => { showSlide(currentSlide + 1); resetInterval(); });
+    prevBtn?.addEventListener("click", () => { showSlide(currentSlide - 1); resetInterval(); });
+
+    startInterval();
+
+    // ✅ Menú hamburguesa
+    const menuBtn = document.querySelector(".hamburger-menu");
+    const navbar = document.querySelector(".main-navbar");
+
+    menuBtn?.addEventListener("click", () => {
       navbar.classList.toggle("active-mobile");
       const icon = menuBtn.querySelector("i");
       icon.textContent = navbar.classList.contains("active-mobile") ? "close" : "menu";
-      // refresca por si cambia la altura del header
       setTimeout(() => ScrollTrigger.refresh(), 80);
     });
-  }
 
-  // ✅ FIX CLAVE: refrescar triggers cuando TODO cargó (imágenes + fuentes)
-  window.addEventListener("load", () => ScrollTrigger.refresh());
+    window.addEventListener("load", () => ScrollTrigger.refresh());
 
-  // ✅ FIX CLAVE: refrescar si navegas por anclas (#productos, etc.)
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", () => {
-      setTimeout(() => ScrollTrigger.refresh(), 300);
-    });
+    /* ===========================================================
+       ✅ WhatsApp personalizado (SIN old-price)
+    =========================================================== */
+    (function setupWhatsAppPersonalizado(){
+      const WA = "51967736074";
+      const buttons = document.querySelectorAll("a.add-to-cart-btn, a.add-to-cart-btn-full");
+
+      buttons.forEach(btn => {
+        if (!btn.textContent.toLowerCase().includes("agregar")) return;
+
+        const card = btn.closest(".offer-card") || btn.closest(".product-card-grid");
+
+        const product =
+          btn.dataset.product ||
+          card?.querySelector("h3")?.textContent?.trim() ||
+          "un producto";
+
+        // ✅ SOLO precio final (elimina old-price)
+        const price = (() => {
+          const priceEl = card?.querySelector(".offer-price");
+          if (!priceEl) return "";
+
+          const clone = priceEl.cloneNode(true);
+          clone.querySelectorAll(".old-price").forEach(el => el.remove());
+          return clone.textContent.replace(/\s+/g, " ").trim();
+        })();
+
+        const message = `Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`;
+
+        btn.href = `https://wa.me/${WA}?text=${encodeURIComponent(message)}`;
+        btn.target = "_blank";
+        btn.rel = "noopener";
+      });
+    })();
+
+    /* ===========================================================
+       ✅✅✅ AGREGADO: Botón "Volver arriba"
+       - Aparece al bajar
+       - Desaparece al estar arriba
+       - Scroll suave hacia arriba
+    =========================================================== */
+    (function setupBackToTop(){
+      const btnTop = document.getElementById("backToTop");
+      if(!btnTop) return;
+
+      const toggleBtn = () => {
+        const showAt = 450; // px: cuando baja más de esto, aparece
+        if (window.scrollY > showAt) btnTop.classList.add("show");
+        else btnTop.classList.remove("show");
+      };
+
+      window.addEventListener("scroll", toggleBtn, { passive: true });
+      toggleBtn();
+
+      btnTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    })();
   });
-});
-</script>
+  </script>
 
 </body>
+
 <div class="promo-modal" id="promoModal" aria-hidden="true">
   <div class="promo-backdrop"></div>
 
@@ -705,18 +786,19 @@ document.addEventListener("keydown", (e) => {
     <button class="promo-close" id="promoClose" aria-label="Cerrar oferta">✕</button>
 
     <!-- IMAGEN DE PROMOCIÓN -->
-    <img 
-      src="./img/alert.png" 
-      alt="Oferta especial 20% de descuento y envío gratis" 
+    <img
+      src="./img/alert.png"
+      alt="Oferta especial 20% de descuento y envío gratis"
       class="promo-image"
     />
 
     <div class="promo-actions">
-      <a class="promo-btn" href="https://wa.me/51981383662" target="_blank" rel="noopener">
+      <a class="promo-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener">
         Pedir por WhatsApp
       </a>
       <button class="promo-btn-outline" id="promoLater">Ver luego</button>
     </div>
   </div>
 </div>
+
 </html>
