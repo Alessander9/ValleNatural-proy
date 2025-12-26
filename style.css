@@ -219,21 +219,22 @@ body {
   color: white;
   width: 100%;
   max-width: 1200px;
+  height: 22.5rem;
   padding: 0 5%;
 }
 
 .slide-content h2 {
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 1.1;
   font-weight: 800;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-transform: uppercase;
   text-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 .slide-content h2 span { color: var(--orange); }
 
 .slide-content p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 40px;
   font-weight: 300;
   max-width: 600px;
@@ -242,8 +243,9 @@ body {
 .action-button {
   display: inline-flex;
   align-items: center;
+  margin-bottom: 3.5rem;
   gap: 12px;
-  padding: 16px 45px;
+  padding: 14px 45px;
   background: var(--orange);
   color: white;
   text-decoration: none;
