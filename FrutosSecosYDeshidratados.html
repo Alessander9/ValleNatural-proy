@@ -10,120 +10,137 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-<style>
-  :root {
-  --green-main: #147a49;
-  --green-light: #e8f5e9;
-  --neon-glow: rgba(20, 122, 73, 0.4);
-  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
 
-/* Contenedor Principal de la Tarjeta */
-.product-card-grid {
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #f0f0f0;
-  transition: var(--transition);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
+  <style>
+    :root {
+      --green-main: #147a49;
+      --green-light: #e8f5e9;
+      --neon-glow: rgba(20, 122, 73, 0.4);
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
 
-/* Efecto Hover: Elevación y Sombra Neón */
-.product-card-grid:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: var(--green-light);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 
-              0 0 15px var(--neon-glow), 
-              0 0 30px var(--neon-glow);
-}
+    /* Contenedor Principal de la Tarjeta */
+    .product-card-grid {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #f0f0f0;
+      transition: var(--transition);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
 
-/* Ajuste de la Imagen */
-.img-wrapper {
-  position: relative;
-  overflow: hidden;
-  padding-top: 75%; /* Ratio 4:3 */
-}
+    /* Efecto Hover: Elevación y Sombra Neón */
+    .product-card-grid:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: var(--green-light);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+                  0 0 15px var(--neon-glow),
+                  0 0 30px var(--neon-glow);
+    }
 
-.img-wrapper img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
+    /* Ajuste de la Imagen */
+    .img-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding-top: 75%; /* Ratio 4:3 */
+    }
 
-.product-card-grid:hover .img-wrapper img {
-  transform: scale(1.1);
-}
+    .img-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
 
-/* Cuerpo de la tarjeta */
-.card-body {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
+    .product-card-grid:hover .img-wrapper img {
+      transform: scale(1.1);
+    }
 
-.card-body h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 0.5rem;
-}
+    /* Cuerpo de la tarjeta */
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-.offer-price {
-  font-size: 1.5rem;
-  color: var(--green-main);
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
+    .card-body h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+    }
 
-/* Iconos de Material Icons en la cuadrícula */
-.features-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
+    .offer-price {
+      font-size: 1.5rem;
+      color: var(--green-main);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
 
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: #4a5568;
-}
+    /* Iconos de Material Icons en la cuadrícula */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
 
-.feature-item i {
-  font-size: 1.2rem;
-  color: var(--green-main);
-}
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: #4a5568;
+    }
 
-/* Botón Modernizado */
-.add-to-cart-btn-full {
-  background-color: var(--green-main);
-  color: white;
-  text-align: center;
-  padding: 0.8rem;
-  border-radius: 12px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: var(--transition);
-  text-decoration: none;
-}
+    .feature-item i {
+      font-size: 1.2rem;
+      color: var(--green-main);
+    }
 
-.add-to-cart-btn-full:hover {
-  background-color: #0f5d38; /* Un verde un poco más oscuro */
-  box-shadow: 0 4px 12px rgba(20, 122, 73, 0.3);
-}
-</style>
+    /* Botón Modernizado */
+    .add-to-cart-btn-full {
+      background-color: var(--green-main);
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .add-to-cart-btn-full:hover {
+      background-color: #0f5d38; /* Un verde un poco más oscuro */
+      box-shadow: 0 4px 12px rgba(20, 122, 73, 0.3);
+    }
+
+    /* ✅✅✅ AGREGADO: Responsive + comportamiento menú hamburguesa (sin borrar nada) */
+    @media (max-width: 768px){
+      .main-navbar{
+        display: none;
+      }
+      .main-navbar.active-mobile{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 14px;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+      }
+    }
+  </style>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
@@ -179,17 +196,17 @@
   <main class="max-w-6xl mx-auto px-4 py-10">
 
     <div class="mb-8 animate-fade-in">
-        <div class="text-sm text-gray-500 mb-2 flex items-center gap-2 page-breadcrumb">
-            <a href="index.html" class="text-[var(--green)] hover:underline">Inicio</a>
-            <span class="mx-1 text-gray-300">/</span>
-            <span>Frutos Secos y Deshidratados</span>
-        </div>
-        <h1 class="section-title text-left" style="margin-bottom: 20px; font-size: 2.5rem;">Frutos Secos y <span>Deshidratados</span></h1>
-        <p class="text-gray-600 max-w-3xl">Una selección de nuestros mejores frutos secos y deshidratados, elegidos por su frescura y calidad. Perfectos para un snack saludable, para cocinar o para llenarte de energía.</p>
+      <div class="text-sm text-gray-500 mb-2 flex items-center gap-2 page-breadcrumb">
+        <a href="index.html" class="text-[var(--green)] hover:underline">Inicio</a>
+        <span class="mx-1 text-gray-300">/</span>
+        <span>Frutos Secos y Deshidratados</span>
+      </div>
+      <h1 class="section-title text-left" style="margin-bottom: 20px; font-size: 2.5rem;">Frutos Secos y <span>Deshidratados</span></h1>
+      <p class="text-gray-600 max-w-3xl">Una selección de nuestros mejores frutos secos y deshidratados, elegidos por su frescura y calidad. Perfectos para un snack saludable, para cocinar o para llenarte de energía.</p>
     </div>
 
     <div class="productos-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      
+
       <div class="offer-card product-card-grid gsap-prod">
         <div class="img-wrapper">
           <img src="./img/FrutosSecos/almendras.jpeg" alt="Almendras">
@@ -297,16 +314,16 @@
           </a>
         </div>
       </div>
-      
+
     </div>
 
     <div class="text-center mt-12">
-        <a href="index.html"
-            class="inline-flex items-center justify-center gap-2 border-2 font-semibold rounded-full px-8 py-3 transition-all hover:bg-[var(--green-light)] hover:--green-light"
-            style="border-color:var(--green); color:var(--green)">
-            <span class="material-icons">arrow_back</span>
-            Volver a la Página Principal
-        </a>
+      <a href="index.html"
+         class="inline-flex items-center justify-center gap-2 border-2 font-semibold rounded-full px-8 py-3 transition-all hover:bg-[var(--green-light)] hover:--green-light"
+         style="border-color:var(--green); color:var(--green)">
+        <span class="material-icons">arrow_back</span>
+        Volver a la Página Principal
+      </a>
     </div>
 
   </main>
@@ -336,6 +353,20 @@
         y: 50,
         duration: 0.8,
         ease: 'power2.out'
+      });
+    });
+
+    /* ✅✅✅ AGREGADO: Toggle menú hamburguesa (sin borrar nada) */
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.querySelector(".hamburger-menu");
+      const navbar = document.querySelector(".main-navbar");
+
+      if (!menuBtn || !navbar) return;
+
+      menuBtn.addEventListener("click", () => {
+        navbar.classList.toggle("active-mobile");
+        const icon = menuBtn.querySelector("i");
+        if (icon) icon.textContent = navbar.classList.contains("active-mobile") ? "close" : "menu";
       });
     });
   </script>

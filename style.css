@@ -662,3 +662,24 @@ body {
   background: rgba(27,155,94,0.10);
   transform: translateY(-1px);
 }
+
+/* ✅ Evita micro overflow en mobile */
+html, body { width: 100%; overflow-x: hidden; }
+
+/* ✅ Flex children pueden encoger (evita desbordes raros) */
+.main-header > * { min-width: 0; }
+.user-actions-container { flex-shrink: 0; }
+
+/* ✅ Mobile: tu logo real es .logo a, no .brand-logo */
+@media (max-width: 768px) {
+  .logo a{
+    font-size: 1.6rem !important;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+}
+
+/* ✅ Mejor adaptación del hero (opcional pero recomendado) */
+.slide-content h2 { font-size: clamp(2rem, 6vw, 4.5rem); }
+.slide-content p  { font-size: clamp(1rem, 3.5vw, 1.5rem); }
+.hero-carousel     { height: clamp(420px, 60vh, 650px); }
