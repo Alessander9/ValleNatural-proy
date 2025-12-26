@@ -23,7 +23,6 @@
   --green-soft:#e5f7f1;
   --radius:18px;
 }
-
 *{box-sizing:border-box}
 body{
   font-family:Poppins,sans-serif;
@@ -364,11 +363,11 @@ body{
   opacity:1;visibility:visible;transform:translateX(0);
 }
 
-/* ✅ BOTÓN IR ARRIBA (AGREGADO) */
+/* ✅ BOTÓN IR ARRIBA */
 .back-to-top{
   position:fixed;
   right:28px;
-  bottom:112px; /* encima del WhatsApp */
+  bottom:112px;
   width:60px;
   height:60px;
   border-radius:999px;
@@ -455,11 +454,15 @@ body{
       </p>
     </div>
 
+    <!-- ✅ CHIPS (6 CATEGORÍAS) -->
     <div class="chips gsap-hero">
       <div class="chip active" data-filter="all"><span class="material-icons">apps</span> Todos</div>
-      <div class="chip" data-filter="granos"><span class="material-icons">grain</span> Granos</div>
-      <div class="chip" data-filter="superfoods"><span class="material-icons">bolt</span> Superfoods</div>
-      <div class="chip" data-filter="endulzantes"><span class="material-icons">local_cafe</span> Endulzantes</div>
+
+      <div class="chip" data-filter="frutos_secos"><span class="material-icons">restaurant</span> Frutos secos</div>
+      <div class="chip" data-filter="semillas"><span class="material-icons">grain</span> Semillas</div>
+      <div class="chip" data-filter="granos_pops"><span class="material-icons">emoji_food_beverage</span> Granos / Pops</div>
+      <div class="chip" data-filter="superfoods_suplementos"><span class="material-icons">bolt</span> Superfoods / Suplementos</div>
+      <div class="chip" data-filter="endulzantes_infusiones"><span class="material-icons">local_cafe</span> Endulzantes e infusiones</div>
       <div class="chip" data-filter="aceites"><span class="material-icons">opacity</span> Aceites</div>
     </div>
   </div>
@@ -478,8 +481,12 @@ body{
 
   <div class="productos-grid" id="grid">
 
+    <!-- =========================
+         ENDULZANTES E INFUSIONES
+         ========================= -->
+
     <!-- PRODUCTO 1 -->
-    <div class="card gsap-prod" data-name="algarrobina" data-cat="endulzantes" data-stock="1" data-offer="0">
+    <div class="card gsap-prod" data-name="algarrobina" data-cat="endulzantes_infusiones" data-stock="1" data-offer="0">
       <div class="img-wrapper">
         <span class="badge-type"><span class="material-icons">local_cafe</span> Endulzante</span>
         <img src="./img/algarrobina.jpg" alt="Algarrobina">
@@ -506,7 +513,7 @@ body{
     </div>
 
     <!-- PRODUCTO 2 -->
-    <div class="card gsap-prod" data-name="miel de abeja" data-cat="endulzantes" data-stock="1" data-offer="1">
+    <div class="card gsap-prod" data-name="miel de abeja" data-cat="endulzantes_infusiones" data-stock="1" data-offer="1">
       <div class="img-wrapper">
         <span class="badge-type"><span class="material-icons">local_cafe</span> Endulzante</span>
         <img src="./img/miel.jpg" alt="Miel de Abeja">
@@ -532,10 +539,69 @@ body{
       </div>
     </div>
 
-    <!-- PRODUCTO 3 -->
-    <div class="card gsap-prod" data-name="polen de abeja" data-cat="superfoods" data-stock="1" data-offer="1">
+    <!-- PRODUCTO 13 -->
+    <div class="card gsap-prod" data-name="flor de jamaica con piña" data-cat="endulzantes_infusiones" data-stock="1" data-offer="1">
       <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <span class="badge-type"><span class="material-icons">local_cafe</span> Infusión</span>
+        <img src="./img/jamaica.jpeg" alt="Flor de Jamaica">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Flor de Jamaica con Piña 100g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 15.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">eco</span> Natural</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Flor de Jamaica con Piña 100g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="JamaicaConPiña.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 19 -->
+    <div class="card gsap-prod" data-name="stevia natural" data-cat="endulzantes_infusiones" data-stock="1" data-offer="1">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">local_cafe</span> Endulzante</span>
+        <img src="./img/stevia-yacon.jpeg" alt="Stevia Natural">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Stevia Natural</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">favorite</span> 0 calorías</span>
+          <span class="pill"><span class="material-icons">eco</span> Natural</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Stevia Natural">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="Stevia.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =========================
+         SUPERFOODS / SUPLEMENTOS
+         ========================= -->
+
+    <!-- PRODUCTO 3 -->
+    <div class="card gsap-prod" data-name="polen de abeja" data-cat="superfoods_suplementos" data-stock="1" data-offer="1">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Suplemento</span>
         <img src="./img/polen-abeja.jpeg" alt="Polen de Abeja">
       </div>
       <div class="card-body">
@@ -560,9 +626,9 @@ body{
     </div>
 
     <!-- PRODUCTO 4 -->
-    <div class="card gsap-prod" data-name="jarabe de propoleo" data-cat="superfoods" data-stock="1" data-offer="0">
+    <div class="card gsap-prod" data-name="jarabe de propoleo" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
       <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <span class="badge-type"><span class="material-icons">bolt</span> Suplemento</span>
         <img src="./img/propoleo.jpg" alt="Jarabe de Propóleo">
       </div>
       <div class="card-body">
@@ -586,37 +652,10 @@ body{
       </div>
     </div>
 
-    <!-- PRODUCTO 5 -->
-    <div class="card gsap-prod" data-name="mix frutos secos" data-cat="granos" data-stock="1" data-offer="1">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">grain</span> Frutos Secos</span>
-        <img src="./img/frutosSecos.jpg" alt="Mix Frutos Secos">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>MIX Frutos Secos 400g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">breakfast_dining</span> Snack</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="MIX Frutos Secos 400g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="FrutosSecos.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
     <!-- PRODUCTO 6 -->
-    <div class="card gsap-prod" data-name="citrato de magnesio" data-cat="superfoods" data-stock="1" data-offer="0">
+    <div class="card gsap-prod" data-name="citrato de magnesio" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
       <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <span class="badge-type"><span class="material-icons">bolt</span> Suplemento</span>
         <img src="./img/magnesio.jpg" alt="Citrato de Magnesio">
       </div>
       <div class="card-body">
@@ -641,9 +680,9 @@ body{
     </div>
 
     <!-- PRODUCTO 7 -->
-    <div class="card gsap-prod" data-name="citrato de potasio" data-cat="superfoods" data-stock="1" data-offer="0">
+    <div class="card gsap-prod" data-name="citrato de potasio" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
       <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <span class="badge-type"><span class="material-icons">bolt</span> Suplemento</span>
         <img src="./img/potasio.jpg" alt="Citrato de Potasio">
       </div>
       <div class="card-body">
@@ -666,6 +705,200 @@ body{
         </div>
       </div>
     </div>
+
+    <!-- PRODUCTO 9 -->
+    <div class="card gsap-prod" data-name="colageno hidrolizado" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Suplemento</span>
+        <img src="./img/colageno-hidrolizado.jpeg" alt="Colágeno Hidrolizado">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Colágeno Hidrolizado 300g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 50.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">spa</span> Belleza</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Colágeno Hidrolizado 300g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="ColagenoHidrolizado.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 10 -->
+    <div class="card gsap-prod" data-name="cartilago de tiburon" data-cat="superfoods_suplementos" data-stock="1" data-offer="1">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Suplemento</span>
+        <img src="./img/colageno.jpg" alt="Cartílago de Tiburón">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Cartílago de Tiburón + Colágeno 700g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 120.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">fitness_center</span> Articulaciones</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Cartílago de Tiburón + Colágeno 700g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="ColagenoCartilagoTiburon.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 11 -->
+    <div class="card gsap-prod" data-name="moringa" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <img src="./img/moringa.jpg" alt="Moringa">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Moringa con Camu Camu y Piña 250g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 50.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">eco</span> Natural</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Moringa con Camu Camu y Piña 250g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="Moringa.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 12 -->
+    <div class="card gsap-prod" data-name="curcuma" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <img src="./img/curcuma.jpg" alt="Cúrcuma">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Cúrcuma + Pimienta y Jengibre 250g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 50.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">whatshot</span> Anti-inflamatorio</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Cúrcuma con Pimienta y Jengibre 250g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="Curcuma.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 15 -->
+    <div class="card gsap-prod" data-name="maca negra" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <img src="./img/maca-negra.jpeg" alt="Maca Negra">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Maca Negra Gelatinizada 200g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">bolt</span> Energizante</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Maca Negra Gelatinizada 200g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="MacaNegra.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 16 -->
+    <div class="card gsap-prod" data-name="cacao en polvo" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <img src="./img/cacao-polvo.png" alt="Cacao en Polvo">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Cacao en Polvo 200g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 20.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">local_cafe</span> Repostería</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Cacao en Polvo 200g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="Cacao.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 17 -->
+    <div class="card gsap-prod" data-name="linaza molida" data-cat="superfoods_suplementos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
+        <img src="./img/linaza-molida.jpeg" alt="Linaza Molida">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Linaza Molida 500g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 15.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">fitness_center</span> Fibra</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Linaza Molida 500g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="Linaza.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =========================
+         ACEITES
+         ========================= -->
 
     <!-- PRODUCTO 8 -->
     <div class="card gsap-prod" data-name="aceite de oliva" data-cat="aceites" data-stock="1" data-offer="1">
@@ -694,304 +927,7 @@ body{
       </div>
     </div>
 
-    <!-- PRODUCTO 9 -->
-    <div class="card gsap-prod" data-name="colageno hidrolizado" data-cat="superfoods" data-stock="1" data-offer="0">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/colageno-hidrolizado.jpeg" alt="Colágeno Hidrolizado">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Colágeno Hidrolizado 300g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 50.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">spa</span> Belleza</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Colágeno Hidrolizado 300g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="ColagenoHidrolizado.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 10 -->
-    <div class="card gsap-prod" data-name="cartilago de tiburon" data-cat="superfoods" data-stock="1" data-offer="1">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/colageno.jpg" alt="Cartílago de Tiburón">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Cartílago de Tiburón + Colágeno 700g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 120.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">fitness_center</span> Articulaciones</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Cartílago de Tiburón + Colágeno 700g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="ColagenoCartilagoTiburon.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 11 -->
-    <div class="card gsap-prod" data-name="moringa" data-cat="superfoods" data-stock="1" data-offer="0">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/moringa.jpg" alt="Moringa">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Moringa con Camu Camu y Piña 250g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 50.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">eco</span> Natural</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Moringa con Camu Camu y Piña 250g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Moringa.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 12 -->
-    <div class="card gsap-prod" data-name="curcuma" data-cat="superfoods" data-stock="1" data-offer="0">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/curcuma.jpg" alt="Cúrcuma">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Cúrcuma + Pimienta y Jengibre 250g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 50.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">whatshot</span> Anti-inflamatorio</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Cúrcuma con Pimienta y Jengibre 250g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Curcuma.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 13 -->
-    <div class="card gsap-prod" data-name="flor de jamaica" data-cat="endulzantes" data-stock="1" data-offer="1">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">local_cafe</span> Infusión</span>
-        <img src="./img/jamaica.jpeg" alt="Flor de Jamaica">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Flor de Jamaica con Piña 100g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 15.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">eco</span> Natural</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Flor de Jamaica con Piña 100g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="JamaicaConPiña.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 14 -->
-    <div class="card gsap-prod" data-name="semillas de chia" data-cat="granos" data-stock="1" data-offer="1">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">grain</span> Semilla</span>
-        <img src="./img/chia.jpeg" alt="Semillas de Chía">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Semillas de Chía 200g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 20.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">eco</span> Natural</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Semillas de Chía 200g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Chia.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 15 -->
-    <div class="card gsap-prod" data-name="maca negra" data-cat="superfoods" data-stock="1" data-offer="0">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/maca-negra.jpeg" alt="Maca Negra">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Maca Negra Gelatinizada 200g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">bolt</span> Energizante</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Maca Negra Gelatinizada 200g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="MacaNegra.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 16 -->
-    <div class="card gsap-prod" data-name="cacao en polvo" data-cat="superfoods" data-stock="1" data-offer="0">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/cacao-polvo.png" alt="Cacao en Polvo">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Cacao en Polvo 200g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 20.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">local_cafe</span> Repostería</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Cacao en Polvo 200g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Cacao.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 17 -->
-    <div class="card gsap-prod" data-name="linaza molida" data-cat="superfoods" data-stock="1" data-offer="0">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/linaza-molida.jpeg" alt="Linaza Molida">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Linaza Molida 500g</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 15.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">fitness_center</span> Fibra</span>
-          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Linaza Molida 500g">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Linaza.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 18 (EXISTENTE) -->
-    <div class="card gsap-prod" data-name="kiwicha pop" data-cat="granos" data-stock="1" data-offer="1">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">grain</span> Grano</span>
-        <img src="./img/kiwicha-pop.jpeg" alt="Kiwicha Pop">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Kiwicha Pop</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 20.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">breakfast_dining</span> Snack</span>
-          <span class="pill"><span class="material-icons">eco</span> Natural</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Kiwicha Pop">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Kiwicha.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 19 (EXISTENTE) -->
-    <div class="card gsap-prod" data-name="stevia natural" data-cat="endulzantes" data-stock="1" data-offer="1">
-      <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">local_cafe</span> Endulzante</span>
-        <img src="./img/stevia-yacon.jpeg" alt="Stevia Natural">
-      </div>
-      <div class="card-body">
-        <div class="title-row">
-          <h3>Stevia Natural</h3>
-          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
-        </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
-        <div class="meta">
-          <span class="pill"><span class="material-icons">favorite</span> 0 calorías</span>
-          <span class="pill"><span class="material-icons">eco</span> Natural</span>
-        </div>
-        <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Stevia Natural">
-            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-          </a>
-          <a href="Stevia.html" class="btn-detail">
-            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PRODUCTO 20 (EXISTENTE) -->
+    <!-- PRODUCTO 20 -->
     <div class="card gsap-prod" data-name="aceite de coco" data-cat="aceites" data-stock="1" data-offer="0">
       <div class="img-wrapper">
         <span class="badge-type"><span class="material-icons">opacity</span> Aceite</span>
@@ -1018,10 +954,42 @@ body{
       </div>
     </div>
 
-    <!-- PRODUCTO 21 (NUEVO ADICIONAL) -->
-    <div class="card gsap-prod" data-name="quinua pop" data-cat="granos" data-stock="1" data-offer="0">
+
+    <!-- =========================
+         GRANOS / POPS
+         ========================= -->
+
+    <!-- PRODUCTO 18 -->
+    <div class="card gsap-prod" data-name="kiwicha pop" data-cat="granos_pops" data-stock="1" data-offer="1">
       <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">grain</span> Grano</span>
+        <span class="badge-type"><span class="material-icons">emoji_food_beverage</span> Pop</span>
+        <img src="./img/kiwicha-pop.jpeg" alt="Kiwicha Pop">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Kiwicha Pop</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 20.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">breakfast_dining</span> Snack</span>
+          <span class="pill"><span class="material-icons">eco</span> Natural</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Kiwicha Pop">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="Kiwicha.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTO 21 -->
+    <div class="card gsap-prod" data-name="quinua pop" data-cat="granos_pops" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">emoji_food_beverage</span> Pop</span>
         <img src="./img/quinua-pop.jpeg" alt="Quinua Pop">
       </div>
       <div class="card-body">
@@ -1045,33 +1013,243 @@ body{
       </div>
     </div>
 
-    <!-- PRODUCTO 22 (NUEVO ADICIONAL)
-    <div class="card gsap-prod" data-name="maca roja" data-cat="superfoods" data-stock="1" data-offer="0">
+
+    <!-- =========================
+         SEMILLAS
+         ========================= -->
+
+    <!-- PRODUCTO 14 -->
+    <div class="card gsap-prod" data-name="semillas de chia" data-cat="semillas" data-stock="1" data-offer="1">
       <div class="img-wrapper">
-        <span class="badge-type"><span class="material-icons">bolt</span> Superfood</span>
-        <img src="./img/maca-negra.jpeg" alt="Maca Roja">
+        <span class="badge-type"><span class="material-icons">grain</span> Semilla</span>
+        <img src="./img/chia.jpeg" alt="Semillas de Chía">
       </div>
       <div class="card-body">
         <div class="title-row">
-          <h3>Maca Roja en Polvo 200g</h3>
+          <h3>Semillas de Chía 200g</h3>
           <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
         </div>
-        <div class="price"><span class="material-icons">sell</span> S/ 22.00</div>
+        <div class="price"><span class="material-icons">sell</span> S/ 20.00</div>
         <div class="meta">
           <span class="pill"><span class="material-icons">eco</span> Natural</span>
           <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
         </div>
         <div class="actions">
-          <a class="btn-add wa-btn" href="https://wa.me/51981383662" target="_blank" rel="noopener" data-product="Maca Roja en Polvo 200g">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="Semillas de Chía 200g">
             <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
           </a>
-          <a href="MacaNegra.html" class="btn-detail">
+          <a href="Chia.html" class="btn-detail">
             <span class="material-icons" style="font-size:18px">visibility</span> Detalle
           </a>
         </div>
       </div>
     </div>
-    -->
+
+    <!-- Semillas de Calabaza -->
+    <div class="card gsap-prod" data-name="semillas de calabaza" data-cat="semillas" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">grain</span> Semillas</span>
+        <img src="./img/FrutosSecos/semillas-girasol.jpeg" alt="Semillas de Calabaza">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Semillas de Calabaza</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">bolt</span> Proteína</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 15.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">scale</span> 300g</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Envío Rápido</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn"
+             href="https://wa.me/51981383662?text=Hola,%20me%20interesan%20las%20Semillas"
+             target="_blank" rel="noopener" data-product="Semillas de Calabaza 300g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Pedir
+          </a>
+          <a href="semillasCalabaza.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =========================
+         FRUTOS SECOS
+         ========================= -->
+
+    <!-- PRODUCTO 5 -->
+    <div class="card gsap-prod" data-name="mix frutos secos" data-cat="frutos_secos" data-stock="1" data-offer="1">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">restaurant</span> Frutos secos</span>
+        <img src="./img/frutosSecos.jpg" alt="Mix Frutos Secos">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>MIX Frutos Secos 400g</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">star</span> 5.0</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">breakfast_dining</span> Snack</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn" href="https://wa.me/51967736074" target="_blank" rel="noopener" data-product="MIX Frutos Secos 400g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+          </a>
+          <a href="FrutosSecos.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Almendras -->
+    <div class="card gsap-prod" data-name="almendras naturales" data-cat="frutos_secos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">restaurant</span> Fruto seco</span>
+        <img src="./img/FrutosSecos/almendras.jpeg" alt="Almendras">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Almendras Naturales</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">bolt</span> Saludable</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 22.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">scale</span> 250g</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Envío Rápido</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn"
+             href="https://wa.me/51981383662?text=Hola,%20me%20interesan%20las%20Almendras"
+             target="_blank" rel="noopener" data-product="Almendras Naturales 250g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Pedir
+          </a>
+          <a href="AlmendrasNaturales.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nueces Peladas -->
+    <div class="card gsap-prod" data-name="nueces peladas" data-cat="frutos_secos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">restaurant</span> Fruto seco</span>
+        <img src="./img/FrutosSecos/nuez-pelada.jpeg" alt="Nueces Peladas">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Nueces Peladas</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">bolt</span> Energético</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 25.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">scale</span> 200g</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Envío Rápido</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn"
+             href="https://wa.me/51981383662?text=Hola,%20me%20interesan%20las%20Nueces"
+             target="_blank" rel="noopener" data-product="Nueces Peladas 200g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Pedir
+          </a>
+          <a href="nuecesPeladas.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pecanas Enteras -->
+    <div class="card gsap-prod" data-name="pecanas enteras" data-cat="frutos_secos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">restaurant</span> Fruto seco</span>
+        <img src="./img/pecanas.jpeg" alt="Pecanas">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Pecanas Enteras</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">bolt</span> Antioxidante</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 28.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">scale</span> 200g</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Envío Rápido</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn"
+             href="https://wa.me/51981383662?text=Hola,%20me%20interesan%20las%20Pecanas"
+             target="_blank" rel="noopener" data-product="Pecanas Enteras 200g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Pedir
+          </a>
+          <a href="pecanasEnteras.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cajú (Castañas) -->
+    <div class="card gsap-prod" data-name="caju castanas" data-cat="frutos_secos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">restaurant</span> Fruto seco</span>
+        <img src="./img/FrutosSecos/caju.jpeg" alt="Cajú">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Cajú (Castañas)</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">bolt</span> Cremoso</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 30.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">scale</span> 250g</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Envío Rápido</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn"
+             href="https://wa.me/51981383662?text=Hola,%20me%20interesa%20el%20Cajú"
+             target="_blank" rel="noopener" data-product="Cajú (Castañas) 250g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Pedir
+          </a>
+          <a href="Castañas.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arándanos Deshidratados -->
+    <div class="card gsap-prod" data-name="arandanos deshidratados" data-cat="frutos_secos" data-stock="1" data-offer="0">
+      <div class="img-wrapper">
+        <span class="badge-type"><span class="material-icons">local_florist</span> Deshidratado</span>
+        <img src="./img/FrutosSecos/arandanos.jpeg" alt="Arándanos">
+      </div>
+      <div class="card-body">
+        <div class="title-row">
+          <h3>Arándanos Deshidratados</h3>
+          <div class="rating"><span class="material-icons" style="font-size:18px">bolt</span> Fibra</div>
+        </div>
+        <div class="price"><span class="material-icons">sell</span> S/ 18.00</div>
+        <div class="meta">
+          <span class="pill"><span class="material-icons">scale</span> 150g</span>
+          <span class="pill"><span class="material-icons">local_shipping</span> Envío Rápido</span>
+        </div>
+        <div class="actions">
+          <a class="btn-add wa-btn"
+             href="https://wa.me/51981383662?text=Hola,%20me%20interesan%20los%20Arándanos"
+             target="_blank" rel="noopener" data-product="Arándanos Deshidratados 150g">
+            <span class="material-icons" style="font-size:18px">shopping_cart</span> Pedir
+          </a>
+          <a href="ArandanosDeshidratados.html" class="btn-detail">
+            <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+          </a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -1122,7 +1300,7 @@ body{
   <span class="tooltip">¿Te ayudo a comprar?</span>
 </a>
 
-<!-- ✅ BOTÓN IR ARRIBA (AGREGADO) -->
+<!-- ✅ BOTÓN IR ARRIBA -->
 <button id="backToTop" class="back-to-top" type="button" aria-label="Volver arriba">
   <span class="material-icons">north</span>
 </button>
@@ -1143,10 +1321,14 @@ body{
       `Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`
     );
 
-    btn.href = `https://wa.me/51967736074?text=${msg}`;
+    // Respeta el número del botón si tú ya lo pusiste con 519813..., si no, usa el default 519677...
+    const originalHref = btn.getAttribute("href") || "";
+    const base = originalHref.includes("wa.me/") ? originalHref.split("?")[0] : "https://wa.me/51967736074";
+
+    btn.href = `${base}?text=${msg}`;
   });
 
-  // ✅ Filtro por chips + buscador
+  // ✅ Filtro por chips + buscador (data-filter debe coincidir EXACTO con data-cat)
   const chips = document.querySelectorAll(".chip[data-filter]");
   const cards = Array.from(document.querySelectorAll(".card"));
   const searchInput = document.getElementById("searchInput");
@@ -1159,13 +1341,13 @@ body{
     const q = (searchInput.value || "").trim().toLowerCase();
 
     cards.forEach(card=>{
-      const name = (card.dataset.name || "").toLowerCase();
-      const cat = card.dataset.cat || "";
+      const name  = (card.dataset.name || "").toLowerCase();
+      const cat   = (card.dataset.cat || "").toLowerCase();
       const stock = card.dataset.stock === "1";
       const offer = card.dataset.offer === "1";
 
-      const matchText = !q || name.includes(q);
-      const matchCat  = activeFilter === "all" || cat === activeFilter;
+      const matchText  = !q || name.includes(q);
+      const matchCat   = activeFilter === "all" || cat === activeFilter;
       const matchOffer = !onlyOffer || offer;
       const matchStock = !onlyStock || stock;
 
@@ -1179,7 +1361,7 @@ body{
     ch.addEventListener("click", ()=>{
       chips.forEach(x=>x.classList.remove("active"));
       ch.classList.add("active");
-      activeFilter = ch.dataset.filter;
+      activeFilter = (ch.dataset.filter || "all").toLowerCase();
       applyFilters();
     });
   });
@@ -1237,27 +1419,19 @@ body{
     }
   });
 
-  gsap.from(".gsap-footer", {
-    scrollTrigger: { trigger: ".gsap-footer", start: "top 92%", once: true },
-    y: 18,
-    opacity: 0,
-    duration: 0.6,
-    ease: "power2.out"
-  });
-
   // Hover micro-anim (card tilt light)
   document.querySelectorAll(".card").forEach(card=>{
     card.addEventListener("mouseenter", ()=> gsap.to(card, { y: -6, duration: .25, ease:"power2.out" }));
     card.addEventListener("mouseleave", ()=> gsap.to(card, { y: 0, duration: .25, ease:"power2.out" }));
   });
 
-  // ✅ BOTÓN IR ARRIBA (AGREGADO)
+  // ✅ BOTÓN IR ARRIBA
   (function setupBackToTop(){
     const btn = document.getElementById("backToTop");
     if(!btn) return;
 
     const toggle = () => {
-      const showAt = 420; // px
+      const showAt = 420;
       if (window.scrollY > showAt) btn.classList.add("show");
       else btn.classList.remove("show");
     };
@@ -1269,6 +1443,9 @@ body{
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   })();
+
+  // ✅ arranque
+  applyFilters();
 </script>
 
 </body>
