@@ -385,7 +385,7 @@
 
       function update(){
         const pres = sel ? sel.value : '';
-        const msg = encodeURIComponent(`Hola Valle Natural, me interesa ${product} (${pres}). Precio base: S/ 18.00 (150g). ¿Está disponible?`);
+        const msg = encodeURIComponent(`Hola Valle Natural, me interesa ${product} (${pres}). ¿Está disponible?`);
         if(wa) wa.href = `https://wa.me/51967736074?text=${msg}`;
       }
       sel?.addEventListener('change', update);
