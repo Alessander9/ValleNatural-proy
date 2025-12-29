@@ -62,6 +62,23 @@
   }
 }
 
+ /* Dropdown de sugerencias del buscador (por encima de TODO) */
+  #searchSuggestions{
+    position: fixed;            /* ✅ clave */
+    z-index: 999999;            /* ✅ por encima del sticky header/nav */
+    display: none;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+    padding: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  #searchSuggestions button:hover{
+    background: rgba(0,104,56,0.08) !important;
+  }
+
   </style>
 </head>
 
@@ -584,6 +601,123 @@
 
     </div>
   </section>
+<!-- =========================
+     NUESTRAS CATEGORÍAS
+     (Pegar después de: <section id="productos" class="nuestros-productos section-padding">)
+     ========================= -->
+<!-- =========================
+     NUESTRAS CATEGORÍAS (con imagen grande)
+     ========================= -->
+<section id="categorias" class="section-padding">
+  <h2 class="section-title">Nuestras <span>Categorías</span></h2>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+
+    <!-- 1) Adulto Mayor -->
+    <a href="AdultoMayor.html" class="offer-card gsap-prod block overflow-hidden hover:shadow-xl transition">
+      <div class="img-wrapper" style="height:190px;">
+        <img src="./img/AdultoMayor.jpg" alt="Adulto Mayor" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-icons text-3xl" style="color:var(--green-dark)">elderly</span>
+          <h3 class="text-xl font-extrabold">Adulto Mayor</h3>
+        </div>
+        <p class="text-gray-600">Bienestar diario, movilidad y energía suave para el día a día.</p>
+        <div class="mt-4 inline-flex items-center gap-2 font-bold" style="color:var(--green)">
+          Ver productos <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2) Articulaciones & Movimiento -->
+    <a href="Articulaciones.html" class="offer-card gsap-prod block overflow-hidden hover:shadow-xl transition">
+      <div class="img-wrapper" style="height:190px;">
+        <img src="./img/Articulaciones.jpg" alt="Articulaciones y Movimiento" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-icons text-3xl" style="color:var(--green-dark)">accessibility_new</span>
+          <h3 class="text-xl font-extrabold">Articulaciones &amp; Movimiento</h3>
+        </div>
+        <p class="text-gray-600">Apoyo para huesos, articulaciones y recuperación. Ideal rutina activa.</p>
+        <div class="mt-4 inline-flex items-center gap-2 font-bold" style="color:var(--green)">
+          Ver productos <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3) Energía & Vitalidad -->
+    <a href="Energia.html" class="offer-card gsap-prod block overflow-hidden hover:shadow-xl transition">
+      <div class="img-wrapper" style="height:190px;">
+        <img src="./img/Vitalidad.jpg" alt="Energía y Vitalidad" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-icons text-3xl" style="color:var(--green-dark)">bolt</span>
+          <h3 class="text-xl font-extrabold">Energía &amp; Vitalidad</h3>
+        </div>
+        <p class="text-gray-600">Superfoods para rendir mejor: energía natural para tu día.</p>
+        <div class="mt-4 inline-flex items-center gap-2 font-bold" style="color:var(--green)">
+          Ver productos <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4) Defensas Naturales -->
+    <a href="DefensasNaturales.html" class="offer-card gsap-prod block overflow-hidden hover:shadow-xl transition">
+      <div class="img-wrapper" style="height:190px;">
+        <img src="./img/Saludable.jpeg" alt="Defensas Naturales" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-icons text-3xl" style="color:var(--green-dark)">shield</span>
+          <h3 class="text-xl font-extrabold">Defensas Naturales</h3>
+        </div>
+        <p class="text-gray-600">Opciones para apoyar tu sistema inmune y tu bienestar general.</p>
+        <div class="mt-4 inline-flex items-center gap-2 font-bold" style="color:var(--green)">
+          Ver productos <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5) Digestión y Bienestar -->
+    <a href="Digestion.html" class="offer-card gsap-prod block overflow-hidden hover:shadow-xl transition">
+      <div class="img-wrapper" style="height:190px;">
+        <img src="./img/Estomacal.jpg" alt="Digestión y Bienestar" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-icons text-3xl" style="color:var(--green-dark)">spa</span>
+          <h3 class="text-xl font-extrabold">Digestión y Bienestar</h3>
+        </div>
+        <p class="text-gray-600">Semillas, fibras e infusiones para sentirte ligero y balanceado.</p>
+        <div class="mt-4 inline-flex items-center gap-2 font-bold" style="color:var(--green)">
+          Ver productos <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6) Antiinflamatorio Natural -->
+    <a href="Antiinflmatorio.html" class="offer-card gsap-prod block overflow-hidden hover:shadow-xl transition">
+      <div class="img-wrapper" style="height:190px;">
+        <img src="./img/Dolor.jpg" alt="Antiinflamatorio Natural" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="card-body">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="material-icons text-3xl" style="color:var(--green-dark)">local_fire_department</span>
+          <h3 class="text-xl font-extrabold">Antiinflamatorio Natural</h3>
+        </div>
+        <p class="text-gray-600">Ingredientes conocidos por su apoyo antiinflamatorio (ej: cúrcuma).</p>
+        <div class="mt-4 inline-flex items-center gap-2 font-bold" style="color:var(--green)">
+          Ver productos <span class="material-icons">arrow_forward</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
 
   <footer class="site-footer">
     <div class="footer-container">
@@ -634,183 +768,444 @@
     <span class="material-icons">arrow_upward</span>
   </button>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-    // ✅ Animación header/nav
-    gsap.from(".main-header", { y: -80, opacity: 0, duration: 1, ease: "power4.out" });
-    gsap.from(".main-navbar", { y: -50, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
+  /* =========================
+     ✅ Animación header/nav
+  ========================= */
+  gsap.from(".main-header", { y: -80, opacity: 0, duration: 1, ease: "power4.out" });
+  gsap.from(".main-navbar", { y: -50, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
 
-    // ✅ Texto del hero
-    const animateHeroText = () => {
-      gsap.timeline()
-        .fromTo(".carousel-slide.active .slide-content h2",
-          { y: 60, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true }
-        )
-        .fromTo(".carousel-slide.active .slide-content p",
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true },
-          "-=0.6"
-        )
-        .fromTo(".carousel-slide.active .action-button",
-          { scale: 0.8, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)", overwrite: true },
-          "-=0.4"
-        );
+  /* =========================
+     ✅ PROMO MODAL (setup)
+  ========================= */
+  (function setupPromoModal(){
+    const promoModal = document.getElementById("promoModal");
+    const promoClose = document.getElementById("promoClose");
+    const promoLater = document.getElementById("promoLater");
+    if(!promoModal) return;
 
-      // ✅ PROMO MODAL
-      const promoModal = document.getElementById("promoModal");
-      const promoClose = document.getElementById("promoClose");
-      const promoLater = document.getElementById("promoLater");
+    const KEY = "promo_closed_session";
 
-      const KEY = "promo_closed_session";
+    const openPromo = () => {
+      promoModal.classList.add("show");
+      gsap.fromTo(".promo-backdrop", { opacity: 0 }, { opacity: 1, duration: 0.25 });
+      gsap.fromTo(".promo-card",
+        { y: 30, scale: 0.95, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1, duration: 0.35 }
+      );
+    };
 
-      const openPromo = () => {
-        promoModal.classList.add("show");
-        gsap.fromTo(".promo-backdrop", { opacity: 0 }, { opacity: 1, duration: 0.25 });
-        gsap.fromTo(".promo-card",
-          { y: 30, scale: 0.95, opacity: 0 },
-          { y: 0, scale: 1, opacity: 1, duration: 0.35 }
-        );
-      };
-
-      const closePromo = () => {
-        sessionStorage.setItem(KEY, "1");
-        gsap.to(".promo-card", { y: 10, scale: 0.97, opacity: 0, duration: 0.22 });
-        gsap.to(".promo-backdrop", {
-          opacity: 0,
-          duration: 0.22,
-          onComplete: () => promoModal.classList.remove("show")
-        });
-      };
-
-      if (promoModal && !sessionStorage.getItem(KEY)) openPromo();
-
-      promoClose?.addEventListener("click", closePromo);
-      promoLater?.addEventListener("click", closePromo);
-      promoModal?.querySelector(".promo-backdrop")?.addEventListener("click", closePromo);
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && promoModal?.classList.contains("show")) closePromo();
+    const closePromo = () => {
+      sessionStorage.setItem(KEY, "1");
+      gsap.to(".promo-card", { y: 10, scale: 0.97, opacity: 0, duration: 0.22 });
+      gsap.to(".promo-backdrop", {
+        opacity: 0,
+        duration: 0.22,
+        onComplete: () => promoModal.classList.remove("show")
       });
     };
+
+    if (!sessionStorage.getItem(KEY)) openPromo();
+
+    promoClose?.addEventListener("click", closePromo);
+    promoLater?.addEventListener("click", closePromo);
+    promoModal.querySelector(".promo-backdrop")?.addEventListener("click", closePromo);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && promoModal.classList.contains("show")) closePromo();
+    });
+  })();
+
+  /* =========================
+     ✅ Texto del hero (anim)
+  ========================= */
+  const animateHeroText = () => {
+    gsap.timeline()
+      .fromTo(".carousel-slide.active .slide-content h2",
+        { y: 60, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true }
+      )
+      .fromTo(".carousel-slide.active .slide-content p",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", overwrite: true },
+        "-=0.6"
+      )
+      .fromTo(".carousel-slide.active .action-button",
+        { scale: 0.8, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.7)", overwrite: true },
+        "-=0.4"
+      );
+  };
+  animateHeroText();
+
+  /* =========================
+     ✅ Animación cards (batch)
+  ========================= */
+  const batchCards = (targets, triggerEl) => {
+    ScrollTrigger.batch(targets, {
+      trigger: triggerEl,
+      start: "top 85%",
+      once: true,
+      onEnter: (batch) => {
+        gsap.fromTo(batch,
+          { y: 50, autoAlpha: 0 },
+          { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12 }
+        );
+      }
+    });
+  };
+  batchCards(".gsap-card", ".featured-offers");
+  batchCards(".gsap-prod", ".nuestros-productos");
+
+  /* =========================
+     ✅ Carrusel
+  ========================= */
+  const slides = document.querySelectorAll(".carousel-slide");
+  const nextBtn = document.querySelector(".next-btn");
+  const prevBtn = document.querySelector(".prev-btn");
+  let currentSlide = 0;
+  let slideInterval;
+
+  const showSlide = (index) => {
+    slides.forEach(slide => slide.classList.remove("active"));
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
     animateHeroText();
+  };
 
-    // ✅ Animación cards
-    const batchCards = (targets, triggerEl) => {
-      ScrollTrigger.batch(targets, {
-        trigger: triggerEl,
-        start: "top 85%",
-        once: true,
-        onEnter: (batch) => {
-          gsap.fromTo(batch,
-            { y: 50, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12 }
-          );
-        }
+  const startInterval = () => {
+    slideInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
+  };
+  const resetInterval = () => {
+    clearInterval(slideInterval);
+    startInterval();
+  };
+
+  nextBtn?.addEventListener("click", () => { showSlide(currentSlide + 1); resetInterval(); });
+  prevBtn?.addEventListener("click", () => { showSlide(currentSlide - 1); resetInterval(); });
+
+  if(slides.length) startInterval();
+
+  /* =========================
+     ✅ Menú hamburguesa
+  ========================= */
+  const menuBtn = document.querySelector(".hamburger-menu");
+  const navbar = document.querySelector(".main-navbar");
+
+  menuBtn?.addEventListener("click", () => {
+    navbar.classList.toggle("active-mobile");
+    const icon = menuBtn.querySelector("i");
+    if(icon) icon.textContent = navbar.classList.contains("active-mobile") ? "close" : "menu";
+    setTimeout(() => ScrollTrigger.refresh(), 80);
+  });
+
+  window.addEventListener("load", () => ScrollTrigger.refresh());
+
+  /* ===========================================================
+     ✅ WhatsApp personalizado (SIN old-price)
+  =========================================================== */
+  function setupWhatsAppPersonalizado(){
+    const WA = "51967736074";
+    const buttons = document.querySelectorAll("a.add-to-cart-btn, a.add-to-cart-btn-full");
+
+    buttons.forEach(btn => {
+      if (!btn.textContent.toLowerCase().includes("agregar")) return;
+
+      const card = btn.closest(".offer-card") || btn.closest(".product-card-grid");
+
+      const product =
+        btn.dataset.product ||
+        card?.querySelector("h3")?.textContent?.trim() ||
+        "un producto";
+
+      const price = (() => {
+        const priceEl = card?.querySelector(".offer-price");
+        if (!priceEl) return "";
+
+        const clone = priceEl.cloneNode(true);
+        clone.querySelectorAll(".old-price").forEach(el => el.remove());
+        return clone.textContent.replace(/\s+/g, " ").trim();
+      })();
+
+      const message = `Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`;
+      btn.href = `https://wa.me/${WA}?text=${encodeURIComponent(message)}`;
+      btn.target = "_blank";
+      btn.rel = "noopener";
+    });
+  }
+  setupWhatsAppPersonalizado();
+
+  /* ===========================================================
+     ✅✅✅ Botón "Volver arriba"
+  =========================================================== */
+  (function setupBackToTop(){
+    const btnTop = document.getElementById("backToTop");
+    if(!btnTop) return;
+
+    const toggleBtn = () => {
+      const showAt = 450;
+      if (window.scrollY > showAt) btnTop.classList.add("show");
+      else btnTop.classList.remove("show");
+    };
+
+    window.addEventListener("scroll", toggleBtn, { passive: true });
+    toggleBtn();
+
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  })();
+
+  /* ===========================================================
+     ✅✅✅ BUSCADOR + AUTOCOMPLETE + REDIRECCIÓN A SUBPÁGINA
+     ✅ RESULTADOS POR ENCIMA DE LA NAVBAR (BODY + FIXED)
+  =========================================================== */
+  (function setupProductSearch(){
+    const input = document.querySelector(".product-search-input");
+    const grid  = document.getElementById("indexProductsGrid");
+    if(!input || !grid) return;
+
+    // Mensaje "No encontrado"
+    let emptyMsg = document.getElementById("noProductsMsg");
+    if(!emptyMsg){
+      emptyMsg = document.createElement("div");
+      emptyMsg.id = "noProductsMsg";
+      emptyMsg.className = "offer-card";
+      emptyMsg.style.display = "none";
+      emptyMsg.style.padding = "18px";
+      emptyMsg.style.textAlign = "center";
+      emptyMsg.innerHTML = `
+        <div style="font-weight:800; font-size:18px; margin-bottom:6px;">No se encontraron productos</div>
+        <div style="color:#6b7280;">Prueba con: <b>miel</b>, <b>maca</b>, <b>citrato</b>.</div>
+      `;
+      grid.parentElement?.appendChild(emptyMsg);
+    }
+
+    // ✅ Dropdown de sugerencias en BODY + FIXED (encima de todo)
+    let sugBox = document.getElementById("searchSuggestions");
+    if(!sugBox){
+      sugBox = document.createElement("div");
+      sugBox.id = "searchSuggestions";
+      document.body.appendChild(sugBox); // ✅ clave: fuera del header sticky
+
+      // Estilos inline (por si no quieres tocar CSS)
+      sugBox.style.position = "fixed";
+      sugBox.style.background = "#fff";
+      sugBox.style.border = "1px solid rgba(0,0,0,0.08)";
+      sugBox.style.borderRadius = "14px";
+      sugBox.style.boxShadow = "0 14px 30px rgba(0,0,0,0.10)";
+      sugBox.style.padding = "8px";
+      sugBox.style.zIndex = "999999";   // ✅ más alto que tu header (1000)
+      sugBox.style.display = "none";
+      sugBox.style.maxHeight = "320px";
+      sugBox.style.overflowY = "auto";
+    } else {
+      // Asegura que tenga prioridad siempre
+      sugBox.style.position = "fixed";
+      sugBox.style.zIndex = "999999";
+    }
+
+    const normalize = (txt) =>
+      (txt || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    const getCards = () =>
+      Array.from(grid.querySelectorAll(".offer-card"))
+        .filter(c => !!c.querySelector("h3"));
+
+    const buildProductList = () => {
+      return getCards().map(card => {
+        const name = card.querySelector("h3")?.textContent?.trim() || "";
+        const verMas = card.querySelector('a[href$=".html"]:not([href^="https://wa.me"])');
+        const url = verMas?.getAttribute("href")?.trim() || "";
+
+        const badge = card.querySelector(".offer-badge")?.textContent || "";
+        const delivery = card.querySelector(".delivery-info")?.textContent || "";
+        const price = card.querySelector(".offer-price")?.textContent || "";
+        const text = normalize(`${name} ${badge} ${delivery} ${price} ${card.textContent || ""}`);
+
+        return { name, url, card, text };
       });
     };
 
-    batchCards(".gsap-card", ".featured-offers");
-    batchCards(".gsap-prod", ".nuestros-productos");
+    let products = buildProductList();
+    let activeIndex = -1;
 
-    // ✅ Carrusel
-    const slides = document.querySelectorAll(".carousel-slide");
-    const nextBtn = document.querySelector(".next-btn");
-    const prevBtn = document.querySelector(".prev-btn");
-    let currentSlide = 0;
-    let slideInterval;
+    const positionSuggestions = () => {
+      const rect = input.getBoundingClientRect();
+      const gap = 8;
 
-    const showSlide = (index) => {
-      slides.forEach(slide => slide.classList.remove("active"));
-      currentSlide = (index + slides.length) % slides.length;
-      slides[currentSlide].classList.add("active");
-      animateHeroText();
+      sugBox.style.width = rect.width + "px";
+      sugBox.style.left  = rect.left + "px";
+      sugBox.style.top   = (rect.bottom + gap) + "px";
     };
 
-    const startInterval = () => slideInterval = setInterval(() => showSlide(currentSlide + 1), 6000);
-    const resetInterval = () => { clearInterval(slideInterval); startInterval(); };
+    const hideSuggestions = () => {
+      sugBox.style.display = "none";
+      sugBox.innerHTML = "";
+      activeIndex = -1;
+    };
 
-    nextBtn?.addEventListener("click", () => { showSlide(currentSlide + 1); resetInterval(); });
-    prevBtn?.addEventListener("click", () => { showSlide(currentSlide - 1); resetInterval(); });
+    const showSuggestions = (items) => {
+      if(!items.length){
+        hideSuggestions();
+        return;
+      }
 
-    startInterval();
+      sugBox.innerHTML = items.slice(0, 6).map((p, idx) => {
+        const hasUrl = !!p.url;
+        return `
+          <button type="button"
+            data-idx="${idx}"
+            style="
+              width:100%;
+              text-align:left;
+              padding:10px 12px;
+              border-radius:12px;
+              border:none;
+              background:transparent;
+              cursor:${hasUrl ? "pointer" : "not-allowed"};
+              display:flex;
+              align-items:center;
+              gap:10px;
+              opacity:${hasUrl ? "1" : "0.55"};
+            "
+            ${hasUrl ? "" : "disabled"}
+          >
+            <span class="material-icons" style="font-size:20px;color:var(--green-dark)">search</span>
+            <span style="font-weight:700">${p.name}</span>
+            ${hasUrl
+              ? `<span style="margin-left:auto;color:#6b7280;font-size:12px">Ver</span>`
+              : `<span style="margin-left:auto;color:#9ca3af;font-size:12px">Sin subpágina</span>`
+            }
+          </button>
+        `;
+      }).join("");
 
-    // ✅ Menú hamburguesa
-    const menuBtn = document.querySelector(".hamburger-menu");
-    const navbar = document.querySelector(".main-navbar");
+      positionSuggestions();
+      sugBox.style.display = "block";
+    };
 
-    menuBtn?.addEventListener("click", () => {
-      navbar.classList.toggle("active-mobile");
-      const icon = menuBtn.querySelector("i");
-      icon.textContent = navbar.classList.contains("active-mobile") ? "close" : "menu";
-      setTimeout(() => ScrollTrigger.refresh(), 80);
+    const filterGrid = () => {
+      const q = normalize(input.value);
+      let visibleCount = 0;
+
+      products.forEach(p => {
+        const match = !q || p.text.includes(q);
+        p.card.style.display = match ? "" : "none";
+        if(match) visibleCount++;
+      });
+
+      emptyMsg.style.display = (q && visibleCount === 0) ? "" : "none";
+    };
+
+    const getMatches = () => {
+      const q = normalize(input.value);
+      if(!q) return [];
+      return products
+        .filter(p => p.text.includes(q) && p.name)
+        .sort((a,b) => a.name.localeCompare(b.name));
+    };
+
+    const goToProduct = (p) => {
+      if(!p || !p.url) return;
+      window.location.href = p.url;
+    };
+
+    input.addEventListener("input", () => {
+      products = buildProductList();
+      filterGrid();
+      showSuggestions(getMatches());
     });
 
-    window.addEventListener("load", () => ScrollTrigger.refresh());
+    sugBox.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-idx]");
+      if(!btn) return;
 
-    /* ===========================================================
-       ✅ WhatsApp personalizado (SIN old-price)
-    =========================================================== */
-    (function setupWhatsAppPersonalizado(){
-      const WA = "51967736074";
-      const buttons = document.querySelectorAll("a.add-to-cart-btn, a.add-to-cart-btn-full");
+      const idx = Number(btn.dataset.idx);
+      const matches = getMatches().slice(0, 6);
+      const selected = matches[idx];
 
-      buttons.forEach(btn => {
-        if (!btn.textContent.toLowerCase().includes("agregar")) return;
+      if(selected){
+        input.value = selected.name;
+        hideSuggestions();
+        goToProduct(selected);
+      }
+    });
 
-        const card = btn.closest(".offer-card") || btn.closest(".product-card-grid");
+    input.addEventListener("keydown", (e) => {
+      const matches = getMatches().slice(0, 6);
+      if(!matches.length) return;
 
-        const product =
-          btn.dataset.product ||
-          card?.querySelector("h3")?.textContent?.trim() ||
-          "un producto";
+      if(e.key === "ArrowDown"){
+        e.preventDefault();
+        activeIndex = (activeIndex + 1) % matches.length;
+        highlightActive();
+      }
 
-        // ✅ SOLO precio final (elimina old-price)
-        const price = (() => {
-          const priceEl = card?.querySelector(".offer-price");
-          if (!priceEl) return "";
+      if(e.key === "ArrowUp"){
+        e.preventDefault();
+        activeIndex = (activeIndex - 1 + matches.length) % matches.length;
+        highlightActive();
+      }
 
-          const clone = priceEl.cloneNode(true);
-          clone.querySelectorAll(".old-price").forEach(el => el.remove());
-          return clone.textContent.replace(/\s+/g, " ").trim();
-        })();
+      if(e.key === "Enter"){
+        e.preventDefault();
+        const chosen = matches[activeIndex] || matches[0];
+        input.value = chosen.name;
+        hideSuggestions();
+        goToProduct(chosen);
+      }
 
-        const message = `Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`;
+      if(e.key === "Escape"){
+        hideSuggestions();
+      }
+    });
 
-        btn.href = `https://wa.me/${WA}?text=${encodeURIComponent(message)}`;
-        btn.target = "_blank";
-        btn.rel = "noopener";
+    const highlightActive = () => {
+      const buttons = sugBox.querySelectorAll("button[data-idx]");
+      buttons.forEach((b, i) => {
+        b.style.background = (i === activeIndex) ? "rgba(0,104,56,0.08)" : "transparent";
       });
-    })();
+    };
 
-    /* ===========================================================
-       ✅✅✅ AGREGADO: Botón "Volver arriba"
-       - Aparece al bajar
-       - Desaparece al estar arriba
-       - Scroll suave hacia arriba
-    =========================================================== */
-    (function setupBackToTop(){
-      const btnTop = document.getElementById("backToTop");
-      if(!btnTop) return;
+    // ✅ Click fuera: cierra (sugBox está en body)
+    document.addEventListener("click", (e) => {
+      if (e.target !== input && !sugBox.contains(e.target)) hideSuggestions();
+    });
 
-      const toggleBtn = () => {
-        const showAt = 450; // px: cuando baja más de esto, aparece
-        if (window.scrollY > showAt) btnTop.classList.add("show");
-        else btnTop.classList.remove("show");
-      };
+    // ✅ Reposiciona al mover viewport
+    window.addEventListener("resize", () => {
+      if(sugBox.style.display === "block") positionSuggestions();
+    });
 
-      window.addEventListener("scroll", toggleBtn, { passive: true });
-      toggleBtn();
+    window.addEventListener("scroll", () => {
+      if(sugBox.style.display === "block") positionSuggestions();
+    }, { passive: true });
 
-      btnTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    })();
-  });
-  </script>
+    // ✅ Si el grid cambia (admin products), actualiza todo
+    const obs = new MutationObserver(() => {
+      products = buildProductList();
+      filterGrid();
+      setupWhatsAppPersonalizado();
+      setTimeout(() => ScrollTrigger.refresh(), 60);
+      if(sugBox.style.display === "block") positionSuggestions();
+    });
+    obs.observe(grid, { childList: true, subtree: true });
+
+    filterGrid();
+  })();
+
+});
+</script>
+
+
 
 <script type="module">
   import { getAdminProducts } from "./js/products-store.js";
