@@ -1455,6 +1455,18 @@ function applyFilters(){
 <script type="module">
   import { getAdminProducts } from "./js/products-store.js";
 
+import { productosRef, getDocs, query, orderBy } from "./js/firebase.js";
+
+const q = query(productosRef, orderBy("createdAt", "desc"));
+const snap = await getDocs(q);
+
+const adminProducts = snap.docs.map(d => ({
+  id: d.id,
+  ...d.data()
+}));
+
+
+
   const grid = document.getElementById("grid");
 
   if (!grid) {

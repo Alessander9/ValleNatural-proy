@@ -176,235 +176,324 @@
     </div>
   </div>
 
-  <script type="module">
-    import { CATEGORIES, getAdminProducts, addProduct, updateProduct, deleteProduct, clearProducts } from "./js/products-store.js";
+ <script type="module">
+  import { CATEGORIES } from "./js/products-store.js";
 
-    const ADMIN_PASS = "admin123";
+  import {
+    db,
+    productosRef,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    updateDoc,
+    doc,
+    serverTimestamp,
+    query,
+    orderBy
+  } from "./js/firebase.js";
 
-    const loginBox = document.getElementById("loginBox");
-    const adminBox  = document.getElementById("adminBox");
-    const loginMsg  = document.getElementById("loginMsg");
-    const pass      = document.getElementById("pass");
+  // ==========================
+  // CONFIG
+  // ==========================
+  const ADMIN_PASS = "admin123";
 
-    const btnLogin  = document.getElementById("btnLogin");
-    const btnLogout = document.getElementById("btnLogout");
+  // ==========================
+  // DOM
+  // ==========================
+  const loginBox = document.getElementById("loginBox");
+  const adminBox  = document.getElementById("adminBox");
+  const loginMsg  = document.getElementById("loginMsg");
+  const pass      = document.getElementById("pass");
 
-    const form      = document.getElementById("productForm");
-    const okMsg     = document.getElementById("okMsg");
-    const btnClear  = document.getElementById("btnClear");
-    const btnClearAll = document.getElementById("btnClearAll");
+  const btnLogin  = document.getElementById("btnLogin");
+  const btnLogout = document.getElementById("btnLogout");
 
-    const categoria = document.getElementById("categoria");
-    const tbody     = document.getElementById("tbody");
+  const form      = document.getElementById("productForm");
+  const okMsg     = document.getElementById("okMsg");
+  const btnClear  = document.getElementById("btnClear");
+  const btnClearAll = document.getElementById("btnClearAll");
 
-    const imagenInput = document.getElementById("imagen");
-    const preview     = document.getElementById("preview");
-    let imagenBase64 = "";
+  const categoria = document.getElementById("categoria");
+  const tbody     = document.getElementById("tbody");
 
-    // modal
-    const modal = document.getElementById("modal");
-    const modalClose = document.getElementById("modalClose");
-    const editCancel = document.getElementById("editCancel");
-    const editForm = document.getElementById("editForm");
-    const editId = document.getElementById("editId");
-    const editNombre = document.getElementById("editNombre");
-    const editPrecio = document.getElementById("editPrecio");
-    const editCategoria = document.getElementById("editCategoria");
-    const editDescripcion = document.getElementById("editDescripcion");
-    const editImagen = document.getElementById("editImagen");
-    const editPreview = document.getElementById("editPreview");
-    let editImageBase64 = "";
+  const imagenInput = document.getElementById("imagen");
+  const preview     = document.getElementById("preview");
+  let imagenBase64 = "";
 
-    // llenar selects con categorías
-    function fillCategorySelect(selectEl){
-      selectEl.innerHTML = `<option value="">Selecciona</option>` + CATEGORIES
-        .map(c => `<option value="${c.value}">${c.label}</option>`)
-        .join("");
+  // modal
+  const modal = document.getElementById("modal");
+  const modalClose = document.getElementById("modalClose");
+  const editCancel = document.getElementById("editCancel");
+  const editForm = document.getElementById("editForm");
+  const editId = document.getElementById("editId");
+  const editNombre = document.getElementById("editNombre");
+  const editPrecio = document.getElementById("editPrecio");
+  const editCategoria = document.getElementById("editCategoria");
+  const editDescripcion = document.getElementById("editDescripcion");
+  const editImagen = document.getElementById("editImagen");
+  const editPreview = document.getElementById("editPreview");
+  let editImageBase64 = "";
+
+  // cache en memoria de lo listado en firestore
+  let cloudList = [];
+
+  // ==========================
+  // CATEGORÍAS
+  // ==========================
+  function fillCategorySelect(selectEl){
+    selectEl.innerHTML =
+      `<option value="">Selecciona</option>` +
+      CATEGORIES.map(c => `<option value="${c.value}">${escapeHtml(c.label)}</option>`).join("");
+  }
+  fillCategorySelect(categoria);
+  fillCategorySelect(editCategoria);
+
+  function labelFor(value){
+    return (CATEGORIES.find(x=>x.value===value)?.label) || value || "-";
+  }
+
+  // ==========================
+  // LOGIN
+  // ==========================
+  function setLogged(isLogged){
+    localStorage.setItem("vn_admin_logged", isLogged ? "1" : "0");
+    loginBox.classList.toggle("hidden", isLogged);
+    adminBox.classList.toggle("hidden", !isLogged);
+  }
+
+  if(localStorage.getItem("vn_admin_logged") === "1") setLogged(true);
+
+  btnLogin.addEventListener("click", async () => {
+    if(pass.value === ADMIN_PASS){
+      loginMsg.classList.add("hidden");
+      setLogged(true);
+      await renderTable();
+    } else {
+      loginMsg.classList.remove("hidden");
     }
-    fillCategorySelect(categoria);
-    fillCategorySelect(editCategoria);
+  });
 
-    function setLogged(isLogged){
-      localStorage.setItem("vn_admin_logged", isLogged ? "1" : "0");
-      loginBox.classList.toggle("hidden", isLogged);
-      adminBox.classList.toggle("hidden", !isLogged);
-    }
+  btnLogout.addEventListener("click", () => setLogged(false));
 
-    if(localStorage.getItem("vn_admin_logged") === "1") setLogged(true);
+  // ==========================
+  // IMAGEN PREVIEW (CREATE)
+  // ==========================
+  imagenInput.addEventListener("change", async (e) => {
+    const file = e.target.files?.[0];
+    if(!file) return;
+    imagenBase64 = await fileToBase64(file);
+    preview.src = imagenBase64;
+    preview.classList.remove("hidden");
+  });
 
-    btnLogin.addEventListener("click", () => {
-      if(pass.value === ADMIN_PASS){
-        loginMsg.classList.add("hidden");
-        setLogged(true);
-        renderTable();
-      } else loginMsg.classList.remove("hidden");
+  // ==========================
+  // CREATE (CLOUD)
+  // ==========================
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    okMsg.classList.add("hidden");
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const precio = Number(document.getElementById("precio").value);
+    const catVal = document.getElementById("categoria").value;
+    const descripcion = document.getElementById("descripcion").value.trim();
+
+    if(!nombre) return alert("Ingresa un nombre.");
+    if(!isFinite(precio) || precio < 0) return alert("Precio inválido.");
+    if(!catVal) return alert("Selecciona una categoría.");
+    if(!imagenBase64) return alert("Sube una imagen.");
+
+    // 🔥 Guardar en Firestore
+    await addDoc(productosRef, {
+      nombre,
+      precio,
+      categoria: catVal,
+      descripcion: descripcion || "",
+      imagen: imagenBase64,     // por ahora base64
+      stock: 1,
+      offer: 0,
+      createdAt: serverTimestamp()
     });
 
-    btnLogout.addEventListener("click", () => setLogged(false));
+    okMsg.classList.remove("hidden");
+    form.reset();
+    imagenBase64 = "";
+    preview.classList.add("hidden");
 
-    imagenInput.addEventListener("change", async (e) => {
-      const file = e.target.files?.[0];
-      if(!file) return;
-      imagenBase64 = await fileToBase64(file);
-      preview.src = imagenBase64;
-      preview.classList.remove("hidden");
-    });
+    await renderTable();
+  });
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      okMsg.classList.add("hidden");
+  // ==========================
+  // LIMPIAR FORM
+  // ==========================
+  btnClear.addEventListener("click", () => {
+    form.reset();
+    imagenBase64 = "";
+    preview.classList.add("hidden");
+    okMsg.classList.add("hidden");
+  });
 
-      if(!imagenBase64){
-        alert("Sube una imagen.");
-        return;
-      }
+  // ==========================
+  // BORRAR TODO (CLOUD)
+  // ==========================
+  btnClearAll.addEventListener("click", async () => {
+    if(!confirm("¿Seguro que deseas borrar TODOS los productos en la nube?")) return;
 
-      addProduct({
-        id: "adm-" + crypto.randomUUID(),
-        nombre: document.getElementById("nombre").value.trim(),
-        precio: Number(document.getElementById("precio").value),
-        categoria: document.getElementById("categoria").value,
-        descripcion: document.getElementById("descripcion").value.trim(),
-        imagen: imagenBase64
+    // Traemos todo y borramos uno por uno
+    const snap = await getDocs(productosRef);
+    const deletes = snap.docs.map(d => deleteDoc(doc(db, "productos", d.id)));
+    await Promise.all(deletes);
+
+    await renderTable();
+  });
+
+  // ==========================
+  // LISTAR (CLOUD) + RENDER
+  // ==========================
+  async function fetchCloud(){
+    const q = query(productosRef, orderBy("createdAt", "desc"));
+    const snap = await getDocs(q);
+    cloudList = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    return cloudList;
+  }
+
+  async function renderTable(){
+    const list = await fetchCloud();
+
+    tbody.innerHTML = list.map(p => `
+      <tr>
+        <td class="p-3">
+          <div class="flex items-center gap-3">
+            <img src="${p.imagen || "./img/alert.png"}"
+                 class="w-10 h-10 rounded-lg object-cover border border-zinc-800" />
+            <div class="font-bold">${escapeHtml(p.nombre || "")}</div>
+          </div>
+        </td>
+        <td class="p-3 text-zinc-300">${escapeHtml(labelFor(p.categoria))}</td>
+        <td class="p-3 font-extrabold text-emerald-400">S/ ${Number(p.precio || 0).toFixed(2)}</td>
+        <td class="p-3">
+          <div class="flex gap-2">
+            <button class="px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700"
+                    data-edit="${p.id}">Editar</button>
+            <button class="px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 font-bold"
+                    data-del="${p.id}">Eliminar</button>
+          </div>
+        </td>
+      </tr>
+    `).join("");
+
+    // acciones eliminar
+    tbody.querySelectorAll("[data-del]").forEach(btn=>{
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.del;
+        if(confirm("¿Eliminar este producto?")){
+          await deleteDoc(doc(db, "productos", id));
+          await renderTable();
+        }
       });
-
-      okMsg.classList.remove("hidden");
-      form.reset();
-      imagenBase64 = "";
-      preview.classList.add("hidden");
-      renderTable();
     });
 
-    btnClear.addEventListener("click", () => {
-      form.reset();
-      imagenBase64 = "";
-      preview.classList.add("hidden");
-      okMsg.classList.add("hidden");
-    });
+    // acciones editar
+    tbody.querySelectorAll("[data-edit]").forEach(btn=>{
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.edit;
+        const p = cloudList.find(x => x.id === id);
+        if(!p) return;
 
-    btnClearAll.addEventListener("click", () => {
-      if(confirm("¿Seguro que deseas borrar todos los productos guardados?")){
-        clearProducts();
-        renderTable();
-      }
-    });
+        editId.value = p.id;
+        editNombre.value = p.nombre ?? "";
+        editPrecio.value = p.precio ?? 0;
+        editCategoria.value = p.categoria ?? "";
+        editDescripcion.value = p.descripcion ?? "";
 
-    function renderTable(){
-      const list = getAdminProducts();
-      tbody.innerHTML = list.map(p => `
-        <tr>
-          <td class="p-3">
-            <div class="flex items-center gap-3">
-              <img src="${p.imagen}" class="w-10 h-10 rounded-lg object-cover border border-zinc-800" />
-              <div class="font-bold">${escapeHtml(p.nombre)}</div>
-            </div>
-          </td>
-          <td class="p-3 text-zinc-300">${escapeHtml(labelFor(p.categoria))}</td>
-          <td class="p-3 font-extrabold text-emerald-400">S/ ${Number(p.precio).toFixed(2)}</td>
-          <td class="p-3">
-            <div class="flex gap-2">
-              <button class="px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700"
-                      data-edit="${p.id}">Editar</button>
-              <button class="px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 font-bold"
-                      data-del="${p.id}">Eliminar</button>
-            </div>
-          </td>
-        </tr>
-      `).join("");
+        editImageBase64 = "";
+        editPreview.src = p.imagen || "./img/alert.png";
+        editPreview.classList.remove("hidden");
 
-      // acciones
-      tbody.querySelectorAll("[data-del]").forEach(btn=>{
-        btn.addEventListener("click", () => {
-          const id = btn.dataset.del;
-          if(confirm("¿Eliminar este producto?")){
-            deleteProduct(id);
-            renderTable();
-          }
-        });
+        openModal();
       });
-
-      tbody.querySelectorAll("[data-edit]").forEach(btn=>{
-        btn.addEventListener("click", () => {
-          const id = btn.dataset.edit;
-          const p = getAdminProducts().find(x => x.id === id);
-          if(!p) return;
-
-          editId.value = p.id;
-          editNombre.value = p.nombre ?? "";
-          editPrecio.value = p.precio ?? 0;
-          editCategoria.value = p.categoria ?? "";
-          editDescripcion.value = p.descripcion ?? "";
-          editImageBase64 = "";
-          editPreview.src = p.imagen;
-          editPreview.classList.remove("hidden");
-
-          openModal();
-        });
-      });
-    }
-
-    function labelFor(value){
-      return (CATEGORIES.find(x=>x.value===value)?.label) || value;
-    }
-
-    function openModal(){
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    }
-    function closeModal(){
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      editForm.reset();
-      editPreview.classList.add("hidden");
-      editImageBase64 = "";
-    }
-
-    modalClose.addEventListener("click", closeModal);
-    editCancel.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
-
-    editImagen.addEventListener("change", async (e) => {
-      const file = e.target.files?.[0];
-      if(!file) return;
-      editImageBase64 = await fileToBase64(file);
-      editPreview.src = editImageBase64;
-      editPreview.classList.remove("hidden");
     });
+  }
 
-    editForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const id = editId.value;
+  // ==========================
+  // MODAL OPEN/CLOSE
+  // ==========================
+  function openModal(){
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+  function closeModal(){
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    editForm.reset();
+    editPreview.classList.add("hidden");
+    editImageBase64 = "";
+  }
 
-      const ok = updateProduct(id, {
-        nombre: editNombre.value.trim(),
-        precio: Number(editPrecio.value),
-        categoria: editCategoria.value,
-        descripcion: editDescripcion.value.trim(),
-        ...(editImageBase64 ? { imagen: editImageBase64 } : {})
-      });
+  modalClose.addEventListener("click", closeModal);
+  editCancel.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
 
-      if(!ok) alert("No se pudo editar (id no encontrado).");
-      closeModal();
-      renderTable();
+  // ==========================
+  // IMAGEN PREVIEW (EDIT)
+  // ==========================
+  editImagen.addEventListener("change", async (e) => {
+    const file = e.target.files?.[0];
+    if(!file) return;
+    editImageBase64 = await fileToBase64(file);
+    editPreview.src = editImageBase64;
+    editPreview.classList.remove("hidden");
+  });
+
+  // ==========================
+  // UPDATE (CLOUD)
+  // ==========================
+  editForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const id = editId.value;
+    if(!id) return;
+
+    const payload = {
+      nombre: editNombre.value.trim(),
+      precio: Number(editPrecio.value),
+      categoria: editCategoria.value,
+      descripcion: editDescripcion.value.trim()
+    };
+
+    if(editImageBase64) payload.imagen = editImageBase64;
+
+    await updateDoc(doc(db, "productos", id), payload);
+
+    closeModal();
+    await renderTable();
+  });
+
+  // ==========================
+  // ARRANQUE
+  // ==========================
+  if(localStorage.getItem("vn_admin_logged") === "1") {
+    await renderTable();
+  }
+
+  // ==========================
+  // HELPERS
+  // ==========================
+  function fileToBase64(file){
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result);
+      r.onerror = reject;
+      r.readAsDataURL(file);
     });
+  }
 
-    // si ya está logueado, renderizar
-    if(localStorage.getItem("vn_admin_logged") === "1") renderTable();
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, m => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    }[m]));
+  }
+</script>
 
-    function fileToBase64(file){
-      return new Promise((resolve, reject) => {
-        const r = new FileReader();
-        r.onload = () => resolve(r.result);
-        r.onerror = reject;
-        r.readAsDataURL(file);
-      });
-    }
-
-    function escapeHtml(str){
-      return String(str).replace(/[&<>"']/g, m => ({
-        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
-      }[m]));
-    }
-  </script>
 </body>
 </html>
