@@ -14,16 +14,22 @@ const LS_KEY = "vn_products_v1";
  * 9) Infusiones, Snacks y Mezclas Funcionales
  */
 export const CATEGORIES = [
-  // value = key que se usará para filtrar en Productos.html (data-cat)
-  { value: "endulzantes_infusiones", label: "Mieles y Endulzantes Naturales" },
-  { value: "superfoods_suplementos", label: "Superalimentos del Perú" },
   { value: "frutos_secos", label: "Frutos Secos y Semillas" },
+  { value: "semillas", label: "Semillas Naturales" },
+
+  { value: "endulzantes_infusiones", label: "Mieles y Endulzantes Naturales" },
+  { value: "endulzantes_infusiones", label: "Infusiones y Mezclas Funcionales" },
+
+  { value: "superfoods_suplementos", label: "Superalimentos del Perú" },
+  { value: "colageno", label: "Colágenos y Articulaciones" },
+  { value: "vitaminas-suplementos", label: "Vitaminas, Minerales y Suplementos" },
+
+  { value: "medicinales", label: "Plantas Medicinales y Extractos" },
+
   { value: "granos_pops", label: "Harinas, Granos y Cereales" },
-  { value: "aceites", label: "Aceites Naturales" },
-  { value: "superfoods_suplementos", label: "Colágenos y Articulaciones" },
-  { value: "superfoods_suplementos", label: "Vitaminas, Minerales y Suplementos" },
-  { value: "superfoods_suplementos", label: "Plantas Medicinales y Extractos" },
-  { value: "endulzantes_infusiones", label: "Infusiones, Snacks y Mezclas Funcionales" },
+  { value: "snacks", label: "Snacks Saludables" },
+
+  { value: "aceites", label: "Aceites Naturales" }
 ];
 
 export function getAdminProducts() {
