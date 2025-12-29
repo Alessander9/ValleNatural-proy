@@ -79,6 +79,35 @@
     background: rgba(0,104,56,0.08) !important;
   }
 
+/* ✅ Mostrar buscador en responsive */
+@media (max-width: 768px){
+  .search-bar-container{
+    display: block !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .search-input-wrapper{
+    width: 100% !important;
+  }
+
+  .product-search-input{
+    width: 100% !important;
+  }
+
+  /* Si tu header usa flex en fila, lo volvemos a “apilar” */
+  .main-header{
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  /* El buscador ocupa toda la fila */
+  .search-bar-container{
+    order: 99 !important;
+  }
+}
+
+
   </style>
 </head>
 
