@@ -1453,119 +1453,99 @@ function applyFilters(){
 </script>
 
 <script type="module">
-  import { getAdminProducts } from "./js/products-store.js";
-
-import { productosRef, getDocs, query, orderBy } from "./js/firebase.js";
-
-const q = query(productosRef, orderBy("createdAt", "desc"));
-const snap = await getDocs(q);
-
-const adminProducts = snap.docs.map(d => ({
-  id: d.id,
-  ...d.data()
-}));
-
-
+  import { productosRef, getDocs, query, orderBy } from "./js/firebase.js";
 
   const grid = document.getElementById("grid");
-
   if (!grid) {
     console.warn("❌ No existe el contenedor #grid");
   } else {
-    const adminProducts = getAdminProducts() || [];
-    console.log("✅ Productos admin encontrados:", adminProducts);
+    try {
+      // 1) Traer productos de Firestore
+      const q = query(productosRef, orderBy("createdAt", "desc"));
+      const snap = await getDocs(q);
 
-    adminProducts.forEach(p => {
-      // Validación mínima
-      if (!p?.id || !p?.nombre) return;
+      const cloudProducts = snap.docs.map(d => ({
+        id: d.id,
+        ...d.data()
+      }));
 
-      const card = document.createElement("div");
-      card.className = "card gsap-prod";
+      console.log("✅ Productos Firebase:", cloudProducts);
 
-      // data-* para tus filtros/buscador
-      card.dataset.name  = String(p.nombre || "").toLowerCase();
-      card.dataset.cat   = String(p.categoria || "all").toLowerCase();
-      card.dataset.stock = String(p.stock ?? 1);   // si no existe, asumimos stock=1
-      card.dataset.offer = String(p.offer ?? 0);   // si no existe, offer=0
+      // 2) Pintar cards
+      cloudProducts.forEach(p => {
+        if (!p?.id || !p?.nombre) return;
 
-      const precio = isFinite(Number(p.precio)) ? Number(p.precio).toFixed(2) : "0.00";
-      const imgSrc = p.imagen || "./img/alert.png";
+        const card = document.createElement("div");
+        card.className = "card gsap-prod";
 
-      card.innerHTML = `
-        <div class="img-wrapper">
-          <span class="badge-type">
-            <span class="material-icons">spa</span> Admin
-          </span>
-          <img src="${imgSrc}" alt="${escapeHtml(p.nombre)}">
-        </div>
+        card.dataset.name  = String(p.nombre || "").toLowerCase();
+        card.dataset.cat   = String(p.categoria || "all").toLowerCase();
+        card.dataset.stock = String(p.stock ?? 1);
+        card.dataset.offer = String(p.offer ?? 0);
 
-        <div class="card-body">
-          <div class="title-row">
-            <h3>${escapeHtml(p.nombre)}</h3>
-            <div class="rating">
-              <span class="material-icons" style="font-size:18px">star</span> 5.0
+        const precio = isFinite(Number(p.precio)) ? Number(p.precio).toFixed(2) : "0.00";
+        const imgSrc = p.imagen || "./img/alert.png";
+
+        card.innerHTML = `
+          <div class="img-wrapper">
+            <span class="badge-type">
+              <span class="material-icons">spa</span> Admin
+            </span>
+            <img src="${imgSrc}" alt="${escapeHtml(p.nombre)}">
+          </div>
+
+          <div class="card-body">
+            <div class="title-row">
+              <h3>${escapeHtml(p.nombre)}</h3>
+              <div class="rating">
+                <span class="material-icons" style="font-size:18px">star</span> 5.0
+              </div>
+            </div>
+
+            <div class="price">
+              <span class="material-icons">sell</span> S/ ${precio}
+            </div>
+
+            <div class="meta">
+              <span class="pill"><span class="material-icons">eco</span> Natural</span>
+              <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+            </div>
+
+            <div class="actions">
+              <a class="btn-add wa-btn"
+                 href="https://wa.me/51967736074"
+                 target="_blank" rel="noopener"
+                 data-product="${escapeHtml(p.nombre)}">
+                <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+              </a>
+
+              <a class="btn-detail"
+                 href="DetalleProducto.html?id=${encodeURIComponent(p.id)}">
+                <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+              </a>
             </div>
           </div>
+        `;
 
-          <div class="price">
-            <span class="material-icons">sell</span> S/ ${precio}
-          </div>
+        // ponlos arriba para notarlos
+        grid.prepend(card);
+      });
 
-          <div class="meta">
-            <span class="pill"><span class="material-icons">eco</span> Natural</span>
-            <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
-          </div>
+      // 3) Rehacer WhatsApp dinámico SOLO para los nuevos
+      document.querySelectorAll(".wa-btn").forEach(btn => {
+        const card = btn.closest(".card");
+        const product = btn.dataset.product || card?.querySelector("h3")?.textContent?.trim() || "un producto";
+        const price = card?.querySelector(".price")?.textContent?.replace(/\s+/g, " ").trim() || "";
+        const msg = encodeURIComponent(`Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`);
+        btn.href = `https://wa.me/51967736074?text=${msg}`;
+      });
 
-          <div class="actions">
-            <a class="btn-add wa-btn"
-               href="https://wa.me/51967736074"
-               target="_blank" rel="noopener"
-               data-product="${escapeHtml(p.nombre)}">
-              <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
-            </a>
+      // 4) Reaplicar filtros (IMPORTANTE)
+      if (typeof window.applyFilters === "function") window.applyFilters();
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
 
-            <a class="btn-detail"
-               href="DetalleProducto.html?id=${encodeURIComponent(p.id)}">
-              <span class="material-icons" style="font-size:18px">visibility</span> Detalle
-            </a>
-          </div>
-        </div>
-      `;
-
-      // Al inicio para que se note
-      grid.prepend(card);
-    });
-
-    // ✅ WhatsApp dinámico (mensaje por producto)
-    document.querySelectorAll(".wa-btn").forEach(btn => {
-      const card = btn.closest(".card");
-
-      const product =
-        btn.dataset.product ||
-        card?.querySelector("h3")?.textContent?.trim() ||
-        "un producto";
-
-      const price =
-        card?.querySelector(".price")?.textContent?.replace(/\s+/g, " ").trim() ||
-        "";
-
-      const msg = encodeURIComponent(
-        `Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`
-      );
-
-      btn.href = `https://wa.me/51967736074?text=${msg}`;
-      btn.target = "_blank";
-      btn.rel = "noopener";
-    });
-
-    // ✅ Aplicar filtros actuales (si ya creaste window.applyFilters en tu script normal)
-    if (typeof window.applyFilters === "function") {
-      window.applyFilters();
-    }
-
-    // ✅ refrescar animaciones si existe
-    if (window.ScrollTrigger) {
-      ScrollTrigger.refresh();
+    } catch (err) {
+      console.error("❌ Error cargando productos de Firebase:", err);
     }
   }
 
@@ -1579,6 +1559,7 @@ const adminProducts = snap.docs.map(d => ({
     }[m]));
   }
 </script>
+
 
 
 
