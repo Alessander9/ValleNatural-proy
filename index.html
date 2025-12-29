@@ -211,7 +211,7 @@
         </div>
 
         <div class="offer-card gsap-card">
-          <div class="offer-badge">Hot</div>
+          <div class="offer-badge">Nuevo</div>
           <div class="img-wrapper">
             <img src="./img/chia.jpeg" alt="Chía">
           </div>
@@ -229,7 +229,7 @@
         </div>
 
         <div class="offer-card gsap-card">
-          <div class="offer-badge">Nuevo</div>
+          <div class="offer-badge">Suplemento</div>
           <div class="img-wrapper">
             <img src="./img/colageno-hidrolizado.jpeg" alt="Colágeno">
           </div>
@@ -253,7 +253,7 @@
   <section id="productos" class="nuestros-productos section-padding">
     <h2 class="section-title">Nuestra <span>Selección</span></h2>
 
-    <div class="productos-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div id="indexProductsGrid" class="productos-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Algarrobina -->
       <div class="offer-card product-card-grid gsap-prod">
         <div class="img-wrapper">
@@ -292,7 +292,7 @@
 
       <!-- Polen de abeja -->
       <div class="offer-card product-card-grid gsap-prod">
-        <div class="offer-badge">*</div>
+        <div class="offer-badge">Nuevo</div>
         <div class="img-wrapper">
           <img src="./img/polen-abeja.jpeg" alt="Polen de abeja">
         </div>
@@ -402,7 +402,7 @@
 
       <!-- Aceite de oliva -->
       <div class="offer-card product-card-grid gsap-prod">
-        <div class="offer-badge">*</div>
+        <div class="offer-badge">Destacado</div>
         <div class="img-wrapper">
           <img src="./img/aceite-oliva.jpeg" alt="Aceite de oliva">
         </div>
@@ -493,7 +493,7 @@
 
       <!-- Flor de Jamaica -->
       <div class="offer-card product-card-grid gsap-prod">
-        <div class="offer-badge">*</div>
+        <div class="offer-badge">Nuevo</div>
         <div class="img-wrapper">
           <img src="./img/jamaica.jpeg" alt="Flor de Jamaica">
         </div>
@@ -811,6 +811,32 @@
     })();
   });
   </script>
+
+<script type="module">
+  import { getAdminProducts } from "./js/products-store.js";
+
+  const grid = document.getElementById("indexProductsGrid");
+  if(!grid) return;
+
+  getAdminProducts().forEach(p=>{
+    const card = document.createElement("div");
+    card.className = "offer-card product-card-grid gsap-prod";
+    card.innerHTML = `
+      <div class="img-wrapper"><img src="${p.imagen}" alt="${p.nombre}"></div>
+      <div class="card-body">
+        <h3>${p.nombre}</h3>
+        <p class="offer-price">S/ ${Number(p.precio).toFixed(2)}</p>
+        <div class="delivery-info"><i class="material-icons">category</i> ${p.categoria}</div>
+        <a class="add-to-cart-btn-full" target="_blank" rel="noopener"
+           href="https://wa.me/51967736074?text=${encodeURIComponent('Hola, me interesa ' + p.nombre)}">
+          <i class="material-icons" style="font-size:18px">shopping_cart</i> Agregar
+        </a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+
 
 </body>
 

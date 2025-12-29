@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Admin | Valle Natural</title>
+
+  <!-- ✅ Tailwind v4 (browser build) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen bg-zinc-950 text-zinc-100">
+  <div class="max-w-5xl mx-auto p-6">
+
+    <div class="flex items-center justify-between gap-4">
+      <h1 class="text-2xl font-black">Panel Administrativo</h1>
+      <a href="index.html" class="text-sm px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700">Volver a la tienda</a>
+    </div>
+
+    <!-- LOGIN -->
+    <section id="loginBox" class="mt-6 bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+      <p class="text-zinc-300 mb-3">Ingresa la contraseña</p>
+      <div class="flex gap-3">
+        <input id="pass" type="password" class="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3"
+               placeholder="Contraseña" />
+        <button id="btnLogin" class="px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold">
+          Entrar
+        </button>
+      </div>
+      <p id="loginMsg" class="text-sm mt-3 text-red-400 hidden">Contraseña incorrecta.</p>
+      <p class="text-xs text-zinc-400 mt-2">Demo: <b>admin123</b></p>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="adminBox" class="hidden mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- FORM -->
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-extrabold">Agregar producto</h2>
+          <button id="btnLogout" class="text-sm px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700">Cerrar</button>
+        </div>
+
+        <form id="productForm" class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="text-sm text-zinc-300">Nombre</label>
+            <input id="nombre" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3"
+                   placeholder="Ej: Maca Negra Gelatinizada 200g" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-zinc-300">Precio (S/)</label>
+              <input id="precio" type="number" min="0" step="0.01" required
+                     class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3"
+                     placeholder="Ej: 25" />
+            </div>
+
+            <div>
+              <label class="text-sm text-zinc-300">Categoría</label>
+              <select id="categoria" required
+                      class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3">
+                <!-- se llena por JS -->
+              </select>
+              <p class="text-xs text-zinc-400 mt-1">Estas categorías vienen del PDF y se mapean a tus filtros.</p>
+            </div>
+          </div>
+
+          <div>
+            <label class="text-sm text-zinc-300">Descripción (opcional)</label>
+            <textarea id="descripcion" rows="3"
+                      class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3"
+                      placeholder="Ej: Ideal para energía, bienestar..."></textarea>
+          </div>
+
+          <div>
+            <label class="text-sm text-zinc-300">Imagen</label>
+            <input id="imagen" type="file" accept="image/*" required
+                   class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3" />
+            <img id="preview" class="mt-3 w-40 h-40 object-cover rounded-xl border border-zinc-800 hidden" />
+          </div>
+
+          <div class="flex gap-3">
+            <button class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold">
+              Guardar
+            </button>
+            <button type="button" id="btnClear"
+                    class="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700">
+              Limpiar
+            </button>
+          </div>
+
+          <p id="okMsg" class="text-sm text-emerald-400 hidden">✅ Guardado.</p>
+        </form>
+      </div>
+
+      <!-- LISTADO -->
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="text-xl font-extrabold">Mis productos</h2>
+          <button id="btnClearAll" class="text-sm px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 font-bold">
+            Borrar todo
+          </button>
+        </div>
+
+        <div class="mt-4 overflow-auto rounded-xl border border-zinc-800">
+          <table class="w-full text-sm">
+            <thead class="bg-zinc-950 text-zinc-200">
+              <tr>
+                <th class="text-left p-3">Producto</th>
+                <th class="text-left p-3">Cat</th>
+                <th class="text-left p-3">Precio</th>
+                <th class="text-left p-3">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tbody" class="divide-y divide-zinc-800"></tbody>
+          </table>
+        </div>
+
+        <p class="text-xs text-zinc-400 mt-3">
+          Nota: esto se guarda en el navegador (localStorage). Si cambias de PC o borras datos, se pierde.
+        </p>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- MODAL EDIT -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative w-full max-w-xl bg-zinc-900 border border-zinc-800 rounded-2xl p-5">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-extrabold">Editar producto</h3>
+        <button id="modalClose" class="px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700">✕</button>
+      </div>
+
+      <form id="editForm" class="mt-4 grid gap-3">
+        <input id="editId" type="hidden" />
+
+        <div>
+          <label class="text-sm text-zinc-300">Nombre</label>
+          <input id="editNombre" required class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3" />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="text-sm text-zinc-300">Precio (S/)</label>
+            <input id="editPrecio" type="number" min="0" step="0.01" required
+                   class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3" />
+          </div>
+          <div>
+            <label class="text-sm text-zinc-300">Categoría</label>
+            <select id="editCategoria" required
+                    class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3"></select>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm text-zinc-300">Descripción</label>
+          <textarea id="editDescripcion" rows="3"
+                    class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3"></textarea>
+        </div>
+
+        <div>
+          <label class="text-sm text-zinc-300">Cambiar imagen (opcional)</label>
+          <input id="editImagen" type="file" accept="image/*"
+                 class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3" />
+          <img id="editPreview" class="mt-3 w-40 h-40 object-cover rounded-xl border border-zinc-800 hidden" />
+        </div>
+
+        <div class="flex gap-3 mt-2">
+          <button class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-bold">Guardar cambios</button>
+          <button type="button" id="editCancel" class="px-5 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module">
+    import { CATEGORIES, getAdminProducts, addProduct, updateProduct, deleteProduct, clearProducts } from "./js/products-store.js";
+
+    const ADMIN_PASS = "admin123";
+
+    const loginBox = document.getElementById("loginBox");
+    const adminBox  = document.getElementById("adminBox");
+    const loginMsg  = document.getElementById("loginMsg");
+    const pass      = document.getElementById("pass");
+
+    const btnLogin  = document.getElementById("btnLogin");
+    const btnLogout = document.getElementById("btnLogout");
+
+    const form      = document.getElementById("productForm");
+    const okMsg     = document.getElementById("okMsg");
+    const btnClear  = document.getElementById("btnClear");
+    const btnClearAll = document.getElementById("btnClearAll");
+
+    const categoria = document.getElementById("categoria");
+    const tbody     = document.getElementById("tbody");
+
+    const imagenInput = document.getElementById("imagen");
+    const preview     = document.getElementById("preview");
+    let imagenBase64 = "";
+
+    // modal
+    const modal = document.getElementById("modal");
+    const modalClose = document.getElementById("modalClose");
+    const editCancel = document.getElementById("editCancel");
+    const editForm = document.getElementById("editForm");
+    const editId = document.getElementById("editId");
+    const editNombre = document.getElementById("editNombre");
+    const editPrecio = document.getElementById("editPrecio");
+    const editCategoria = document.getElementById("editCategoria");
+    const editDescripcion = document.getElementById("editDescripcion");
+    const editImagen = document.getElementById("editImagen");
+    const editPreview = document.getElementById("editPreview");
+    let editImageBase64 = "";
+
+    // llenar selects con categorías
+    function fillCategorySelect(selectEl){
+      selectEl.innerHTML = `<option value="">Selecciona</option>` + CATEGORIES
+        .map(c => `<option value="${c.value}">${c.label}</option>`)
+        .join("");
+    }
+    fillCategorySelect(categoria);
+    fillCategorySelect(editCategoria);
+
+    function setLogged(isLogged){
+      localStorage.setItem("vn_admin_logged", isLogged ? "1" : "0");
+      loginBox.classList.toggle("hidden", isLogged);
+      adminBox.classList.toggle("hidden", !isLogged);
+    }
+
+    if(localStorage.getItem("vn_admin_logged") === "1") setLogged(true);
+
+    btnLogin.addEventListener("click", () => {
+      if(pass.value === ADMIN_PASS){
+        loginMsg.classList.add("hidden");
+        setLogged(true);
+        renderTable();
+      } else loginMsg.classList.remove("hidden");
+    });
+
+    btnLogout.addEventListener("click", () => setLogged(false));
+
+    imagenInput.addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if(!file) return;
+      imagenBase64 = await fileToBase64(file);
+      preview.src = imagenBase64;
+      preview.classList.remove("hidden");
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      okMsg.classList.add("hidden");
+
+      if(!imagenBase64){
+        alert("Sube una imagen.");
+        return;
+      }
+
+      addProduct({
+        id: "adm-" + crypto.randomUUID(),
+        nombre: document.getElementById("nombre").value.trim(),
+        precio: Number(document.getElementById("precio").value),
+        categoria: document.getElementById("categoria").value,
+        descripcion: document.getElementById("descripcion").value.trim(),
+        imagen: imagenBase64
+      });
+
+      okMsg.classList.remove("hidden");
+      form.reset();
+      imagenBase64 = "";
+      preview.classList.add("hidden");
+      renderTable();
+    });
+
+    btnClear.addEventListener("click", () => {
+      form.reset();
+      imagenBase64 = "";
+      preview.classList.add("hidden");
+      okMsg.classList.add("hidden");
+    });
+
+    btnClearAll.addEventListener("click", () => {
+      if(confirm("¿Seguro que deseas borrar todos los productos guardados?")){
+        clearProducts();
+        renderTable();
+      }
+    });
+
+    function renderTable(){
+      const list = getAdminProducts();
+      tbody.innerHTML = list.map(p => `
+        <tr>
+          <td class="p-3">
+            <div class="flex items-center gap-3">
+              <img src="${p.imagen}" class="w-10 h-10 rounded-lg object-cover border border-zinc-800" />
+              <div class="font-bold">${escapeHtml(p.nombre)}</div>
+            </div>
+          </td>
+          <td class="p-3 text-zinc-300">${escapeHtml(labelFor(p.categoria))}</td>
+          <td class="p-3 font-extrabold text-emerald-400">S/ ${Number(p.precio).toFixed(2)}</td>
+          <td class="p-3">
+            <div class="flex gap-2">
+              <button class="px-3 py-2 rounded-xl bg-zinc-800 hover:bg-zinc-700"
+                      data-edit="${p.id}">Editar</button>
+              <button class="px-3 py-2 rounded-xl bg-red-600 hover:bg-red-500 font-bold"
+                      data-del="${p.id}">Eliminar</button>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+
+      // acciones
+      tbody.querySelectorAll("[data-del]").forEach(btn=>{
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.del;
+          if(confirm("¿Eliminar este producto?")){
+            deleteProduct(id);
+            renderTable();
+          }
+        });
+      });
+
+      tbody.querySelectorAll("[data-edit]").forEach(btn=>{
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.edit;
+          const p = getAdminProducts().find(x => x.id === id);
+          if(!p) return;
+
+          editId.value = p.id;
+          editNombre.value = p.nombre ?? "";
+          editPrecio.value = p.precio ?? 0;
+          editCategoria.value = p.categoria ?? "";
+          editDescripcion.value = p.descripcion ?? "";
+          editImageBase64 = "";
+          editPreview.src = p.imagen;
+          editPreview.classList.remove("hidden");
+
+          openModal();
+        });
+      });
+    }
+
+    function labelFor(value){
+      return (CATEGORIES.find(x=>x.value===value)?.label) || value;
+    }
+
+    function openModal(){
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+    function closeModal(){
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      editForm.reset();
+      editPreview.classList.add("hidden");
+      editImageBase64 = "";
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    editCancel.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+
+    editImagen.addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if(!file) return;
+      editImageBase64 = await fileToBase64(file);
+      editPreview.src = editImageBase64;
+      editPreview.classList.remove("hidden");
+    });
+
+    editForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const id = editId.value;
+
+      const ok = updateProduct(id, {
+        nombre: editNombre.value.trim(),
+        precio: Number(editPrecio.value),
+        categoria: editCategoria.value,
+        descripcion: editDescripcion.value.trim(),
+        ...(editImageBase64 ? { imagen: editImageBase64 } : {})
+      });
+
+      if(!ok) alert("No se pudo editar (id no encontrado).");
+      closeModal();
+      renderTable();
+    });
+
+    // si ya está logueado, renderizar
+    if(localStorage.getItem("vn_admin_logged") === "1") renderTable();
+
+    function fileToBase64(file){
+      return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(r.result);
+        r.onerror = reject;
+        r.readAsDataURL(file);
+      });
+    }
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, m => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+      }[m]));
+    }
+  </script>
+</body>
+</html>

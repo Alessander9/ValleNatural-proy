@@ -1330,32 +1330,36 @@ body{
 
   // ✅ Filtro por chips + buscador (data-filter debe coincidir EXACTO con data-cat)
   const chips = document.querySelectorAll(".chip[data-filter]");
-  const cards = Array.from(document.querySelectorAll(".card"));
-  const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInput");
 
-  let activeFilter = "all";
-  let onlyOffer = false;
-  let onlyStock = false;
+let activeFilter = "all";
+let onlyOffer = false;
+let onlyStock = false;
 
-  function applyFilters(){
-    const q = (searchInput.value || "").trim().toLowerCase();
+function getCards(){
+  return Array.from(document.querySelectorAll(".card"));
+}
 
-    cards.forEach(card=>{
-      const name  = (card.dataset.name || "").toLowerCase();
-      const cat   = (card.dataset.cat || "").toLowerCase();
-      const stock = card.dataset.stock === "1";
-      const offer = card.dataset.offer === "1";
+function applyFilters(){
+  const q = (searchInput.value || "").trim().toLowerCase();
 
-      const matchText  = !q || name.includes(q);
-      const matchCat   = activeFilter === "all" || cat === activeFilter;
-      const matchOffer = !onlyOffer || offer;
-      const matchStock = !onlyStock || stock;
+  getCards().forEach(card=>{
+    const name  = (card.dataset.name || "").toLowerCase();
+    const cat   = (card.dataset.cat || "").toLowerCase();
+    const stock = card.dataset.stock === "1";
+    const offer = card.dataset.offer === "1";
 
-      card.style.display = (matchText && matchCat && matchOffer && matchStock) ? "" : "none";
-    });
+    const matchText  = !q || name.includes(q);
+    const matchCat   = activeFilter === "all" || cat === activeFilter;
+    const matchOffer = !onlyOffer || offer;
+    const matchStock = !onlyStock || stock;
 
-    ScrollTrigger.refresh();
-  }
+    card.style.display = (matchText && matchCat && matchOffer && matchStock) ? "" : "none";
+  });
+
+  ScrollTrigger.refresh();
+}
+
 
   chips.forEach(ch=>{
     ch.addEventListener("click", ()=>{
@@ -1447,6 +1451,126 @@ body{
   // ✅ arranque
   applyFilters();
 </script>
+
+<script type="module">
+  import { getAdminProducts } from "./js/products-store.js";
+
+  const grid = document.getElementById("grid");
+
+  if (!grid) {
+    console.warn("❌ No existe el contenedor #grid");
+  } else {
+    const adminProducts = getAdminProducts() || [];
+    console.log("✅ Productos admin encontrados:", adminProducts);
+
+    adminProducts.forEach(p => {
+      // Validación mínima
+      if (!p?.id || !p?.nombre) return;
+
+      const card = document.createElement("div");
+      card.className = "card gsap-prod";
+
+      // data-* para tus filtros/buscador
+      card.dataset.name  = String(p.nombre || "").toLowerCase();
+      card.dataset.cat   = String(p.categoria || "all").toLowerCase();
+      card.dataset.stock = String(p.stock ?? 1);   // si no existe, asumimos stock=1
+      card.dataset.offer = String(p.offer ?? 0);   // si no existe, offer=0
+
+      const precio = isFinite(Number(p.precio)) ? Number(p.precio).toFixed(2) : "0.00";
+      const imgSrc = p.imagen || "./img/alert.png";
+
+      card.innerHTML = `
+        <div class="img-wrapper">
+          <span class="badge-type">
+            <span class="material-icons">spa</span> Admin
+          </span>
+          <img src="${imgSrc}" alt="${escapeHtml(p.nombre)}">
+        </div>
+
+        <div class="card-body">
+          <div class="title-row">
+            <h3>${escapeHtml(p.nombre)}</h3>
+            <div class="rating">
+              <span class="material-icons" style="font-size:18px">star</span> 5.0
+            </div>
+          </div>
+
+          <div class="price">
+            <span class="material-icons">sell</span> S/ ${precio}
+          </div>
+
+          <div class="meta">
+            <span class="pill"><span class="material-icons">eco</span> Natural</span>
+            <span class="pill"><span class="material-icons">local_shipping</span> Delivery</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn-add wa-btn"
+               href="https://wa.me/51967736074"
+               target="_blank" rel="noopener"
+               data-product="${escapeHtml(p.nombre)}">
+              <span class="material-icons" style="font-size:18px">shopping_cart</span> Agregar
+            </a>
+
+            <a class="btn-detail"
+               href="DetalleProducto.html?id=${encodeURIComponent(p.id)}">
+              <span class="material-icons" style="font-size:18px">visibility</span> Detalle
+            </a>
+          </div>
+        </div>
+      `;
+
+      // Al inicio para que se note
+      grid.prepend(card);
+    });
+
+    // ✅ WhatsApp dinámico (mensaje por producto)
+    document.querySelectorAll(".wa-btn").forEach(btn => {
+      const card = btn.closest(".card");
+
+      const product =
+        btn.dataset.product ||
+        card?.querySelector("h3")?.textContent?.trim() ||
+        "un producto";
+
+      const price =
+        card?.querySelector(".price")?.textContent?.replace(/\s+/g, " ").trim() ||
+        "";
+
+      const msg = encodeURIComponent(
+        `Hola Valle Natural, me interesa ${product}${price ? ` (${price})` : ""}. ¿Está disponible? ¿Hacen delivery?`
+      );
+
+      btn.href = `https://wa.me/51967736074?text=${msg}`;
+      btn.target = "_blank";
+      btn.rel = "noopener";
+    });
+
+    // ✅ Aplicar filtros actuales (si ya creaste window.applyFilters en tu script normal)
+    if (typeof window.applyFilters === "function") {
+      window.applyFilters();
+    }
+
+    // ✅ refrescar animaciones si existe
+    if (window.ScrollTrigger) {
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, m => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    }[m]));
+  }
+</script>
+
+
+
+
 
 </body>
 </html>
