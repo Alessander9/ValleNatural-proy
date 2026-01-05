@@ -38,6 +38,14 @@
       width:0;height:0; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:6px solid white;
     }
     .floating-whatsapp-btn:hover .tooltip-wa{ opacity:1; visibility:visible; transform:translateX(0); }
+
+    /* fallback suave si no carga imagen */
+    .img-fallback{
+      background:
+        radial-gradient(600px 300px at 10% -10%, rgba(27,155,94,.18), transparent 60%),
+        radial-gradient(520px 280px at 100% 0%, rgba(255,138,0,.16), transparent 55%),
+        #fff;
+    }
   </style>
 
   <meta name="description" content="Detalle de producto Valle Natural.">
@@ -68,7 +76,7 @@
         Valle <span style="color:var(--orange)">Natural</span>
       </a>
 
-      <button id="menuBtn" class="md:hidden text-gray-700">
+      <button id="menuBtn" class="md:hidden text-gray-700" aria-label="Abrir menú">
         <span class="material-icons text-3xl">menu</span>
       </button>
 
@@ -109,9 +117,13 @@
 
       <!-- Imagen -->
       <div class="bg-white rounded-2xl shadow-sm p-4 border border-gray-100 product-image">
-        <img id="prodImg" class="rounded-xl w-full h-96 object-cover"
-             src=""
-             alt="Producto">
+        <div class="rounded-xl overflow-hidden img-fallback">
+          <img id="prodImg" class="w-full h-96 object-cover"
+               src="./img/alert.png"
+               alt="Producto"
+               loading="lazy"
+               referrerpolicy="no-referrer">
+        </div>
       </div>
 
       <!-- Info -->
@@ -123,7 +135,7 @@
 
         <p id="prodDesc" class="text-gray-700 mb-5 flex items-start gap-2">
           <span class="material-icons text-gray-400 mt-0.5">info</span>
-          Descripción del producto.
+          Cargando...
         </p>
 
         <div class="flex items-baseline gap-3 mb-6">
@@ -147,7 +159,7 @@
             <label class="block text-sm font-medium text-gray-700 mb-1 flex items-center gap-1">
               <span class="material-icons text-base text-gray-500">check_circle</span> Disponibilidad
             </label>
-            <div class="px-3 py-2 rounded-lg border border-green-200 bg-[var(--green-soft)] text-[var(--green)] font-semibold flex items-center gap-2">
+            <div id="stockBox" class="px-3 py-2 rounded-lg border border-green-200 bg-[var(--green-soft)] text-[var(--green)] font-semibold flex items-center gap-2">
               <span class="material-icons text-base">verified</span> En stock
             </div>
           </div>
@@ -264,76 +276,164 @@
     <span class="tooltip-wa">¡Hola! ¿En qué te ayudo?</span>
   </a>
 
+  <!-- ✅ MENÚ MÓVIL -->
   <script>
-    // Toggle menú móvil
     document.getElementById('menuBtn')?.addEventListener('click', ()=>{
       document.getElementById('mobileNav')?.classList.toggle('hidden');
     });
 
-    // ==========================
-    // ✅ Cargar producto por ?id=
-    // ==========================
-    const LS_KEY = "vn_products_v1";
+    // Si alguna imagen falla, ponemos fallback sin romper la página
+    const img = document.getElementById("prodImg");
+    img?.addEventListener("error", () => {
+      img.src = "./img/alert.png";
+    });
+  </script>
+
+  <!-- ✅ CARGA REAL DESDE FIRESTORE POR ?id= -->
+  <script type="module">
+    import { db, doc, getDoc } from "./js/firebase.js";
 
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
 
-    const list = JSON.parse(localStorage.getItem(LS_KEY) || "[]");
-    const p = list.find(x => x.id === id);
+    const $ = (sel) => document.querySelector(sel);
 
-    if(!p){
-      document.title = "Producto no encontrado | Valle Natural";
-      document.getElementById("prodTitle").textContent = "Producto no encontrado";
-      document.getElementById("prodDesc").innerHTML = `<span class="material-icons text-gray-400 mt-0.5">info</span> Este producto no existe o fue eliminado.`;
-      document.getElementById("prodImg").src = "./img/alert.png";
+    const prodTitle = $("#prodTitle");
+    const prodDesc  = $("#prodDesc");
+    const prodImg   = $("#prodImg");
+    const prodPrice = $("#prodPrice");
+    const bcName    = $("#bcName");
+    const techCat   = $("#techCat");
+    const selPres   = $("#presentacion");
+    const btnWA     = $("#btn-wa");
+    const stockBox  = $("#stockBox");
+
+    // Estado inicial
+    if (prodDesc) prodDesc.innerHTML = `<span class="material-icons text-gray-400 mt-0.5">info</span> Cargando producto...`;
+
+    if (!id) {
+      renderNotFound("Falta el parámetro ?id=");
     } else {
-      // títulos / seo
-      document.title = `Valle Natural - ${p.nombre}`;
-      document.getElementById("bcName").textContent = p.nombre;
-      document.getElementById("prodTitle").innerHTML = `<span class="material-icons" style="color:var(--orange)">local_fire_department</span> ${escapeHtml(p.nombre)}`;
+      try {
+        const snap = await getDoc(doc(db, "productos", id));
 
-      // imagen / descripción / precio
-      document.getElementById("prodImg").src = p.imagen;
-      document.getElementById("prodImg").alt = p.nombre;
+        if (!snap.exists()) {
+          renderNotFound("Este producto no existe o fue eliminado.");
+        } else {
+          const p = snap.data();
 
-      const desc = (p.descripcion && p.descripcion.trim()) ? p.descripcion.trim() : "Producto natural ideal para tu bienestar.";
-      document.getElementById("prodDesc").innerHTML = `<span class="material-icons text-gray-400 mt-0.5">info</span> ${escapeHtml(desc)}`;
+          // ✅ Título / SEO
+          document.title = `Valle Natural - ${p.nombre || "Producto"}`;
+          if (bcName) bcName.textContent = p.nombre || "Producto";
 
-      document.getElementById("prodPrice").innerHTML = `<span class="material-icons">sell</span> S/ ${Number(p.precio).toFixed(2)}`;
+          if (prodTitle) {
+            prodTitle.innerHTML = `
+              <span class="material-icons" style="color:var(--orange)">local_fire_department</span>
+              ${escapeHtml(p.nombre || "Producto")}
+            `;
+          }
 
-      // categoría
-      document.getElementById("techCat").textContent = prettyCat(p.categoria);
+          // ✅ Imagen
+          const imgUrl = (p.imagen && String(p.imagen).trim()) ? String(p.imagen).trim() : "./img/alert.png";
+          if (prodImg) {
+            prodImg.src = imgUrl;
+            prodImg.alt = p.nombre || "Producto";
+          }
 
-      // presentación (si luego guardas p.presentaciones como array)
-      const sel = document.getElementById("presentacion");
-      sel.innerHTML = "";
-      const pres = Array.isArray(p.presentaciones) && p.presentaciones.length ? p.presentaciones : ["Única"];
-      pres.forEach(x => {
-        const opt = document.createElement("option");
-        opt.textContent = x;
-        sel.appendChild(opt);
-      });
+          // ✅ Descripción
+          const desc = (p.descripcion && String(p.descripcion).trim())
+            ? String(p.descripcion).trim()
+            : "Producto natural ideal para tu bienestar.";
+          if (prodDesc) {
+            prodDesc.innerHTML = `<span class="material-icons text-gray-400 mt-0.5">info</span> ${escapeHtml(desc)}`;
+          }
 
-      // WhatsApp con presentación
-      const wa = document.getElementById("btn-wa");
-      function updateWA(){
-        const presSel = sel.value || "";
-        const price = `S/ ${Number(p.precio).toFixed(2)}`;
-        const msg = encodeURIComponent(`Hola Valle Natural, me interesa ${p.nombre} (${presSel}) por ${price}. ¿Está disponible?`);
-        wa.href = `https://wa.me/51967736074?text=${msg}`;
+          // ✅ Precio (acepta número o string)
+          const precioNum = toNumberSafe(p.precio);
+          if (prodPrice) {
+            prodPrice.innerHTML = `<span class="material-icons">sell</span> S/ ${precioNum.toFixed(2)}`;
+          }
+
+          // ✅ Categoría
+          if (techCat) techCat.textContent = prettyCat(String(p.categoria || ""));
+
+          // ✅ Stock (si guardas stock en firebase como número o "1/0")
+          const inStock = String(p.stock ?? "1") !== "0";
+          if (stockBox) {
+            if (inStock) {
+              stockBox.className = "px-3 py-2 rounded-lg border border-green-200 bg-[var(--green-soft)] text-[var(--green)] font-semibold flex items-center gap-2";
+              stockBox.innerHTML = `<span class="material-icons text-base">verified</span> En stock`;
+            } else {
+              stockBox.className = "px-3 py-2 rounded-lg border border-red-200 bg-red-50 text-red-600 font-semibold flex items-center gap-2";
+              stockBox.innerHTML = `<span class="material-icons text-base">error</span> Agotado`;
+            }
+          }
+
+          // ✅ Presentaciones (soporta: presentaciones[], o presentacion string, o vacío)
+          const presList = normalizePresentaciones(p);
+          if (selPres) {
+            selPres.innerHTML = "";
+            presList.forEach((x) => {
+              const opt = document.createElement("option");
+              opt.value = x;
+              opt.textContent = x;
+              selPres.appendChild(opt);
+            });
+          }
+
+          // ✅ WhatsApp
+          const updateWA = () => {
+            const presSel = selPres?.value ? ` (${selPres.value})` : "";
+            const msg = encodeURIComponent(
+              `Hola Valle Natural, me interesa ${p.nombre || "este producto"}${presSel} por S/ ${precioNum.toFixed(2)}. ¿Está disponible?`
+            );
+            if (btnWA) btnWA.href = `https://wa.me/51967736074?text=${msg}`;
+          };
+
+          selPres?.addEventListener("change", updateWA);
+          updateWA();
+        }
+      } catch (err) {
+        console.error("❌ Error leyendo producto:", err);
+        renderNotFound("Ocurrió un error cargando el producto. Intenta nuevamente.");
       }
-      sel.addEventListener("change", updateWA);
-      updateWA();
     }
 
-    // GSAP animaciones
-    document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.from("header", { y: -20, opacity: 0, duration: 0.6, ease: "power2.out" });
-      gsap.from(".page-breadcrumb", { y: 10, opacity: 0, duration: 0.5, delay: 0.15, ease: "power2.out" });
-      gsap.from(".product-image", { x: -25, opacity: 0, duration: 0.7, ease: "power2.out", delay: 0.1 });
-      gsap.from(".product-info", { x: 25, opacity: 0, duration: 0.7, ease: "power2.out", delay: 0.15 });
-    });
+    function renderNotFound(msg) {
+      document.title = "Producto no encontrado | Valle Natural";
+
+      if (prodTitle) prodTitle.textContent = "Producto no encontrado";
+      if (bcName) bcName.textContent = "Producto";
+      if (prodDesc) {
+        prodDesc.innerHTML = `<span class="material-icons text-gray-400 mt-0.5">info</span> ${escapeHtml(msg)}`;
+      }
+      if (prodImg) prodImg.src = "./img/alert.png";
+      if (prodPrice) prodPrice.innerHTML = `<span class="material-icons">sell</span> S/ 0.00`;
+      if (techCat) techCat.textContent = "-";
+
+      if (btnWA) {
+        const msgWA = encodeURIComponent(`Hola Valle Natural, necesito ayuda para encontrar un producto.`);
+        btnWA.href = `https://wa.me/51967736074?text=${msgWA}`;
+      }
+    }
+
+    function normalizePresentaciones(p) {
+      // 1) si viene array: presentaciones: ["250g","500g"]
+      if (Array.isArray(p.presentaciones) && p.presentaciones.length) {
+        return p.presentaciones.map(x => String(x)).filter(Boolean);
+      }
+      // 2) si viene string: presentacion: "250g"
+      if (p.presentacion && String(p.presentacion).trim()) {
+        return [String(p.presentacion).trim()];
+      }
+      // 3) default
+      return ["Única"];
+    }
+
+    function toNumberSafe(v) {
+      const n = Number(String(v ?? "0").replace(",", "."));
+      return Number.isFinite(n) ? n : 0;
+    }
 
     function prettyCat(cat){
       const map = {
@@ -343,8 +443,12 @@
         "superfoods_suplementos":"Superfoods / Suplementos",
         "endulzantes_infusiones":"Endulzantes e infusiones",
         "aceites":"Aceites",
+        "medicinales":"Plantas Medicinales",
+        "snacks":"Snacks saludables",
+        "colageno":"Colágeno",
+        "vitaminas-suplementos":"Vitaminas / Suplementos"
       };
-      return map[cat] || cat || "-";
+      return map[(cat || "").toLowerCase()] || (cat || "-");
     }
 
     function escapeHtml(str){
@@ -354,6 +458,16 @@
     }
   </script>
 
+  <!-- ✅ GSAP animaciones -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from("header", { y: -20, opacity: 0, duration: 0.6, ease: "power2.out" });
+      gsap.from(".page-breadcrumb", { y: 10, opacity: 0, duration: 0.5, delay: 0.15, ease: "power2.out" });
+      gsap.from(".product-image", { x: -25, opacity: 0, duration: 0.7, ease: "power2.out", delay: 0.1 });
+      gsap.from(".product-info", { x: 25, opacity: 0, duration: 0.7, ease: "power2.out", delay: 0.15 });
+    });
+  </script>
+
 </body>
 </html>
-  

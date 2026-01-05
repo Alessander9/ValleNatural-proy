@@ -5,6 +5,7 @@ import {
   collection,
   getDocs,
   addDoc,
+  getDoc,
   deleteDoc,
   updateDoc,
   doc,
@@ -35,6 +36,7 @@ export const productosRef = collection(db, "productos");
 // Helpers exportados
 export {
   getDocs,
+  getDoc,
   addDoc,
   deleteDoc,
   updateDoc,
