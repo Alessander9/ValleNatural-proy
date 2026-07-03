@@ -176,8 +176,9 @@
     </div>
   </div>
 
- <script type="module">
-  import { CATEGORIES } from "./js/products-store.js";
+<script type="module">
+  import { CATEGORIES } from "./assets/js/products-store.js";
+  import { escapeHtml } from "./assets/js/site-utils.js";
 
   import {
     db,
@@ -190,7 +191,7 @@
     serverTimestamp,
     query,
     orderBy
-  } from "./js/firebase.js";
+  } from "./assets/js/firebase.js";
 
   // ==========================
   // CONFIG
@@ -488,11 +489,6 @@
     });
   }
 
-  function escapeHtml(str){
-    return String(str).replace(/[&<>"']/g, m => ({
-      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
-    }[m]));
-  }
 </script>
 
 </body>

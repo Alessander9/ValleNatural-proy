@@ -1,0 +1,1495 @@
+# datosValleNatural
+
+Volcado estructurado del contenido visible de las vistas HTML del proyecto Valle Natural.
+
+## Resumen
+
+Archivos HTML analizados: 39
+Nota: las pÃ¡ginas sin catÃ¡logo visible o vacÃ­as se reportan como referencia de vista.
+
+## Archivo: AceiteCoco.html
+
+TÃ­tulo: Valle Natural - Aceite de Coco
+Meta description: Aceite de Coco prensado en frÃ­o. Ideal para cocina y cuidado personal.
+Tipo: ficha de producto.
+Producto: local_fire_department Aceite de Coco
+Meta description: Aceite de Coco prensado en frÃ­o. Ideal para cocina y cuidado personal.
+Imagen: ./img/aceite-coco.jpeg
+Alt imagen: Aceite de Coco
+DescripciÃ³n: info Prensado en frÃ­o, de sabor suave. Ideal para cocinar, hornear y cuidado personal.
+Precio: S/ 50.00
+Precio anterior: S/ 68.00
+Presentaciones:
+ - 450 ml
+ - 500 ml
+Utilidad:
+ - task_alt Apto para cocinar y hornear.
+ - task_alt Uso recomendado en cuidado de piel y cabello.
+ - task_alt Libre de aditivos.
+Ficha tÃ©cnica:
+ - Cantidad: 450 ml
+ - Origen: PerÃº
+ - ConservaciÃ³n: Mantener cerrado y en sombra
+
+## Archivo: AceiteOliva.html
+
+TÃ­tulo: Valle Natural - Aceite de Oliva 250 ml
+Meta description: Aceite de Oliva 250 ml: ideal para ensaladas, aderezos y cocina diaria. Sabor suave y uso versÃ¡til.
+Tipo: ficha de producto.
+Producto: local_fire_department Aceite de Oliva
+Meta description: Aceite de Oliva 250 ml: ideal para ensaladas, aderezos y cocina diaria. Sabor suave y uso versÃ¡til.
+Imagen: ./img/aceite-oliva.jpeg
+Alt imagen: Aceite de Oliva 250 ml
+DescripciÃ³n: info Aceite de oliva ideal para ensaladas, aderezos y cocina diaria. Sabor suave, textura ligera y uso versÃ¡til para darle un toque saludable a tus comidas.
+Precio: S/ 25.00
+Presentaciones:
+ - 250 ml
+Utilidad:
+ - task_alt Ideal para ensaladas, aderezos y aliÃ±os (sabor suave y aromÃ¡tico).
+ - task_alt Ãštil en cocina diaria: salteados ligeros y preparaciones caseras.
+ - task_alt Aporta grasas saludables como parte de una alimentaciÃ³n equilibrada.
+Ficha tÃ©cnica:
+ - Contenido: 250 ml
+ - Origen: PerÃº
+ - ConservaciÃ³n: En lugar fresco, seco y lejos del sol
+
+## Archivo: admin.html
+
+TÃ­tulo: Admin | Valle Natural
+
+Vista administrativa. No expone catÃ¡logo de productos en contenido visible principal.
+
+## Archivo: AdultoMayor.html
+
+TÃ­tulo: Adulto Mayor | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: EnergÃ­a
+ - Imagen: ./img/maca-negra.jpeg
+ - Alt imagen: Maca Negra
+ - Slug: maca negra
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: ColÃ¡geno
+ - Imagen: ./img/colageno-hidrolizado.jpeg
+ - Alt imagen: ColÃ¡geno Hidrolizado
+ - Slug: colageno hidrolizado
+ - CategorÃ­a interna: colageno
+ - Stock: 1
+ - Oferta: 0
+
+Producto 3:
+ - Etiqueta: Articulaciones
+ - Imagen: ./img/colageno.jpg
+ - Alt imagen: CartÃ­lago de TiburÃ³n + ColÃ¡geno
+ - Slug: colageno cartilago de tiburon
+ - CategorÃ­a interna: colageno
+ - Stock: 1
+ - Oferta: 1
+
+Producto 4:
+ - Etiqueta: Mineral
+ - Imagen: ./img/magnesio.jpg
+ - Alt imagen: Citrato de Magnesio
+ - Slug: citrato de magnesio
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 5:
+ - Etiqueta: Mineral
+ - Imagen: ./img/potasio.jpg
+ - Alt imagen: Citrato de Potasio
+ - Slug: citrato de potasio
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 6:
+ - Etiqueta: Pop
+ - Imagen: ./img/kiwicha-pop.jpeg
+ - Alt imagen: Kiwicha Pop
+ - Slug: kiwicha pop
+ - CategorÃ­a interna: snacks
+ - Stock: 1
+ - Oferta: 1
+
+Producto 7:
+ - Etiqueta: Natural
+ - Imagen: ./img/moringa.jpg
+ - Alt imagen: Moringa
+ - Slug: moringa
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 8:
+ - Etiqueta: Cacao
+ - Imagen: ./img/cacao-polvo.png
+ - Alt imagen: Cacao en Polvo
+ - Slug: cacao en polvo
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 9:
+ - Etiqueta: Anti
+ - Imagen: ./img/curcuma.jpg
+ - Alt imagen: CÃºrcuma
+ - Slug: curcuma
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 10:
+ - Etiqueta: Defensas
+ - Imagen: ./img/propoleo.jpg
+ - Alt imagen: Jarabe de PropÃ³leo
+ - Slug: jarabe de propoleo
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 11:
+ - Etiqueta: InfusiÃ³n
+ - Imagen: ./img/jamaica.jpeg
+ - Alt imagen: Flor de Jamaica con PiÃ±a
+ - Slug: flor de jamaica con piÃ±a
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 1
+
+Producto 12:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-coco.jpeg
+ - Alt imagen: Aceite de Coco
+ - Slug: aceite de coco
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 0
+
+Producto 13:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-oliva.jpeg
+ - Alt imagen: Aceite de Oliva
+ - Slug: aceite de oliva
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 1
+
+## Archivo: Algarrobina.html
+
+TÃ­tulo: Valle Natural - Algarrobina
+Meta description: Algarrobina Premium: jarabe natural de algarrobo. Ideal para batidos y postres. Fuente de energÃ­a y minerales.
+Tipo: ficha de producto.
+Producto: local_fire_department Algarrobina Premium
+Meta description: Algarrobina Premium: jarabe natural de algarrobo. Ideal para batidos y postres. Fuente de energÃ­a y minerales.
+Imagen: ./img/algarrobina.jpg
+Alt imagen: Algarrobina Premium
+DescripciÃ³n: info Jarabe natural de algarrobo con sabor intenso y agradable. Ideal para batidos, postres y bebidas. Fuente natural de energÃ­a y minerales.
+Precio: S/ 29.90
+Precio anterior: S/35.00
+Presentaciones:
+ - 1 KG
+ - 1 L
+Utilidad:
+ - task_alt Aporta energÃ­a natural para tu dÃ­a.
+ - task_alt Excelente para postres, helados y batidos.
+ - task_alt Fuente natural de hierro y calcio.
+Ficha tÃ©cnica:
+ - Cantidad: 1 Kg
+ - Origen: PerÃº
+ - ConservaciÃ³n: Mantener cerrado. Refrigerar tras abrir.
+
+## Archivo: AlmendrasNaturales.html
+
+TÃ­tulo: Valle Natural - Almendras Naturales
+Meta description: Almendras Naturales 250g: snack saludable y versÃ¡til. Ideal para desayunos, postres y mix de frutos secos.
+Tipo: ficha de producto.
+Producto: local_fire_department Almendras Naturales
+Meta description: Almendras Naturales 250g: snack saludable y versÃ¡til. Ideal para desayunos, postres y mix de frutos secos.
+Imagen: ./img/FrutosSecos/almendras.jpeg
+Alt imagen: Almendras Naturales 250g
+DescripciÃ³n: info Snack natural y versÃ¡til: agrÃ©galas a yogurt, bowls, granola o postres. Ideales para un estilo de vida saludable.
+Precio: S/ 22.00
+Precio anterior: S/ 28.00
+Presentaciones:
+ - 250 g
+ - 500 g
+ - 1 kg
+Utilidad:
+ - task_alt Snack saludable para media maÃ±ana o tarde.
+ - task_alt Perfectas para yogurt, bowls, granola y batidos.
+ - task_alt Ãštiles en reposterÃ­a: galletas, queques y toppings.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 250 g
+ - Origen: Importado / selecciÃ³n premium
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Antiinflmatorio.html
+
+TÃ­tulo: Anti-inflamatorio | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: Anti-inflamatorio
+ - Imagen: ./img/curcuma.jpg
+ - Alt imagen: CÃºrcuma
+ - Slug: curcuma
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: Superfood
+ - Imagen: ./img/linaza-molida.jpeg
+ - Alt imagen: Linaza Molida
+ - Slug: linaza molida
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 3:
+ - Etiqueta: Semilla
+ - Imagen: ./img/chia.jpeg
+ - Alt imagen: Semillas de ChÃ­a
+ - Slug: semillas de chia
+ - CategorÃ­a interna: semillas
+ - Stock: 1
+ - Oferta: 1
+
+Producto 4:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-oliva.jpeg
+ - Alt imagen: Aceite de Oliva
+ - Slug: aceite de oliva
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 1
+
+## Archivo: ArandanosDeshidratados.html
+
+TÃ­tulo: Valle Natural - ArÃ¡ndanos Deshidratados
+Meta description: ArÃ¡ndanos Deshidratados 150g: snack delicioso y prÃ¡ctico. Ideal para yogurt, granola, reposterÃ­a y mix de frutos secos.
+Tipo: ficha de producto.
+Producto: local_fire_department ArÃ¡ndanos Deshidratados
+Meta description: ArÃ¡ndanos Deshidratados 150g: snack delicioso y prÃ¡ctico. Ideal para yogurt, granola, reposterÃ­a y mix de frutos secos.
+Imagen: ./img/FrutosSecos/arandanos.jpeg
+Alt imagen: ArÃ¡ndanos Deshidratados 150g
+DescripciÃ³n: info Dulces, prÃ¡cticos y perfectos para agregar a yogurt, avena, granola o reposterÃ­a. Ideal tambiÃ©n para snacks y mix.
+Precio: S/ 18.00
+Precio anterior: S/ 24.00
+Presentaciones:
+ - 150 g
+ - 300 g
+ - 500 g
+Utilidad:
+ - task_alt Perfectos para yogurt, avena y granola.
+ - task_alt Ideales en reposterÃ­a (muffins, kekes, galletas).
+ - task_alt Excelente para mix de frutos secos y snacks.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 150 g
+ - Origen: SelecciÃ³n premium
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Articulaciones.html
+
+TÃ­tulo: Articulaciones | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: ColÃ¡geno
+ - Imagen: ./img/colageno-hidrolizado.jpeg
+ - Alt imagen: ColÃ¡geno Hidrolizado
+ - Slug: colageno hidrolizado
+ - CategorÃ­a interna: colageno
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: Soporte
+ - Imagen: ./img/colageno.jpg
+ - Alt imagen: CartÃ­lago de TiburÃ³n + ColÃ¡geno
+ - Slug: cartilago de tiburon
+ - CategorÃ­a interna: colageno
+ - Stock: 1
+ - Oferta: 1
+
+Producto 3:
+ - Etiqueta: Mineral
+ - Imagen: ./img/magnesio.jpg
+ - Alt imagen: Citrato de Magnesio
+ - Slug: citrato de magnesio
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 4:
+ - Etiqueta: Mineral
+ - Imagen: ./img/potasio.jpg
+ - Alt imagen: Citrato de Potasio
+ - Slug: citrato de potasio
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 5:
+ - Etiqueta: Anti
+ - Imagen: ./img/curcuma.jpg
+ - Alt imagen: CÃºrcuma
+ - Slug: curcuma
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 6:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-oliva.jpeg
+ - Alt imagen: Aceite de Oliva
+ - Slug: aceite de oliva
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 1
+
+## Archivo: Cacao.html
+
+TÃ­tulo: Valle Natural - Cacao en Polvo
+Meta description: Cacao en Polvo: intenso sabor natural para bebidas y reposterÃ­a. Fuente de antioxidantes.
+Tipo: ficha de producto.
+Producto: local_fire_department Cacao en Polvo
+Meta description: Cacao en Polvo: intenso sabor natural para bebidas y reposterÃ­a. Fuente de antioxidantes.
+Imagen: ./img/cacao-polvo.png
+Alt imagen: Cacao en Polvo
+DescripciÃ³n: info Cacao natural de sabor intenso. Ideal para bebidas calientes, smoothies y reposterÃ­a. Excelente aroma y textura para tus recetas.
+Precio: S/ 20.00
+Precio anterior: S/ 26.00
+Presentaciones:
+ - 200 g
+ - 500 g
+Utilidad:
+ - task_alt Ideal para chocolate caliente y postres.
+ - task_alt Aporta antioxidantes naturales.
+ - task_alt Combina excelente con leche vegetal.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Castañas.html
+
+TÃ­tulo: Valle Natural - CastaÃ±as de CajÃº
+Meta description: CastaÃ±as de CajÃº 250g: snack premium, ideal para bowls, ensaladas y reposterÃ­a saludable.
+Tipo: ficha de producto.
+Producto: local_fire_department CastaÃ±as de CajÃº
+Meta description: CastaÃ±as de CajÃº 250g: snack premium, ideal para bowls, ensaladas y reposterÃ­a saludable.
+Imagen: ./img/FrutosSecos/caju.jpeg
+Alt imagen: CastaÃ±as de CajÃº 250g
+DescripciÃ³n: info CastaÃ±as de cajÃº seleccionadas: sabor suave y textura cremosa. Perfectas para snacks, bowls y recetas.
+Precio: S/ 30.00
+Precio anterior: S/ 38.00
+Presentaciones:
+ - 250 g
+ - 500 g
+ - 1 kg
+Utilidad:
+ - task_alt Snack rÃ¡pido para media maÃ±ana o tarde.
+ - task_alt Ideal para bowls, ensaladas y granola.
+ - task_alt Excelente para reposterÃ­a y mantequilla de cajÃº casera.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 250 g
+ - Origen: SelecciÃ³n premium
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Chia.html
+
+TÃ­tulo: Valle Natural - ChÃ­a
+Meta description: Semillas de ChÃ­a: ricas en Omega-3, fibra y proteÃ­na vegetal. Perfectas para puddings y smoothies.
+Tipo: ficha de producto.
+Producto: local_fire_department Semillas de ChÃ­a
+Meta description: Semillas de ChÃ­a: ricas en Omega-3, fibra y proteÃ­na vegetal. Perfectas para puddings y smoothies.
+Imagen: ./img/chia.jpeg
+Alt imagen: Semillas de ChÃ­a
+DescripciÃ³n: info Fuente vegetal de Omega-3, fibra y proteÃ­na. Perfectas para puddings, batidos y ensaladas. RemÃ³jalas para una mejor digestiÃ³n.
+Precio: S/ 20.00
+Precio anterior: S/ 30.00
+Presentaciones:
+ - 200 g
+ - 500 g
+Utilidad:
+ - task_alt Contribuye a la salud cardiovascular (Omega-3).
+ - task_alt Aporta fibra para una buena digestiÃ³n.
+ - task_alt Apoya la saciedad en planes de control de peso.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: CitratoMagnesio.html
+
+TÃ­tulo: Valle Natural - Citrato de Magnesio 150 g
+Meta description: Citrato de Magnesio 150 g: suplemento ideal para apoyar el descanso, funciÃ³n muscular y bienestar diario. FÃ¡cil de mezclar en agua o jugos.
+Tipo: ficha de producto.
+Producto: local_fire_department Citrato de Magnesio
+Meta description: Citrato de Magnesio 150 g: suplemento ideal para apoyar el descanso, funciÃ³n muscular y bienestar diario. FÃ¡cil de mezclar en agua o jugos.
+Imagen: ./img/magnesio.jpg
+Alt imagen: Citrato de Magnesio 150 g
+DescripciÃ³n: info Citrato de magnesio en polvo: excelente opciÃ³n para apoyar la funciÃ³n muscular y el descanso. FÃ¡cil de disolver en agua o jugos para tu rutina diaria.
+Precio: S/ 35.00
+Presentaciones:
+ - 150 g
+Utilidad:
+ - task_alt Apoyo a la funciÃ³n muscular y recuperaciÃ³n (ideal para rutinas activas).
+ - task_alt Puede ayudar a la relajaciÃ³n y el descanso nocturno (tÃ³malo segÃºn indicaciÃ³n).
+ - task_alt FÃ¡cil de mezclar en agua, jugos o bebidas tibias.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 150 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: CitratoPotasio.html
+
+TÃ­tulo: Valle Natural - Citrato de Potasio 150 g
+Meta description: Citrato de Potasio 150 g: soporte para equilibrio electrolÃ­tico y bienestar diario. FÃ¡cil de mezclar en agua o bebidas.
+Tipo: ficha de producto.
+Producto: local_fire_department Citrato de Potasio
+Meta description: Citrato de Potasio 150 g: soporte para equilibrio electrolÃ­tico y bienestar diario. FÃ¡cil de mezclar en agua o bebidas.
+Imagen: ./img/potasio.jpg
+Alt imagen: Citrato de Potasio 150 g
+DescripciÃ³n: info Citrato de potasio en polvo: apoyo para el equilibrio electrolÃ­tico y bienestar diario. FÃ¡cil de disolver en agua o bebidas, ideal para complementar tu rutina (segÃºn indicaciÃ³n).
+Precio: S/ 35.00
+Presentaciones:
+ - 150 g
+Utilidad:
+ - task_alt Apoya el equilibrio de electrolitos (Ãºtil en rutinas activas y buena hidrataciÃ³n).
+ - task_alt Puede complementar dietas con baja ingesta de potasio (segÃºn indicaciÃ³n).
+ - task_alt FÃ¡cil de mezclar en agua o bebidas, ideal para consumo prÃ¡ctico.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 150 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: ColagenoCartilagoTiburon.html
+
+TÃ­tulo: Valle Natural - ColÃ¡geno + CartÃ­lago de TiburÃ³n
+Meta description: ColÃ¡geno + CartÃ­lago de TiburÃ³n: apoyo para bienestar articular y movilidad. PresentaciÃ³n en polvo.
+Tipo: ficha de producto.
+Producto: local_fire_department ColÃ¡geno + CartÃ­lago de TiburÃ³n
+Meta description: ColÃ¡geno + CartÃ­lago de TiburÃ³n: apoyo para bienestar articular y movilidad. PresentaciÃ³n en polvo.
+Imagen: ./img/colageno.jpg
+Alt imagen: ColÃ¡geno y CartÃ­lago de TiburÃ³n
+DescripciÃ³n: info FÃ³rmula en polvo con colÃ¡geno hidrolizado y cartÃ­lago de tiburÃ³n. Ideal como complemento para tu rutina diaria.
+Precio: S/ 119.90
+Precio anterior: S/ 145.00
+Presentaciones:
+ - 700 g
+Utilidad:
+ - task_alt Complemento para tu rutina de bienestar.
+ - task_alt FÃ¡cil de mezclar en agua o batidos.
+ - task_alt Ideal para consumo diario segÃºn preferencia.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 700 g
+ - Sabor: Natural
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: ColagenoHidrolizado.html
+
+TÃ­tulo: Valle Natural - ColÃ¡geno Hidrolizado
+Meta description: ColÃ¡geno Hidrolizado: pÃ©ptidos de colÃ¡geno de alta absorciÃ³n. Ideal como complemento para piel, uÃ±as, cabello y articulaciones.
+Tipo: ficha de producto.
+Producto: local_fire_department ColÃ¡geno Hidrolizado
+Meta description: ColÃ¡geno Hidrolizado: pÃ©ptidos de colÃ¡geno de alta absorciÃ³n. Ideal como complemento para piel, uÃ±as, cabello y articulaciones.
+Imagen: ./img/colageno-hidrolizado.jpeg
+Alt imagen: ColÃ¡geno Hidrolizado
+DescripciÃ³n: info PÃ©ptidos de colÃ¡geno de alta absorciÃ³n. Ideal como complemento para el cuidado de piel, uÃ±as, cabello y articulaciones.
+Precio: S/ 64.90
+Precio anterior: S/ 60.00
+Presentaciones:
+ - 300 g
+Utilidad:
+ - task_alt Apoyo a la salud articular y la movilidad.
+ - task_alt Contribuye al mantenimiento de piel, uÃ±as y cabello.
+ - task_alt Se mezcla fÃ¡cilmente con agua o batidos.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 300 g
+ - Sabor: Natural
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Curcuma.html
+
+TÃ­tulo: Valle Natural - CÃºrcuma en Polvo
+Meta description: CÃºrcuma en polvo: especia dorada con tradiciÃ³n milenaria. Ideal para leches doradas, sopas y aderezos.
+Tipo: ficha de producto.
+Producto: spa Curcuma con pimienta negra y gengibre
+Meta description: CÃºrcuma en polvo: especia dorada con tradiciÃ³n milenaria. Ideal para leches doradas, sopas y aderezos.
+Imagen: ./img/curcuma.jpg
+Alt imagen: CÃºrcuma en Polvo
+DescripciÃ³n: info La especia dorada con tradiciÃ³n milenaria. Ideal para preparar leche dorada, sopas, aderezos y smoothies.
+Precio: S/ 59.90
+Precio anterior: S/ 65.00
+Presentaciones:
+ - 250 g
+ - 500 g
+Utilidad:
+ - task_alt Perfecta para â€œleche doradaâ€ y recetas saladas.
+ - task_alt Especie versÃ¡til para aderezos y salsas.
+ - task_alt Combina muy bien con jengibre y pimienta.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 250 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: DefensasNaturales.html
+
+TÃ­tulo: Defensas Naturales | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: Defensas
+ - Imagen: ./img/moringa.jpg
+ - Alt imagen: Moringa
+ - Slug: moringa
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: Superfood
+ - Imagen: ./img/linaza-molida.jpeg
+ - Alt imagen: Linaza Molida
+ - Slug: linaza molida
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 3:
+ - Etiqueta: Superfood
+ - Imagen: ./img/curcuma.jpg
+ - Alt imagen: CÃºrcuma
+ - Slug: curcuma
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 4:
+ - Etiqueta: Defensas
+ - Imagen: ./img/propoleo.jpg
+ - Alt imagen: Jarabe de PropÃ³leo
+ - Slug: jarabe de propoleo
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 5:
+ - Etiqueta: Natural
+ - Imagen: ./img/miel.jpg
+ - Alt imagen: Miel de Abeja
+ - Slug: miel de abeja
+ - CategorÃ­a interna: endulzantes_infusiones
+ - Stock: 1
+ - Oferta: 1
+
+Producto 6:
+ - Etiqueta: Vitalidad
+ - Imagen: ./img/polen-abeja.jpeg
+ - Alt imagen: Polen de Abeja
+ - Slug: polen de abeja
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 1
+
+## Archivo: DetalleProducto.html
+
+TÃ­tulo: Valle Natural - Detalle de Producto
+
+Tipo: plantilla dinÃ¡mica de detalle de producto.
+Fuente de datos: colecciÃ³n Firestore `productos`.
+Campos visibles en la plantilla: nombre, descripciÃ³n, precio, imagen, presentaciÃ³n, stock, ficha tÃ©cnica y botones de compra.
+
+Secciones detectadas:
+ - TÃ­tulo y breadcrumb dinÃ¡mico
+ - Imagen principal
+ - DescripciÃ³n
+ - Precio
+ - PresentaciÃ³n
+ - Disponibilidad
+ - MÃ©todos de pago
+ - Ficha tÃ©cnica
+ - Relacionados
+
+## Archivo: Digestion.html
+
+TÃ­tulo: DigestiÃ³n | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: Superfood
+ - Imagen: ./img/linaza-molida.jpeg
+ - Alt imagen: Linaza Molida
+ - Slug: linaza molida
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: Semilla
+ - Imagen: ./img/chia.jpeg
+ - Alt imagen: Semillas de ChÃ­a
+ - Slug: semillas de chia
+ - CategorÃ­a interna: semillas
+ - Stock: 1
+ - Oferta: 1
+
+Producto 3:
+ - Etiqueta: InfusiÃ³n
+ - Imagen: ./img/jamaica.jpeg
+ - Alt imagen: Flor de Jamaica
+ - Slug: flor de jamaica con piÃ±a
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 1
+
+Producto 4:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-coco.jpeg
+ - Alt imagen: Aceite de Coco
+ - Slug: aceite de coco
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 0
+
+## Archivo: Energia.html
+
+TÃ­tulo: EnergÃ­a | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: EnergÃ­a
+ - Imagen: ./img/maca-negra.jpeg
+ - Alt imagen: Maca Negra
+ - Slug: maca negra
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: EnergÃ©tico
+ - Imagen: ./img/algarrobina.jpg
+ - Alt imagen: Algarrobina
+ - Slug: algarrobina
+ - CategorÃ­a interna: endulzantes_infusiones
+ - Stock: 1
+ - Oferta: 0
+
+Producto 3:
+ - Etiqueta: Vitalidad
+ - Imagen: ./img/polen-abeja.jpeg
+ - Alt imagen: Polen de Abeja
+ - Slug: polen de abeja
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 1
+
+Producto 4:
+ - Etiqueta: Snack
+ - Imagen: ./img/kiwicha-pop.jpeg
+ - Alt imagen: Kiwicha Pop
+ - Slug: kiwicha pop
+ - CategorÃ­a interna: snacks
+ - Stock: 1
+ - Oferta: 1
+
+Producto 5:
+ - Etiqueta: Snack
+ - Imagen: ./img/quinua-pop.jpeg
+ - Alt imagen: Quinua Pop
+ - Slug: quinua pop
+ - CategorÃ­a interna: snacks
+ - Stock: 1
+ - Oferta: 0
+
+Producto 6:
+ - Etiqueta: Snack
+ - Imagen: ./img/frutosSecos.jpg
+ - Alt imagen: Mix Frutos Secos
+ - Slug: mix frutos secos
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 1
+
+Producto 7:
+ - Etiqueta: EnergÃ­a
+ - Imagen: ./img/cacao-polvo.png
+ - Alt imagen: Cacao en Polvo
+ - Slug: cacao en polvo
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+## Archivo: FrutosSecos.html
+
+TÃ­tulo: Valle Natural - Frutos Secos
+Meta description: Mix Premium de Frutos Secos: almendras, nueces, pecanas y mÃ¡s. Snack saludable y lleno de energÃ­a.
+Tipo: ficha de producto.
+Producto: local_fire_department Mix de Frutos Secos
+Meta description: Mix Premium de Frutos Secos: almendras, nueces, pecanas y mÃ¡s. Snack saludable y lleno de energÃ­a.
+Imagen: ./img/frutosSecos.jpg
+Alt imagen: Mix Premium de Frutos Secos
+DescripciÃ³n: info Mezcla selecta de almendras, nueces, pecanas, castaÃ±as y pasas. Tostado ligero y sin sal aÃ±adida. Ideal como snack saludable o para tus recetas.
+Precio: S/ 27.90
+Precio anterior: S/ 35.00
+Presentaciones:
+ - 250 g
+ - 400 g
+ - 1 kg
+Utilidad:
+ - task_alt Snack energÃ©tico y natural para cualquier momento.
+ - task_alt Fuente de proteÃ­nas, fibra y grasas saludables.
+ - task_alt Ideal para topping de yogur, ensaladas o reposterÃ­a.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 400 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: FrutosSecosYDeshidratados.html
+
+TÃ­tulo: Valle Natural - Frutos Secos y Deshidratados
+Meta description: Nuestra selecciÃ³n de frutos secos y deshidratados de alta calidad. Almendras, nueces, arÃ¡ndanos y mÃ¡s.
+Tipo: vista de catÃ¡logo / tarjetas de producto.
+
+Producto 1:
+ - Nombre: Almendras Naturales
+ - Precio: S/ 22.00
+ - Detalle: https://wa.me/51967736074?text=Hola,%20me%20interesan%20las%20Almendras
+
+Producto 2:
+ - Nombre: Nueces Peladas
+ - Precio: S/ 25.00
+ - Detalle: https://wa.me/51967736074?text=Hola,%20me%20interesan%20las%20Nueces
+
+Producto 3:
+ - Nombre: Pecanas Enteras
+ - Precio: S/ 28.00
+ - Detalle: https://wa.me/51967736074?text=Hola,%20me%20interesan%20las%20Pecanas
+
+Producto 4:
+ - Nombre: CajÃº (CastaÃ±as)
+ - Precio: S/ 30.00
+ - Detalle: https://wa.me/51967736074?text=Hola,%20me%20interesa%20el%20CajÃº
+
+Producto 5:
+ - Nombre: ArÃ¡ndanos Deshidratados
+ - Precio: S/ 18.00
+ - Detalle: https://wa.me/51967736074?text=Hola,%20me%20interesan%20los%20ArÃ¡ndanos
+
+Producto 6:
+ - Nombre: Semillas de Calabaza
+ - Precio: S/ 15.00
+ - Detalle: https://wa.me/51967736074?text=Hola,%20me%20interesan%20las%20Semillas
+
+## Archivo: index.html
+
+TÃ­tulo: Valle Natural - Tienda Orgánica
+Tipo: vista de catÃ¡logo / tarjetas de producto.
+
+Producto 1:
+ - Nombre: Mix Premium de Frutos Secos
+ - Precio: S/ 27.90
+ - Precio anterior: S/ 40.00
+ - Nota: local_shipping Envío Inmediato
+ - Detalle: https://wa.me/51967736074
+
+Producto 2:
+ - Nombre: Miel de Abeja (1kg)
+ - Precio: S/ 39.90
+ - Precio anterior: S/ 50.00
+ - Nota: verified 100% Natural
+ - Detalle: https://wa.me/51967736074
+
+Producto 3:
+ - Nombre: Semillas de Chía Premium
+ - Precio: S/ 20.00
+ - Precio anterior: S/ 30.00
+ - Nota: favorite Superalimento
+ - Detalle: https://wa.me/51967736074
+
+Producto 4:
+ - Nombre: Colágeno Hidrolizado
+ - Precio: S/ 64.90
+ - Precio anterior: S/ 75.00
+ - Nota: spa Salud Articular
+ - Detalle: https://wa.me/51967736074
+
+Producto 5:
+ - Nombre: Algarrobina 1kg
+ - Precio: S/ 29.90
+ - Nota: eco Endulzante Natural
+ - Detalle: https://wa.me/51967736074
+
+Producto 6:
+ - Nombre: Miel de abeja 1kg
+ - Precio: S/ 39.90
+ - Nota: hive 100% Pura
+ - Detalle: https://wa.me/51967736074
+
+Producto 7:
+ - Nombre: Polen de abeja 130g
+ - Precio: S/ 24.90
+ - Nota: filter_vintage Energizante
+ - Detalle: https://wa.me/51967736074
+
+Producto 8:
+ - Nombre: Jarabe de propoleo 250ML
+ - Precio: S/ 25.00
+ - Nota: medication Sistema Inmune
+ - Detalle: https://wa.me/51967736074
+
+Producto 9:
+ - Nombre: MIX Frutos secos 400g
+ - Precio: S/ 27.90
+ - Nota: restaurant Snack Saludable
+ - Detalle: https://wa.me/51967736074
+
+Producto 10:
+ - Nombre: Citrato de magnesio 150g
+ - Precio: S/ 35.00
+ - Nota: science 100% Puro
+ - Detalle: https://wa.me/51967736074
+
+Producto 11:
+ - Nombre: Citrato de potasio 150g
+ - Precio: S/ 35.00
+ - Nota: medical_services 100% Puro
+ - Detalle: https://wa.me/51967736074
+
+Producto 12:
+ - Nombre: Aceite de oliva 250 ML
+ - Precio: S/ 25.00
+ - Nota: water_drop Extra Virgen
+ - Detalle: https://wa.me/51967736074
+
+Producto 13:
+ - Nombre: Colageno Hidrolizado 300g
+ - Precio: S/ 64.90
+ - Nota: spa Piel y Articulaciones
+ - Detalle: https://wa.me/51967736074
+
+Producto 14:
+ - Nombre: Cartilago de tiburón 700g
+ - Precio: S/ 119.90
+ - Nota: health_and_safety Refuerzo Total
+ - Detalle: https://wa.me/51967736074
+
+Producto 15:
+ - Nombre: Moringa con camu camu 250g
+ - Precio: S/ 59.90
+ - Nota: forest Superalimento
+ - Detalle: https://wa.me/51967736074
+
+Producto 16:
+ - Nombre: Curcuma + pimienta 250g
+ - Precio: S/ 59.90
+ - Nota: local_florist Anti-inflamatorio
+ - Detalle: https://wa.me/51967736074
+
+Producto 17:
+ - Nombre: Flor de Jamaica 100g
+ - Precio: S/ 15.00
+ - Nota: local_bar Refrescante
+ - Detalle: https://wa.me/51967736074
+
+Producto 18:
+ - Nombre: Semillas de Chia 200g
+ - Precio: S/ 20.00
+ - Nota: grain Omega 3
+ - Detalle: https://wa.me/51967736074
+
+Producto 19:
+ - Nombre: Maca negra 200 g
+ - Precio: S/ 29.90
+ - Nota: energy_savings_leaf Vigorizante
+ - Detalle: https://wa.me/51967736074
+
+Producto 20:
+ - Nombre: Cacao en polvo 200g
+ - Precio: S/ 20.00
+ - Nota: breakfast_dining Antioxidante
+ - Detalle: https://wa.me/51967736074
+
+Producto 21:
+ - Nombre: Linaza molida 500g
+ - Precio: S/ 15.00
+ - Nota: brunch_dining Fibra Digestiva
+ - Detalle: https://wa.me/51981383662
+
+Producto 22:
+ - Nombre: Antiinflamatorio Natural
+ - Imagen: ${p.imagen}
+ - Alt imagen: ${p.nombre}
+ - Nota: Ingredientes conocidos por su apoyo antiinflamatorio (ej: cúrcuma).
+
+Producto 23:
+ - Nombre: ${p.nombre}
+ - Nota: category ${p.categoria}
+
+## Archivo: JamaicaConPiña.html
+
+TÃ­tulo: Valle Natural - Flor de Jamaica con PiÃ±a 100 g
+Meta description: Flor de Jamaica con PiÃ±a 100 g: mezcla deliciosa para infusiones frÃ­as o calientes, con sabor frutal y refrescante.
+Tipo: ficha de producto.
+Producto: local_fire_department Flor de Jamaica con PiÃ±a
+Meta description: Flor de Jamaica con PiÃ±a 100 g: mezcla deliciosa para infusiones frÃ­as o calientes, con sabor frutal y refrescante.
+Imagen: ./img/jamaica.jpeg
+Alt imagen: Flor de Jamaica con PiÃ±a 100 g
+DescripciÃ³n: info Mezcla frutal y refrescante para preparar infusiones frÃ­as o calientes. Ideal para disfrutar en verano, endulzar al gusto y tomar en cualquier momento del dÃ­a.
+Precio: S/ 15.00
+Presentaciones:
+ - 100 g
+Utilidad:
+ - task_alt Para infusiones frÃ­as o calientes (sabor frutal y refrescante).
+ - task_alt Ideal para preparar â€œagua de jamaicaâ€ casera, endulzada al gusto.
+ - task_alt Perfecta para acompaÃ±ar comidas o para hidrataciÃ³n durante el dÃ­a.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 100 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Kiwicha.html
+
+TÃ­tulo: Valle Natural - Kiwicha Pop
+Meta description: Kiwicha Pop: amaranto inflado, snack liviano y nutritivo. Ideal para yogur y desayunos.
+Tipo: ficha de producto.
+Producto: bolt Kiwicha Pop
+Meta description: Kiwicha Pop: amaranto inflado, snack liviano y nutritivo. Ideal para yogur y desayunos.
+Imagen: ./img/kiwicha-pop.jpeg
+Alt imagen: Kiwicha Pop
+DescripciÃ³n: info Amaranto inflado, crocante y liviano. Ideal para mezclar con yogur, frutas y desayunos energÃ©ticos.
+Precio: S/ 20.00
+Precio anterior: S/ 30.00
+Presentaciones:
+ - 200 g
+ - 400 g
+Utilidad:
+ - task_alt Snack saludable para combinar con yogur o frutas.
+ - task_alt Aporta energÃ­a con textura crocante.
+ - task_alt Ideal para desayunos rÃ¡pidos.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Linaza.html
+
+TÃ­tulo: Valle Natural - Linaza Molida
+Meta description: Linaza Molida: fuente de fibra y Omega-3. Ideal para batidos y panificaciÃ³n saludable.
+Tipo: ficha de producto.
+Producto: local_fire_department Linaza Molida
+Meta description: Linaza Molida: fuente de fibra y Omega-3. Ideal para batidos y panificaciÃ³n saludable.
+Imagen: ./img/linaza-molida.jpeg
+Alt imagen: Linaza Molida
+DescripciÃ³n: info Fuente de fibra y Omega-3 de origen vegetal. Perfecta para batidos, bowls y panificaciÃ³n saludable.
+Precio: S/ 15.00
+Precio anterior: S/ 20.00
+Presentaciones:
+ - 500 g
+ - 500 g
+Utilidad:
+ - task_alt Aporta fibra a tu dieta diaria.
+ - task_alt Buena fuente de Omega-3 vegetal.
+ - task_alt Ãštil en reposterÃ­a y batidos.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 500 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: MacaNegra.html
+
+TÃ­tulo: Valle Natural - Maca Negra Gelatinizada 200 g
+Meta description: Maca Negra Gelatinizada 200 g: energÃ­a natural, vitalidad y apoyo al rendimiento. Ideal para batidos, avenas y postres.
+Tipo: ficha de producto.
+Producto: local_fire_department Maca Negra Gelatinizada
+Meta description: Maca Negra Gelatinizada 200 g: energÃ­a natural, vitalidad y apoyo al rendimiento. Ideal para batidos, avenas y postres.
+Imagen: ./img/maca-negra.jpeg
+Alt imagen: Maca Negra Gelatinizada 200 g
+DescripciÃ³n: info Maca negra gelatinizada: opciÃ³n prÃ¡ctica y de fÃ¡cil digestiÃ³n, ideal para sumar energÃ­a y vitalidad a tu rutina. Perfecta en batidos, avena, yogur o postres.
+Precio: S/ 29.90
+Presentaciones:
+ - 200 g
+Utilidad:
+ - task_alt Ideal para batidos, avena, yogur y postres.
+ - task_alt Aporte natural para energÃ­a y vitalidad en tu dÃ­a a dÃ­a.
+ - task_alt PresentaciÃ³n gelatinizada: mÃ¡s fÃ¡cil de digerir y usar.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: MielAbeja.html
+
+TÃ­tulo: Valle Natural - Miel de Abeja
+Meta description: Miel de Abeja 100% pura y cruda. Endulzante natural, antioxidantes y apoyo a las defensas.
+Tipo: ficha de producto.
+Producto: emoji_nature Miel de Abeja
+Meta description: Miel de Abeja 100% pura y cruda. Endulzante natural, antioxidantes y apoyo a las defensas.
+Imagen: ./img/miel.jpg
+Alt imagen: Miel de Abeja Pura
+DescripciÃ³n: info Recolectada por apicultores locales. Miel cruda, sin aditivos ni procesos industriales para preservar sus enzimas y propiedades naturales.
+Precio: S/ 39.90
+Precio anterior: S/ 52.00
+Presentaciones:
+ - 250 g
+ - 1 Kg
+ - 1 kg
+Utilidad:
+ - task_alt Endulzante natural para bebidas y postres.
+ - task_alt Aporta antioxidantes y enzimas naturales.
+ - task_alt Tradicionalmente usada para aliviar la garganta.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 1 kg
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco; evitar sol directo
+
+## Archivo: Moringa.html
+
+TÃ­tulo: Valle Natural - Moringa en Polvo
+Meta description: Moringa en Polvo: hojas de moringa pulverizadas. Aporte natural para batidos y jugos.
+Tipo: ficha de producto.
+Producto: eco Moringa con camu camu y piÃ±a atomizada
+Meta description: Moringa en Polvo: hojas de moringa pulverizadas. Aporte natural para batidos y jugos.
+Imagen: ./img/moringa.jpg
+Alt imagen: Moringa en Polvo
+DescripciÃ³n: info Hojas de moringa pulverizadas, ideales para jugos y batidos. Una forma prÃ¡ctica de aÃ±adir moringa a tu dieta diaria.
+Precio: S/ 59.90
+Presentaciones:
+ - 250 g
+ - 500 g
+Utilidad:
+ - task_alt FÃ¡cil de mezclar en batidos y jugos.
+ - task_alt OpciÃ³n prÃ¡ctica para consumir moringa diariamente.
+ - task_alt Sabor suave que combina con frutas.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 250g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Movimiento.html
+
+Contenido: archivo vacÃ­o.
+
+## Archivo: nuecesPeladas.html
+
+TÃ­tulo: Valle Natural - Nueces Peladas
+Meta description: Nueces Peladas 200g: snack premium, ideal para desayunos, ensaladas y reposterÃ­a.
+Tipo: ficha de producto.
+Producto: local_fire_department Nueces Peladas
+Meta description: Nueces Peladas 200g: snack premium, ideal para desayunos, ensaladas y reposterÃ­a.
+Imagen: ./img/FrutosSecos/nuez-pelada.jpeg
+Alt imagen: Nueces Peladas 200g
+DescripciÃ³n: info Nueces seleccionadas y listas para consumir. Perfectas para ensaladas, yogurt, granola y reposterÃ­a.
+Precio: S/ 25.00
+Precio anterior: S/ 32.00
+Presentaciones:
+ - 200 g
+ - 400 g
+ - 1 kg
+Utilidad:
+ - task_alt Ideales para ensaladas y bowls (toque crocante).
+ - task_alt Perfectas para yogurt, avena y granola.
+ - task_alt Excelente ingrediente para reposterÃ­a (pan, galletas, brownies).
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: SelecciÃ³n premium
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: pecanasEnteras.html
+
+TÃ­tulo: Valle Natural - Pecanas Enteras
+Meta description: Pecanas Enteras 200g: snack premium, ideal para postres, ensaladas y mix de frutos secos.
+Tipo: ficha de producto.
+Producto: local_fire_department Pecanas Enteras
+Meta description: Pecanas Enteras 200g: snack premium, ideal para postres, ensaladas y mix de frutos secos.
+Imagen: ./img/pecanas.jpeg
+Alt imagen: Pecanas Enteras 200g
+DescripciÃ³n: info Pecanas enteras premium: sabor suave y textura crujiente. Perfectas para postres, ensaladas y bowls.
+Precio: S/ 28.00
+Precio anterior: S/ 35.00
+Presentaciones:
+ - 200 g
+ - 400 g
+ - 1 kg
+Utilidad:
+ - task_alt Ideales para postres (keke, brownies, galletas).
+ - task_alt Perfectas para ensaladas y bowls (toque premium).
+ - task_alt Ãštiles para mix de frutos secos y snacks.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: PolenAbeja.html
+
+TÃ­tulo: Valle Natural - Polen de Abeja
+Meta description: Polen de abeja 130g. Fuente natural de nutrientes. Ideal para batidos, yogur y desayunos.
+Tipo: ficha de producto.
+Producto: emoji_nature Polen de Abeja
+Meta description: Polen de abeja 130g. Fuente natural de nutrientes. Ideal para batidos, yogur y desayunos.
+Imagen: ./img/polen-abeja.jpeg
+Alt imagen: Polen de Abeja
+DescripciÃ³n: info Polen natural recolectado y seleccionado. Ideal para complementar desayunos, batidos o yogur. Sabor suave y textura granulada.
+Precio: S/ 24.90
+Presentaciones:
+ - 130 g
+Utilidad:
+ - task_alt AgrÃ©galo a yogur, avena o frutas para un desayuno completo.
+ - task_alt Ideal para batidos (smoothies) por su aporte natural de nutrientes.
+ - task_alt Ãšsalo como topping en postres para un toque natural y delicioso.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 130 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco; mantener bien cerrado
+
+## Archivo: Productos.html
+
+TÃ­tulo: Productos | Valle Natural
+Tipo: vista de catÃ¡logo temÃ¡tico.
+
+Producto 1:
+ - Etiqueta: Endulzante
+ - Imagen: ./img/algarrobina.jpg
+ - Alt imagen: Algarrobina
+ - Slug: algarrobina
+ - CategorÃ­a interna: endulzantes_infusiones
+ - Stock: 1
+ - Oferta: 0
+
+Producto 2:
+ - Etiqueta: Endulzante
+ - Imagen: ./img/miel.jpg
+ - Alt imagen: Miel de Abeja
+ - Slug: miel de abeja
+ - CategorÃ­a interna: endulzantes_infusiones
+ - Stock: 1
+ - Oferta: 1
+
+Producto 3:
+ - Etiqueta: InfusiÃ³n
+ - Imagen: ./img/jamaica.jpeg
+ - Alt imagen: Flor de Jamaica
+ - Slug: flor de jamaica con piÃ±a
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 1
+
+Producto 4:
+ - Etiqueta: Endulzante
+ - Imagen: ./img/stevia-yacon.jpeg
+ - Alt imagen: Stevia Natural
+ - Slug: stevia natural
+ - CategorÃ­a interna: endulzantes_infusiones
+ - Stock: 1
+ - Oferta: 1
+
+Producto 5:
+ - Etiqueta: Suplemento
+ - Imagen: ./img/polen-abeja.jpeg
+ - Alt imagen: Polen de Abeja
+ - Slug: polen de abeja
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 1
+
+Producto 6:
+ - Etiqueta: Suplemento
+ - Imagen: ./img/propoleo.jpg
+ - Alt imagen: Jarabe de PropÃ³leo
+ - Slug: jarabe de propoleo
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 7:
+ - Etiqueta: Suplemento
+ - Imagen: ./img/magnesio.jpg
+ - Alt imagen: Citrato de Magnesio
+ - Slug: citrato de magnesio
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 8:
+ - Etiqueta: Suplemento
+ - Imagen: ./img/potasio.jpg
+ - Alt imagen: Citrato de Potasio
+ - Slug: citrato de potasio
+ - CategorÃ­a interna: vitaminas-suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 9:
+ - Etiqueta: Suplemento
+ - Imagen: ./img/colageno-hidrolizado.jpeg
+ - Alt imagen: ColÃ¡geno Hidrolizado
+ - Slug: colageno hidrolizado
+ - CategorÃ­a interna: colageno
+ - Stock: 1
+ - Oferta: 0
+
+Producto 10:
+ - Etiqueta: Suplemento
+ - Imagen: ./img/colageno.jpg
+ - Alt imagen: CartÃ­lago de TiburÃ³n
+ - Slug: cartilago de tiburon
+ - CategorÃ­a interna: colageno
+ - Stock: 1
+ - Oferta: 1
+
+Producto 11:
+ - Etiqueta: Superfood
+ - Imagen: ./img/moringa.jpg
+ - Alt imagen: Moringa
+ - Slug: moringa
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 12:
+ - Etiqueta: Superfood
+ - Imagen: ./img/curcuma.jpg
+ - Alt imagen: CÃºrcuma
+ - Slug: curcuma
+ - CategorÃ­a interna: medicinales
+ - Stock: 1
+ - Oferta: 0
+
+Producto 13:
+ - Etiqueta: Superfood
+ - Imagen: ./img/maca-negra.jpeg
+ - Alt imagen: Maca Negra
+ - Slug: maca negra
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 14:
+ - Etiqueta: Superfood
+ - Imagen: ./img/cacao-polvo.png
+ - Alt imagen: Cacao en Polvo
+ - Slug: cacao en polvo
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 15:
+ - Etiqueta: Superfood
+ - Imagen: ./img/linaza-molida.jpeg
+ - Alt imagen: Linaza Molida
+ - Slug: linaza molida
+ - CategorÃ­a interna: superfoods_suplementos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 16:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-oliva.jpeg
+ - Alt imagen: Aceite de Oliva
+ - Slug: aceite de oliva
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 1
+
+Producto 17:
+ - Etiqueta: Aceite
+ - Imagen: ./img/aceite-coco.jpeg
+ - Alt imagen: Aceite de Coco
+ - Slug: aceite de coco
+ - CategorÃ­a interna: aceites
+ - Stock: 1
+ - Oferta: 0
+
+Producto 18:
+ - Etiqueta: Pop
+ - Imagen: ./img/kiwicha-pop.jpeg
+ - Alt imagen: Kiwicha Pop
+ - Slug: kiwicha pop
+ - CategorÃ­a interna: snacks
+ - Stock: 1
+ - Oferta: 1
+
+Producto 19:
+ - Etiqueta: Pop
+ - Imagen: ./img/quinua-pop.jpeg
+ - Alt imagen: Quinua Pop
+ - Slug: quinua pop
+ - CategorÃ­a interna: snacks
+ - Stock: 1
+ - Oferta: 0
+
+Producto 20:
+ - Etiqueta: Semilla
+ - Imagen: ./img/chia.jpeg
+ - Alt imagen: Semillas de ChÃ­a
+ - Slug: semillas de chia
+ - CategorÃ­a interna: semillas
+ - Stock: 1
+ - Oferta: 1
+
+Producto 21:
+ - Etiqueta: Semillas
+ - Imagen: ./img/FrutosSecos/semillas-girasol.jpeg
+ - Alt imagen: Semillas de Calabaza
+ - Slug: semillas de calabaza
+ - CategorÃ­a interna: semillas
+ - Stock: 1
+ - Oferta: 0
+
+Producto 22:
+ - Etiqueta: Frutos secos
+ - Imagen: ./img/frutosSecos.jpg
+ - Alt imagen: Mix Frutos Secos
+ - Slug: mix frutos secos
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 1
+
+Producto 23:
+ - Etiqueta: Fruto seco
+ - Imagen: ./img/FrutosSecos/almendras.jpeg
+ - Alt imagen: Almendras
+ - Slug: almendras naturales
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 24:
+ - Etiqueta: Fruto seco
+ - Imagen: ./img/FrutosSecos/nuez-pelada.jpeg
+ - Alt imagen: Nueces Peladas
+ - Slug: nueces peladas
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 25:
+ - Etiqueta: Fruto seco
+ - Imagen: ./img/pecanas.jpeg
+ - Alt imagen: Pecanas
+ - Slug: pecanas enteras
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 26:
+ - Etiqueta: Fruto seco
+ - Imagen: ./img/FrutosSecos/caju.jpeg
+ - Alt imagen: CajÃº
+ - Slug: caju castanas
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 0
+
+Producto 27:
+ - Etiqueta: Deshidratado
+ - Imagen: ./img/FrutosSecos/arandanos.jpeg
+ - Alt imagen: ArÃ¡ndanos
+ - Slug: arandanos deshidratados
+ - CategorÃ­a interna: frutos_secos
+ - Stock: 1
+ - Oferta: 0
+
+## Archivo: Propoleo.html
+
+TÃ­tulo: Valle Natural - PropÃ³leo
+Meta description: PropÃ³leo Natural: extracto en gotas. Apoyo a las defensas y bienestar respiratorio.
+Tipo: ficha de producto.
+Producto: healing PropÃ³leo Natural
+Meta description: PropÃ³leo Natural: extracto en gotas. Apoyo a las defensas y bienestar respiratorio.
+Imagen: ./img/propoleo.jpg
+Alt imagen: PropÃ³leo en gotas
+DescripciÃ³n: info Extracto natural en gotas. Tradicionalmente usado como apoyo a las defensas y bienestar de la garganta.
+Precio: S/ 25.00
+Presentaciones:
+ - 20 ml
+ - 250 ml
+Utilidad:
+ - task_alt Apoyo tradicional a las defensas.
+ - task_alt Ideal para temporadas frÃ­as.
+ - task_alt Uso prÃ¡ctico en gotas.
+Ficha tÃ©cnica:
+ - Cantidad: 250 ml
+ - PresentaciÃ³n: Gotas (frasco)
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Quinua.html
+
+TÃ­tulo: Valle Natural - Quinua Andina
+Meta description: Quinua Andina: grano andino rico en proteÃ­nas y nutrientes. Ideal para ensaladas, guisos y desayunos.
+Tipo: ficha de producto.
+Producto: grain Quinua Pop
+Meta description: Quinua Andina: grano andino rico en proteÃ­nas y nutrientes. Ideal para ensaladas, guisos y desayunos.
+Imagen: ./img/quinua-pop.jpeg
+Alt imagen: Quinua Pop
+DescripciÃ³n: info Grano andino de alto valor nutricional, fuente de proteÃ­na completa y fibra. Perfecta para ensaladas, guisos y desayunos saludables.
+Precio: S/ 18.00
+Presentaciones:
+ - 200 g
+ - 1 kg
+Utilidad:
+ - task_alt Base para ensaladas, bowls y guarniciones.
+ - task_alt Rica en proteÃ­nas, fibra y minerales.
+ - task_alt Ideal para dietas balanceadas.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 200 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: semillasCalabaza.html
+
+TÃ­tulo: Valle Natural - Semillas de Calabaza
+Meta description: Semillas de Calabaza 300g: snack crocante y versÃ¡til. Ideal para ensaladas, yogurt, granola y reposterÃ­a.
+Tipo: ficha de producto.
+Producto: local_fire_department Semillas de Calabaza
+Meta description: Semillas de Calabaza 300g: snack crocante y versÃ¡til. Ideal para ensaladas, yogurt, granola y reposterÃ­a.
+Imagen: ./img/FrutosSecos/semillas-girasol.jpeg
+Alt imagen: Semillas de Calabaza 300g
+DescripciÃ³n: info Semillas seleccionadas, crocantes y versÃ¡tiles. Perfectas para ensaladas, bowls, yogurt, granola o snacks.
+Precio: S/ 15.00
+Precio anterior: S/ 19.00
+Presentaciones:
+ - 300 g
+ - 500 g
+ - 1 kg
+Utilidad:
+ - task_alt Ideales para ensaladas, cremas y sopas (topping).
+ - task_alt Perfectas para granola, yogurt, avena y bowls.
+ - task_alt Snack prÃ¡ctico y crocante para el dÃ­a a dÃ­a.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 300 g
+ - Origen: SelecciÃ³n premium
+ - ConservaciÃ³n: Lugar fresco y seco
+
+## Archivo: Stevia.html
+
+TÃ­tulo: Valle Natural - Stevia Natural
+Meta description: Stevia Natural: endulzante 0 calorÃ­as. Perfecto para bebidas y postres.
+Tipo: ficha de producto.
+Producto: spa Stevia con Harina de YacÃ³n
+Meta description: Stevia Natural: endulzante 0 calorÃ­as. Perfecto para bebidas y postres.
+Imagen: ./img/stevia-yacon.jpeg
+Alt imagen: Stevia Natural
+DescripciÃ³n: info Endulzante natural sin calorÃ­as. Perfecto para bebidas y postres, alternativa al azÃºcar tradicional.
+Precio: S/ 25.00
+Presentaciones:
+ - 150 g
+ - 200 g
+Utilidad:
+ - task_alt Endulza bebidas y postres sin calorÃ­as.
+ - task_alt Alternativa natural al azÃºcar.
+ - task_alt Rinde y disuelve fÃ¡cilmente.
+Ficha tÃ©cnica:
+ - Peso/Cantidad: 150 g
+ - Origen: PerÃº
+ - ConservaciÃ³n: Lugar fresco y seco
+
